@@ -83,11 +83,18 @@
 <div id="link_list" spellcheck="false">
 <a href="#b">B</a>
 <a href="#c">C</a>
+<a href="#d">D</a>
 <a href="#f">F</a>
+<a href="#g">G</a>
+<a href="#i">I</a>
 <a href="#l">L</a>
 <a href="#p">P</a>
 <a href="#r">R</a>
 <a href="#s">S</a>
+<a href="#t">T</a>
+<a href="#u">U</a>
+<a href="#w">W</a>
+<a href="#z">Z</a>
 </div>
 </section>
 
@@ -107,6 +114,8 @@
 
 
 
+
+
 <div class="letter_anchor" id="c">C</div>
 
 <p>A <dfn data-lt="consumer|consumers">consumer</dfn> is any process that receives natural language strings, either for display or processing.</p>
@@ -115,9 +124,38 @@
 
 
 
+<div class="letter_anchor" id="d">D</div>
+
+<p><dfn id="def_dst">Daylight Saving Time</dfn> (DST) or "Summer Time" was adopted as a way of allowing people more sunlight hours in the evening. DST varies from country to country (not to mention locality-to-locality) and often has special one-off changes to accommodate special events. Not all regions observe DST: usually those closer to the equator do not need it. In converting times it is  important to know when DST was introduced, and sometimes abandoned, for the local area, as well as on what dates DST starts and ends (which can vary from year to year). For example, Korea Standard Time and Japan Standard Time currently use the same <a href="#def_zone_offset" class="termref">zone offset</a> and neither uses daylight saving. However, Japan abandoned DST in 1951, while South Korea used it last in 1988, so an application that tracks time values that reach back that far might need to track these time zones separately.</p>
+
+
+
+
+
 <div class="letter_anchor" id="f">F</div>
 
-<p> <dfn>First-strong detection</dfn> is an algorithm that looks for the first strongly-directional character in a string (while ignoring embedded runs of isolated text), and then uses that to guess at the appropriate base direction for the string as a whole. Unicode code points are associated with properties relating to text direction: generally, letters in right-to-left scripts such as Arabic and Hebrew have a strong RTL direction, whereas Latin and Han characters have a strong LTR direction. Other characters, such as punctuation, only have a weak intrinsic directionality, and the actual directionality is determined according to the context in which they are found.</p>
+<p><dfn id="def_field_based_format">Field-based formats</dfn> divide the date and/or time into separate field values such as year, month, day, hour, minute, second, etc. such as <samp>2016-09-11T06:10:32</samp>. Contrast this with an alternative way to express the same time, <samp>1465621816590</samp>, which is not field-based and is rather hard to read. Field-based times may or may not be tied to either <a href="#utc" class="termref">UTC</a> or the local time zone – or they may be indeterminate. Field-based times are also typically tied to a specific calendar (such as the Gregorian calendar). The formats described by the ISO 8601 standard are field-based.</p>
+
+<p><dfn>First-strong detection</dfn> is an algorithm that looks for the first strongly-directional character in a string (while ignoring embedded runs of isolated text), and then uses that to guess at the appropriate base direction for the string as a whole. Unicode code points are associated with properties relating to text direction: generally, letters in right-to-left scripts such as Arabic and Hebrew have a strong RTL direction, whereas Latin and Han characters have a strong LTR direction. Other characters, such as punctuation, only have a weak intrinsic directionality, and the actual directionality is determined according to the context in which they are found.</p>
+
+<p><dfn id="def_floating_time">Floating times</dfn> are not fixed to a specific <a href="#def_incremental_time" class="termref">incremental time</a> value or time zone. When you apply time zone information to floating times they produce <em>a range of acceptable incremental time values</em>, because they represent a nominal time which is described in the same way in all time zones around the world. For example, Saturday 11 June 2016 happens to be the date of the British Queen's official 90th birthday. The specific time when 11th June starts or ends in Britain may actually be on Friday or Sunday in other countries, because their clocks are set differently, but the date of the event is always referred to as Saturday 11 June. Other examples of floating time events include  the  publication date for an issue of a newspaper, the date the Tokyo Olympics starts, the time the New Year starts, office hours set to "9 to 5" regardless of <a href="#def_time_zone">time zone</a>, and so on.</p>
+
+
+
+
+
+<div class="letter_anchor" id="g">G</div>
+
+<p>The <dfn id="def_gregorian_calendar">Gregorian calendar</dfn> is the most widely used way of representing civil time. It is a solar calendar, with years usually consisting of 365 days, plus the concept of a "leap year". This adds an additional day every 4 years, except when the year is evenly divisible by 100 (unless the year is also evenly divisible by 400). There are numerous other calendars in use around the world, some of which are lunar calendars, some that are based on a different start date than the Gregorian calendar, and some that are reset each time a prominent person dies. Often these calendars are still used for religious purposes, but sometimes you will also find them being used in newspapers and emails, or for birth dates. There are technologies, such as ICU or Dojo, that support conversion between different calendaring systems.</p>
+
+
+
+
+
+<div class="letter_anchor" id="i">I</div>
+
+<p><dfn id="def_incremental_time">Incremental time</dfn> is a way of representing time in computers that is based on a  progression of fixed integer units that increase monotonically from a specific point in time (called the "epoch").  Java (and many other systems) count time as the number of milliseconds since midnight (00:00 a.m.) on January 1, 1970 in <a href="#utc" class="termref">UTC</a> (less all of the intervening leap seconds). Other systems use different units and/or epochs. For example,  the incremental time for 11 June, 2016 at 6.10am BST in JavaScript is <samp>1465621816590</samp>. Most programming languages and operating environments provide or use incremental time for working with time values. However, incremental time is not usually seen directly by users, but is typically mapped to a <a href="#def_field_based_format" class="termref">field-based time format</a> for interchange or  for human consumption.</p>
+
 
 
 
@@ -148,6 +186,39 @@
 <div class="letter_anchor" id="s">S</div>
 
 <p>A <dfn data-lt="agreement|agreements|serialization agreement|serialization agreements|serialization">serialization agreement</dfn> (or "agreement" for short) is the common understanding between a producer and consumer about the serialization of string metadata: how it is to be understood, serialized, read, transmitted, removed, etc.</p>
+
+
+
+
+<div class="letter_anchor" id="t">T</div>
+
+<p>A <dfn id="def_time_zone">time zone</dfn> is a set of rules for determining the local  time (wall time) as it relates to incremental time (as used in most computing systems) for a particular geographical region, and vice versa. Time zone rules have to take into account <a href="#def_zone_offset" class="termref"> zone offsets</a> <em>plus</em> any <a href="#def_dst" class="termref">daylight savings</a> modifications to wall time that apply.</p>
+
+<p><dfn id="def_time_zone_id">Time zone identifiers</dfn> allow you to refer to a particular difference from <a href="utc" class="termref">UTC</a> that includes both <a href="#def_zone_offset" class="termref"> zone offsets</a> and <a href="#def_dst" class="termref">daylight savings time</a>. The most definitive reference for identifying sets of time zone rules is the <a href="https://www.iana.org/time-zones">TZ database</a> (also known as the Olson time zone database), which is used by systems such as various commercial UNIX operating systems, Linux, Java, CLDR, ICU, and many other systems and libraries. Other systems exist: for example, Microsoft Windows uses its own data set and identifiers. In the TZ database, time zones are given IDs that typically consist of a region and exemplar city. An exemplar city is a city in the time zone in question that should be well-known to people using the time zone. For example, the U.S. Pacific time zone has a TZ database ID of <code class="kw" translate="no">America/Los_Angeles</code>. The TZ database also supplies aliases for many IDs; for example, <code class="kw" translate="no">Asia/Ulan Bator</code> is equivalent to <code class="kw" translate="no">Asia/Ulaanbaatar</code>. The Common Locale Data Repository (CLDR) can be used to provide a localized form for the IDs. Note that some systems, such as Apple's Mac OS, provide additional exemplar cities.</p>
+
+
+
+
+<div class="letter_anchor" id="u">U</div>
+
+<p><dfn data-lt="utc">Universal Coordinated Time (UTC)</dfn> is the basis for modern timekeeping. Among other things, it provides a common baseline for converting between <a href="#def_incremental_time" class="termref">incremental</a> and <a href="#def_wall_time" class="termref">wall</a> time. UTC is also known as GMT (Greenwich Mean Time). There are some subtle differences between the two, but none that  the average person would notice. 
+The time zone offset for UTC is 0. UTC is often indicated in <a href="#def_field_based_format" class="termref">field-based formats</a> using <code class="kw" translate="no">Z</code>.</p>
+
+
+
+
+<div class="letter_anchor" id="w">W</div>
+
+<p><dfn id="def_wall_time">Wall time</dfn> or <dfn id="def_local_time">local time</dfn> is a  moment in time that can be mapped to a specific point in <a href="#def_incremental_time" class="termref">incremental time</a> if you apply any relevant time zone information, but it corresponds to what a person would recognise the time to be if they looked at a clock and/or calendar mounted on a wall in a particular place. So, for example,  the time displayed by a computer in the UK may be <samp>Sat 11 Jun 06:10</samp>. By applying knowledge about how that time relates to <a href="utc" class="termref">UTC</a> (in this case, adjusting by one hour to account for British Summer Time) it is possible to convert that to the incremental time <samp>1465621816590</samp>. It's also possible to convert that to a wall time in another location, such as San Francisco, where someone  looking at their computer's time display at the same time would have seen <samp>Fri 10 Jun 22:10</samp>.</p>
+
+
+
+
+<div class="letter_anchor" id="z">Z</div>
+
+<p>A <dfn id="def_zone_offset"> zone offset</dfn> is an amount that is added to or subtracted from <a href="utc" class="termref">UTC</a> based on the location of the event around the world relative to the prime meridian. Usually offsets are at one-hour intervals, but offsets can also include other differences, such as 30 or 45 minutes. A common way to express a zone offset in field-based formats is with +/- followed by the offset. So for example, Japan is 9 hours ahead of UTC, so you may see a time written as <samp>2016-06-11 05:10+09:00</samp>. Note, importantly, that the zone offset does not help you convert times to wall time where <a href="#dst" class="termref">daylight savings time</a> is in force.</p>
+
+
 </section>
 
 
