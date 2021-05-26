@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<title>Internationalization Glossary</title>
+<meta charset="utf-8"/>
+<script src="https://www.w3.org/Tools/respec/respec-w3c" class="remove"></script>
+<script class="remove">
+      var respecConfig = {
+          // specification status (e.g. WD, LCWD, WG-NOTE, etc.). If in doubt use ED.
+          specStatus:           "ED",
+          //publishDate:  		"2019-04-16",
+          //previousPublishDate:  "2019-04-16",
+          //previousMaturity:  	"WD",
+
+
+          noRecTrack:           true,
+          shortName:            "i18n-glossary",
+          copyrightStart: 		"2021",
+          edDraftURI:   		"https://w3c.github.io/i18n-glossary/",
+
+          // if this is a LCWD, uncomment and set the end of its review period
+          // lcEnd: "2009-08-05",
+
+          // editors, add as many as you like
+          // only "name" is required
+          //authors:  [
+          //    { name: "Person", mailto: "someone@example.com",
+          //      company: "Invited Expert" },
+		  //	     ],
+          editors:  [
+                { name: "Richard Ishida", mailto: "ishida@w3.org", company: "W3C", w3cid: 3439 },
+                ],
+         
+
+		
+		  github: "w3c/i18n-glossary",
+		  group: "i18n",
+		  
+          };
+    </script>
+<!--link rel="stylesheet" href="local.css" /-->
+<style>
+.letter_anchor {
+    font-weight: bold;
+    color: #66cc00;
+    font-size: 140%;
+    margin-block-start: 3em;
+    }
+#link_list a {
+    font-weight: bold;
+    margin-inline-start: 1em;
+    font-size: 120%;
+    color: #66cc00;
+    }
+</style>
+</head>
+
+<body>
+<div id="abstract">
+  <p>This document provides definitions for various terms related to W3C internationalization.</p>
+</div>
+
+
+<div id="sotd">
+  <p>We welcome comments on this document, but to make it easier to track them, please raise 
+  separate issues for each comment, and point to the section 
+  you are commenting on using a URL.</p>
+</div>
+
+<section>
+<h2 id="introduction">Introduction</h2>
+
+<p>This document can be pointed to for definitions of terms, or these definitions may be copied to other documents and slightly adapted.</p>
+</section>
+
+
+
+
+
+<section>
+<h2 id="links">Alphabetical links</h2>
+
+<div id="link_list" spellcheck="false">
+<a href="#b">B</a>
+<a href="#c">C</a>
+<a href="#f">F</a>
+<a href="#l">L</a>
+<a href="#p">P</a>
+<a href="#r">R</a>
+<a href="#s">S</a>
+</div>
+</section>
+
+
+
+
+
+<section id="glossary">
+<h2>Glossary</h2>
+
+
+<div class="letter_anchor" id="b">B</div>
+
+<p><dfn>Base direction</dfn> determines the general arrangement and progression of content when bidirectional text is displayed. The <dfn data-lt="unicode bidirectional algorithm|uba">Unicode Bidirectional Algorithm</dfn> or <q>UBA</q> [[UAX9]] is primarily focused on arranging adjacent characters, based on character properties. Base direction works at a higher level, and dictates (a) the visual order and direction in which runs of strongly-typed LTR and RTL character are displayed, and (b) where there are weakly-typed characters such as punctuation, the placement of those items relative to the other content.</p>
+<p><dfn>Bidirectional text</dfn> (often referred to as &quot;bidi&quot; for short) refers to text that mixes runs of both LTR and RTL text inline. It is common for right-to-left scripts, such as Arabic and Hebrew, to contain short runs of left-to-right text (most commonly in the Latin script), and several of the scripts that are predominantly right-to-left display  numbers from left-to-right. Bidirectional text is the source of many of the difficulties when dealing with RTL scripts.</p>
+<p><dfn>Bidi isolation</dfn> often needs to be applied to a range of text in order to prevent the automatic rules of the Unicode Bidirectional Algorithm incorrectly ordering that content in relation to the surrounding text. For example, numbers following right-to-left text in memory are automatically positioned to the left of that text by the Bidi Algorithm, but sometimes need to appear to the right. Another example occurs when lists of RTL items occur in a LTR sentence: the Bidi Algorithm will automatically assume that the order of items in the list should be "3 ,2 ,1", but actually what's needed is "1, 2, 3". In HTML, bidi isolation can be applied to a range of text by enclosing it in an element with a <code class="kw" translate="no">dir</code> attribute. In plain text there are Unicode formatting characters that can do the job. These mechanisms remove unwanted 'spillover effects'.</p>
+
+
+
+<div class="letter_anchor" id="c">C</div>
+
+<p>A <dfn data-lt="consumer|consumers">consumer</dfn> is any process that receives natural language strings, either for display or processing.</p>
+
+
+
+
+
+<div class="letter_anchor" id="f">F</div>
+
+<p> <dfn>First-strong detection</dfn> is an algorithm that looks for the first strongly-directional character in a string (while ignoring embedded runs of isolated text), and then uses that to guess at the appropriate base direction for the string as a whole. Unicode code points are associated with properties relating to text direction: generally, letters in right-to-left scripts such as Arabic and Hebrew have a strong RTL direction, whereas Latin and Han characters have a strong LTR direction. Other characters, such as punctuation, only have a weak intrinsic directionality, and the actual directionality is determined according to the context in which they are found.</p>
+
+
+
+
+<div class="letter_anchor" id="l">L</div>
+
+<p><dfn data-lt="language negotiation">Language negotiation</dfn> is any process which selects or filters content based on language. Usually this implies selecting content in a single language (or falling back to some meaningful default language that is available) by finding the best matching values when several languages or locales [[LTLI]] are present in the content. Some common language negotiation algorithms include the Lookup algorithm in [[BCP47]] or the BestFitMatcher in [[ECMA-402]].</p>
+<p><dfn>LTR</dfn> stands for "left-to-right" and refers to the inline base direction of left-to-right [[UAX9]]. This is the base text direction used by languages whose starting character progression begins on the left side of the page in horizontal text. It's used for scripts such as Latin, Cyrillic, Devanagari, and many others.</p>
+
+
+
+
+
+<div class="letter_anchor" id="p">P</div>
+	
+<p>A <dfn data-lt="producer|producers">producer</dfn> is any process where natural language string data is created for later storage, processing, or interchange.</p>
+
+
+
+
+<div class="letter_anchor" id="r">R</div>
+
+<p><dfn>RTL</dfn> stands for "right-to-left" and refers to the inline base direction of right-to-left [[UAX9]]. This is the base text direction used by languages whose starting character progression begins on the right side of the page in horizontal text. It's used for a variety of scripts which include Arabic, Hebrew, N'Ko, Adlam, Thaana, and Syriac among others.</p>
+
+
+
+
+<div class="letter_anchor" id="s">S</div>
+
+<p>A <dfn data-lt="agreement|agreements|serialization agreement|serialization agreements|serialization">serialization agreement</dfn> (or "agreement" for short) is the common understanding between a producer and consumer about the serialization of string metadata: how it is to be understood, serialized, read, transmitted, removed, etc.</p>
+</section>
+
+
+<!--section class="appendix" id="Acknowledgements">
+<h2>Acknowledgements</h2>
+
+<p>The Internationalization (I18N) Working Group would like to thank 
+the following contributors to this document: 
+    Mati Allouche, 
+    David Baron,
+    Ivan Herman,
+    Tobie Langel,
+    Sangwhan Moon,
+    Felix Sasaki, 
+    Najib Tounsi, 
+    
+ and many others.</p>
+
+<p>The following pages formed the initial basis of this document:</p>
+<ul>
+  <li><a href="https://w3c.github.io/i18n-discuss/notes/annotation-language-use-cases.html">Use cases for language information in web annotations</a></li>
+  <li><a href="http://w3c.github.io/i18n-discuss/notes/string-base-direction.html">Support for bidi text in strings</a></li>
+  <li><a href="http://w3c.github.io/i18n-discuss/notes/json-bidi.html">Notes on JSON strings and text direction</a></li>
+</ul>
+
+</section-->
+
+
+</body>
+</html>
