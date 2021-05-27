@@ -90,15 +90,18 @@
 <a href="#b">B</a>
 <a href="#c">C</a>
 <a href="#d">D</a>
+<a href="#e">E</a>
 <a href="#f">F</a>
 <a href="#g">G</a>
 <a href="#i">I</a>
 <a href="#l">L</a>
+<a href="#n">N</a>
 <a href="#p">P</a>
 <a href="#r">R</a>
 <a href="#s">S</a>
 <a href="#t">T</a>
 <a href="#u">U</a>
+<a href="#v">V</a>
 <a href="#w">W</a>
 <a href="#z">Z</a>
 </div>
@@ -116,6 +119,9 @@
 
 <p><dfn>Base direction</dfn> determines the general arrangement and progression of content when bidirectional text is displayed. The <dfn data-lt="unicode bidirectional algorithm|uba">Unicode Bidirectional Algorithm</dfn> or <q>UBA</q> [[UAX9]] is primarily focused on arranging adjacent characters, based on character properties. Base direction works at a higher level, and dictates (a) the visual order and direction in which runs of strongly-typed LTR and RTL character are displayed, and (b) where there are weakly-typed characters such as punctuation, the placement of those items relative to the other content.</p>
 <p><dfn>Bidirectional text</dfn> (often referred to as &quot;bidi&quot; for short) refers to text that mixes runs of both LTR and RTL text inline. It is common for right-to-left scripts, such as Arabic and Hebrew, to contain short runs of left-to-right text (most commonly in the Latin script), and several of the scripts that are predominantly right-to-left display  numbers from left-to-right. Bidirectional text is the source of many of the difficulties when dealing with RTL scripts.</p>
+
+<p><dfn data-lt="basic language range|Basic language range" id="def_basic_language_range">Basic language range</dfn>. A <a href="#def_language_range" class="termref">language range</a> consisting of a sequence of subtags separated by hyphens. That is, it is identical in appearance to a language tag.</p>
+
 <p><dfn>Bidi isolation</dfn> often needs to be applied to a range of text in order to prevent the automatic rules of the Unicode Bidirectional Algorithm incorrectly ordering that content in relation to the surrounding text. For example, numbers following right-to-left text in memory are automatically positioned to the left of that text by the Bidi Algorithm, but sometimes need to appear to the right. Another example occurs when lists of RTL items occur in a LTR sentence: the Bidi Algorithm will automatically assume that the order of items in the list should be "3 ,2 ,1", but actually what's needed is "1, 2, 3". In HTML, bidi isolation can be applied to a range of text by enclosing it in an element with a <code class="kw" translate="no">dir</code> attribute. In plain text there are Unicode formatting characters that can do the job. These mechanisms remove unwanted 'spillover effects'.</p>
 
 
@@ -123,6 +129,12 @@
 
 
 <div class="letter_anchor" id="c">C</div>
+
+<p><dfn data-lt="canonical Unicode locale identifier|canonical tag|canonical locale|Canonical Unicode locale identifier" data-plurals="canonical unicode locale identifiers" id="def_canonical_unicode_locale_identifier">Canonical Unicode locale identifier</dfn>. A <a href="#def_well_formed" class="termref">well-formed language tag</a> resulting from the application of the <a href="#def_unicode_locale" class="termref">Unicode locale identifier</a> canonicalization rules found in [[LDML]]. This process converts any <a href="#def_valid" class="termref">valid</a> [[BCP47]] <a href="#def_language_tag">language tag</a> into a valid <a href="#def_unicode_locale" class="termref">Unicode locale identifier</a>.  For example, deprecated subtags or irregular grandfathered tags are replaced with their preferred value from the <a href="#def_iana_language_subtag_registry" class="termref">IANA language subtag registry</a>.</p>
+
+<p><strong><em>CLDR</em></strong>, see <a href="def_common_locale_data_repository">Common Locale Data Repository</a>.</p>
+
+<p><dfn data-lt="common locale data repository|CLDR|Common Locale Data Repository" id="def_common_locale_data_repository">Common Locale Data Repository</dfn> (or [[CLDR]]). The Common Locale Data Repository is a Unicode Consortium project that defines, collects, and curates sets of data needed to enable <a href="#locale" class="termref">locales</a> in systems or operating environments. CLDR data and its locale model are widely adopted, particularly in browsers.</p>
 
 <p>A <dfn data-lt="consumer|consumers">consumer</dfn> is any process that receives natural language strings, either for display or processing.</p>
 
@@ -138,9 +150,18 @@
 
 
 
+
+<div class="letter_anchor" id="e">E</div>
+
+<p><dfn id="def_extended_language_range">Extended language range</dfn>. A <a href="#def_language_range" class="termref">language range</a> consisting of a sequence of hyphen-separated subtags. In an extended language range, a subtag can either be a valid subtag or the wildcard subtag <q><code>*</code></q>, which matches any value.</p>
+
+
+
+
+
 <div class="letter_anchor" id="f">F</div>
 
-<p><dfn id="def_field_based_format">Field-based formats</dfn> divide the date and/or time into separate field values such as year, month, day, hour, minute, second, etc. such as <samp>2016-09-11T06:10:32</samp>. Contrast this with an alternative way to express the same time, <samp>1465621816590</samp>, which is not field-based and is rather hard to read. Field-based times may or may not be tied to either <a href="#utc" class="termref">UTC</a> or the local time zone – or they may be indeterminate. Field-based times are also typically tied to a specific calendar (such as the Gregorian calendar). The formats described by the ISO 8601 standard are field-based.</p>
+<p><dfn id="def_field_based_format">Field-based formats</dfn> divide the date and/or time into separate field values such as year, month, day, hour, minute, second, etc. such as <samp>2016-09-11T06:10:32</samp>. Contrast this with an alternative way to express the same time, <samp>1465621816590</samp>, which is not field-based and is rather hard to read. Field-based times may or may not be tied to either <a href="#def_utc" class="termref">UTC</a> or the local time zone – or they may be indeterminate. Field-based times are also typically tied to a specific calendar (such as the Gregorian calendar). The formats described by the ISO 8601 standard are field-based.</p>
 
 <p><dfn>First-strong detection</dfn> is an algorithm that looks for the first strongly-directional character in a string (while ignoring embedded runs of isolated text), and then uses that to guess at the appropriate base direction for the string as a whole. Unicode code points are associated with properties relating to text direction: generally, letters in right-to-left scripts such as Arabic and Hebrew have a strong RTL direction, whereas Latin and Han characters have a strong LTR direction. Other characters, such as punctuation, only have a weak intrinsic directionality, and the actual directionality is determined according to the context in which they are found.</p>
 
@@ -160,7 +181,13 @@
 
 <div class="letter_anchor" id="i">I</div>
 
-<p><dfn id="def_incremental_time">Incremental time</dfn> is a way of representing time in computers that is based on a  progression of fixed integer units that increase monotonically from a specific point in time (called the "epoch").  Java (and many other systems) count time as the number of milliseconds since midnight (00:00 a.m.) on January 1, 1970 in <a href="#utc" class="termref">UTC</a> (less all of the intervening leap seconds). Other systems use different units and/or epochs. For example,  the incremental time for 11 June, 2016 at 6.10am BST in JavaScript is <samp>1465621816590</samp>. Most programming languages and operating environments provide or use incremental time for working with time values. However, incremental time is not usually seen directly by users, but is typically mapped to a <a href="#def_field_based_format" class="termref">field-based time format</a> for interchange or  for human consumption.</p>
+<p><dfn id="def_incremental_time">Incremental time</dfn> is a way of representing time in computers that is based on a  progression of fixed integer units that increase monotonically from a specific point in time (called the "epoch").  Java (and many other systems) count time as the number of milliseconds since midnight (00:00 a.m.) on January 1, 1970 in <a href="#def_utc" class="termref">UTC</a> (less all of the intervening leap seconds). Other systems use different units and/or epochs. For example,  the incremental time for 11 June, 2016 at 6.10am BST in JavaScript is <samp>1465621816590</samp>. Most programming languages and operating environments provide or use incremental time for working with time values. However, incremental time is not usually seen directly by users, but is typically mapped to a <a href="#def_field_based_format" class="termref">field-based time format</a> for interchange or  for human consumption.</p>
+
+<p><dfn id="internationalization" data-lt="internationalization|I18N|internationalized|Internationalization">Internationalization</dfn>. The design and development of a product that is enabled for target audiences that vary in culture, region, or language. Internationalization is sometimes abbreviated <code>i18n</code> because there are eighteen letters between the "I" and the "N" in the English word.</p>
+
+<p><dfn id="def_international_preferences" data-lt="international preferences|International Preferences." data-plurals="international preference">International Preferences.</dfn> A user's particular set of language and formatting preferences and associated cultural conventions. Software can use these preferences to correctly process or present information exchanged with that user.</p>
+
+<p><dfn data-lt="iana language subtag registry|subtag registry|registry|lstr|IANA Language Subtag Registry" id="def_iana_language_subtag_registry">IANA Language Subtag Registry</dfn>. A machine-readable text file available via IANA which contains a comprehensive list of all of the subtags valid in language tags. (Link: <a href="https://www.iana.org/assignments/language-subtag-registry/language-subtag-registry">Registry</a>)</p>
 
 
 
@@ -168,10 +195,41 @@
 
 <div class="letter_anchor" id="l">L</div>
 
+
+<p><dfn data-lt="language tag extension|extension|extensions|registered extension|Language tag extension" data-plurals="language tag extensions" id="def_language_tag_extension">Language tag extension</dfn> or <em>extension</em>. A system of additional [[BCP47]] subtags introduced by a single letter or digit subtag registered with IANA and permitting additional types of language identification.</p>
+
 <p><dfn data-lt="language negotiation">Language negotiation</dfn> is any process which selects or filters content based on language. Usually this implies selecting content in a single language (or falling back to some meaningful default language that is available) by finding the best matching values when several languages or locales [[LTLI]] are present in the content. Some common language negotiation algorithms include the Lookup algorithm in [[BCP47]] or the BestFitMatcher in [[ECMA-402]].</p>
+
+<p><dfn data-plurals="language priority lists" id="def_language_priority_list">Language priority list</dfn>. A collection of one or more <a href="#def_language_range" class="termref">language ranges</a> identifying the user's language preferences for use in matching. As the name suggests, such lists are normally ordered or weighted according to the user's preferences. The HTTP [[RFC2616]] <code>Accept-Language</code> [[RFC3282]] header is an example of one kind of language priority list.</p>
+
+<p><dfn data-lt="language range|range|language-range|language ranges|Language range" id="def_language_range">Language range</dfn>. A string similar in structure to a language tag that is used for "identifying sets of language tags that share specific attributes".</p>
+
+<p><dfn data-lt="subtag|subtags|Subtag" id="def_subtag">Language subtag</dfn>. A sequence of ASCII letters or digits separated from other subtags by the hyphen-minus character and identifying a specific element of meaning withing the overall <a href="#def_language_tag">language tag</a>. In [[BCP47]], subtags can consist of upper or lowercase ASCII letters (the case carries no distinction) or ASCII digits. Subtags are limited to no more than eight characters (although additional length restrictions apply depending on the specific use of the subtag).
+</p>
+<p><dfn data-lt="language tag|language tags|Language tag" id="def_language_tag" tabindex="0">Language tag</dfn>. A string used as an identifier for a language, usually referring explicitly to a [[BCP47]] language tag. These language tags consist of one or more subtags.
+</p>
 <p><dfn>LTR</dfn> stands for "left-to-right" and refers to the inline base direction of left-to-right [[UAX9]]. This is the base text direction used by languages whose starting character progression begins on the left side of the page in horizontal text. It's used for scripts such as Latin, Cyrillic, Devanagari, and many others.</p>
 
+<p><dfn id="locale" data-lt="locale|locales|Locale">Locale</dfn>. An identifier (such as a <a href="#def_language_tag" class="termref">language tag</a>) for a set of <a href="#def_international_preferences" class="termref">international preferences</a>. Usually this identifier indicates the preferred language of the user and possibly includes other information, such as a geographic region (such as a country). A locale is passed in APIs or set in the operating environment to obtain culturally-affected behavior within a system or process.</p>
 
+<p><dfn data-lt="locale aware|locale-aware|enabled|enable|Locale-aware" id="def_locale_aware">Locale-aware</dfn> (or <em>Enabled</em>). A system that can respond to changes in the <a href="#locale" class="termref">locale</a> with culturally and language-specific behavior or content. Generally, systems that are internationalized can support a wide range of <a href="#locale" class="termref">locales</a> in order to meet the <a href="#def_international_preferences" class="termref">international preferences</a> of many kinds of users.</p>
+
+<p><dfn data-lt="locale fallback|fallback|Locale fallback" id="def_locale_fallback">Locale fallback</dfn>. The process of searching for translated content, locale data, or other resources by "falling back" from more-specific resources to more-general ones following a deterministic pattern.</p>
+
+<p><dfn data-lt="locale-neutral|locale neutral|Locale-neutral" id="def_locale_neutral">Locale-neutral</dfn>. A <a href="#def_non_linguistic_field" class="termref">non-linguistic field</a> is said to be <a href="#def_locale_neutral" class="termref">locale-neutral</a> when it is stored or exchanged in a format that is not specifically appropriate for any given language, locale, or culture and which can be interpreted unambiguously for presentation in a <a href="#def_locale_aware" class="termref">locale aware</a> way.</p>
+
+<p><dfn data-lt="localization|localized|L10N|Localization" id="def_localization">Localization</dfn>. The tailoring of a system to the individual cultural expectations of a specific target market or group of individuals. Localization includes, but is not limited to, the translation of user-facing text and messages. Localization is sometimes abbreviated as <code>l10n</code> because there are ten letters between the "L" and the "N" in the English word. When a particular set of content and preferences corresponding to a specific set of international preferences is operationally available, then the system is said to be <em>localized</em>.</p>
+
+
+
+
+
+
+<div class="letter_anchor" id="n">N</div>
+	
+<p><dfn data-lt="natural language|language|Natural Language" id="def_natural_language" tabindex="0">Natural Language</dfn> (sometimes just <em>language</em>) refers to the spoken, written, or signed communications used by human beings.</p>
+
+<p><dfn data-lt="non-linguistic field|field|non-linguistic fields|fields|Non-linguistic Field" id="def_non_linguistic_field">Non-linguistic Field</dfn>. Any element of a data structure not intended for the storage or interchange of natural language textual data. This includes non-string data types, such as booleans, numbers, dates, and so forth. It also includes strings, such as program or protocol internal identifiers. This document uses the term <em>field</em> as a short hand for this concept.</p>
 
 
 
@@ -200,15 +258,27 @@
 
 <p>A <dfn id="def_time_zone">time zone</dfn> is a set of rules for determining the local  time (wall time) as it relates to incremental time (as used in most computing systems) for a particular geographical region, and vice versa. Time zone rules have to take into account <a href="#def_zone_offset" class="termref"> zone offsets</a> <em>plus</em> any <a href="#def_dst" class="termref">daylight savings</a> modifications to wall time that apply.</p>
 
-<p><dfn id="def_time_zone_id">Time zone identifiers</dfn> allow you to refer to a particular difference from <a href="utc" class="termref">UTC</a> that includes both <a href="#def_zone_offset" class="termref"> zone offsets</a> and <a href="#def_dst" class="termref">daylight savings time</a>. The most definitive reference for identifying sets of time zone rules is the <a href="https://www.iana.org/time-zones">TZ database</a> (also known as the Olson time zone database), which is used by systems such as various commercial UNIX operating systems, Linux, Java, CLDR, ICU, and many other systems and libraries. Other systems exist: for example, Microsoft Windows uses its own data set and identifiers. In the TZ database, time zones are given IDs that typically consist of a region and exemplar city. An exemplar city is a city in the time zone in question that should be well-known to people using the time zone. For example, the U.S. Pacific time zone has a TZ database ID of <code class="kw" translate="no">America/Los_Angeles</code>. The TZ database also supplies aliases for many IDs; for example, <code class="kw" translate="no">Asia/Ulan Bator</code> is equivalent to <code class="kw" translate="no">Asia/Ulaanbaatar</code>. The Common Locale Data Repository (CLDR) can be used to provide a localized form for the IDs. Note that some systems, such as Apple's Mac OS, provide additional exemplar cities.</p>
+<p><dfn id="def_time_zone_id">Time zone identifiers</dfn> allow you to refer to a particular difference from <a href="utc" class="termref">UTC</a> that includes both <a href="#def_zone_offset" class="termref"> zone offsets</a> and <a href="#def_dst" class="termref">daylight savings time</a>. The most definitive reference for identifying sets of time zone rules is the <a href="https://www.iana.org/time_zones">TZ database</a> (also known as the Olson time zone database), which is used by systems such as various commercial UNIX operating systems, Linux, Java, CLDR, ICU, and many other systems and libraries. Other systems exist: for example, Microsoft Windows uses its own data set and identifiers. In the TZ database, time zones are given IDs that typically consist of a region and exemplar city. An exemplar city is a city in the time zone in question that should be well-known to people using the time zone. For example, the U.S. Pacific time zone has a TZ database ID of <code class="kw" translate="no">America/Los_Angeles</code>. The TZ database also supplies aliases for many IDs; for example, <code class="kw" translate="no">Asia/Ulan Bator</code> is equivalent to <code class="kw" translate="no">Asia/Ulaanbaatar</code>. The Common Locale Data Repository (CLDR) can be used to provide a localized form for the IDs. Note that some systems, such as Apple's Mac OS, provide additional exemplar cities.</p>
 
 
 
 
 <div class="letter_anchor" id="u">U</div>
 
-<p><dfn data-lt="utc">Universal Coordinated Time (UTC)</dfn> is the basis for modern timekeeping. Among other things, it provides a common baseline for converting between <a href="#def_incremental_time" class="termref">incremental</a> and <a href="#def_wall_time" class="termref">wall</a> time. UTC is also known as GMT (Greenwich Mean Time). There are some subtle differences between the two, but none that  the average person would notice. 
+<p><dfn data-lt="unicode locale|unicode locale identifier|unicode locale identifiers|unicode locales|Unicode Locale Identifier" id="def_unicode_locale">Unicode Locale Identifier</dfn> or <em>Unicode Locale</em>. A <a href="#def_language_tag" class="termref">language tag</a> that follows the additional rules and restrictions on subtag choice defined in UTR#35 [[LDML]]. Any valid Unicode locale identifier is also a <a href="#def_valid" class="termref">valid</a> [[BCP47]] <a href="#def_language_tag" class="termref">language tag</a>, but a few <a href="#def_valid" class="termref">valid language tags</a> are not also valid Unicode locale identifiers.</p>
+
+<p><dfn id="def_utc" data-lt="utc">Universal Coordinated Time (UTC)</dfn> is the basis for modern timekeeping. Among other things, it provides a common baseline for converting between <a href="#def_incremental_time" class="termref">incremental</a> and <a href="#def_wall_time" class="termref">wall</a> time. UTC is also known as GMT (Greenwich Mean Time). There are some subtle differences between the two, but none that  the average person would notice. 
 The time zone offset for UTC is 0. UTC is often indicated in <a href="#def_field_based_format" class="termref">field-based formats</a> using <code class="kw" translate="no">Z</code>.</p>
+
+
+
+
+
+<div class="letter_anchor" id="v">V</div>
+
+<p><dfn data-lt="valid|valid language tag|valid language tags|Valid language tag" id="def_valid">Valid language tag</dfn>. A language tag that is <a href="#def_well_formed" class="termref">well-formed</a> and which also conforms to the additional <a href="https://tools.ietf.org/html/bcp47#section-2.2.9">conformance requirements</a> in [[BCP47]], notably that each of the subtags appears in the IANA Language Subtag Registry.</p>
+
+
 
 
 
@@ -219,10 +289,14 @@ The time zone offset for UTC is 0. UTC is often indicated in <a href="#def_field
 
 
 
+<p><dfn data-lt="well-formed|well-formed language tag|well-formed language tags|Well-formed language tag" id="def_well_formed">Well-formed language tag</dfn>. A language tag that follows the grammar defined in [[BCP47]]. That is, it is structurally correct, consisting of ASCII letters and digit <a href="#def_subtag" class="termref">subtags</a> of the prescribed length, separated by hyphens.</p>
+
+
+
 
 <div class="letter_anchor" id="z">Z</div>
 
-<p>A <dfn id="def_zone_offset"> zone offset</dfn> is an amount that is added to or subtracted from <a href="utc" class="termref">UTC</a> based on the location of the event around the world relative to the prime meridian. Usually offsets are at one-hour intervals, but offsets can also include other differences, such as 30 or 45 minutes. A common way to express a zone offset in field-based formats is with +/- followed by the offset. So for example, Japan is 9 hours ahead of UTC, so you may see a time written as <samp>2016-06-11 05:10+09:00</samp>. Note, importantly, that the zone offset does not help you convert times to wall time where <a href="#dst" class="termref">daylight savings time</a> is in force.</p>
+<p>A <dfn id="def_zone_offset"> zone offset</dfn> is an amount that is added to or subtracted from <a href="utc" class="termref">UTC</a> based on the location of the event around the world relative to the prime meridian. Usually offsets are at one-hour intervals, but offsets can also include other differences, such as 30 or 45 minutes. A common way to express a zone offset in field-based formats is with +/- followed by the offset. So for example, Japan is 9 hours ahead of UTC, so you may see a time written as <samp>2016-06-11 05:10+09:00</samp>. Note, importantly, that the zone offset does not help you convert times to wall time where <a href="#def_dst" class="termref">daylight savings time</a> is in force.</p>
 
 
 </section>
