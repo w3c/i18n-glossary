@@ -85,6 +85,7 @@
 <h2 id="introduction">Introduction</h2>
 
 <p>This document can be pointed to for definitions of terms, or these definitions may be copied to other documents and slightly adapted.</p>
+<p>The W3C Internationalization Working Group also uses <a href="https://www.unicode.org/glossary/#normalization_form_d">definitions provided by the Unicode Consortium</a>.</p>
 </section>
 
 
@@ -129,6 +130,8 @@
 
 <p><dfn data-plurals="application internal identifiers" id="dfn-application-internal-identifier">Application internal identifiers</dfn>. Identifiers defined by or assigned by a user in a <a href="#def_vocabulary" class="termref">vocabulary</a> that is internal to the document format or protocol and not intended for human interaction. Such values are generally not <a href="#def_localizable_content" class="termref">localizable content</a>.</p>
 
+<p><dfn data-lt="ASCII case-insensitive|ASCII case-insensitive matching" id="def_ascii_case-insensitive">ASCII case-insensitive matching</dfn>. <a href="https://infra.spec.whatwg.org/#ascii-case-insensitive">Defined</a> in [[INFRA]], this compares two sequences of code points as if all ASCII code points in the range 0x41 to 0x5A (A to Z) were mapped to the corresponding code points in the range 0x61 to 0x7A (a to z), but other code points are not <a class="termref" href="#def_case_folding">case-folded</a>. ASCII case-insensitive matching can be required when a <a href="#def_vocabulary" class="termref">vocabulary</a> is itself constrained to ASCII.</p>
+
 
 
 
@@ -161,6 +164,12 @@
 <p><dfn id="def_encoding">Character encoding</dfn>. The way the <a class="termref" href="#def_coded_character_set">coded character set</a> is mapped to bytes for manipulation in a computer. Commonly referred to as just the <span class="alt_name">encoding</span>. For examples and further descriptions see <a href="https://www.w3.org/International/articles/definitions-characters/index#charsets">Character encodings: Essential concepts</a>.</p>
 
 <p><dfn id="def_character_set">Character set</dfn> or <span class="alt_name">repertoire</span>. The set of characters one might use for a particular purpose – be it those required to support Western European languages in computers, or those a Chinese child will learn at school in the third grade (nothing to do with computers).</p>
+
+<p><dfn id="def_case_mapping">Case mapping</dfn> is the process of transforming characters to a specific case, such as UPPER, lower, or Titlecase. For those scripts that have a case distinction, Unicode defines a <em>default</em> UPPER, lower, and Titlecase character mapping for each Unicode code point. Case mapping, at first, appears simple. However there are variations that need to be considered when treating the full range of Unicode in diverse languages.</p>
+
+<p><dfn id="def_case_folding">Case folding</dfn> is the process of making two texts which differ only in case identical for comparison purposes, that is, it is meant for the purpose of string matching. This is distinct from <a href="#def_case_mapping" class="termref">case mapping</a>, which is primarily meant for display purposes. As with the default case mappings, Unicode defines default case fold mappings ("case folding") for each Unicode code point. Unicode defines two forms of case folding.</p>
+
+<p><dfn data-lt="case-sensitive|Case sensitive matching" id="def_case_sensitive">Case sensitive matching</dfn>. Code points are compared directly with no case folding.</p>
 
 <p><dfn id="def_coded_character_set">Coded character set</dfn>. A set of characters where a unique number has been assigned to each character. Units of a coded character set are known as <a href="#def_code_point" class="termref">code points</a>.</p>
 
@@ -259,6 +268,8 @@
 <div class="letter_anchor" id="l">L</div>
 
 
+<p><dfn id="def_language_metadata">Language metadata</dfn>. When constrasted with the <a href="#def_text_processing_language" class="termref">text-processing language</a>, this indicates the<em> intended use of the resource</em> as a whole.  For example, such metadata may be used for searching for a relevant resource, for serving the right language version, for classification, etc. This type of language declaration differs from that of the text-processing language declaration in that (a)  the value for such declarations may be more than one  language subtag, and (b) the language value declared doesn't indicate which bits of a multilingual resource are in which language.</p>
+
 <p><dfn data-lt="language tag extension|extension|extensions|registered extension|Language tag extension" data-plurals="language tag extensions" id="def_language_tag_extension">Language tag extension</dfn>. A system of additional [[BCP47]] subtags introduced by a single letter or digit subtag registered with IANA and permitting additional types of language identification.</p>
 
 <p><dfn data-lt="language negotiation">Language negotiation</dfn> is any process which selects or filters content based on language. Usually this implies selecting content in a single language (or falling back to some meaningful default language that is available) by finding the best matching values when several languages or locales [[LTLI]] are present in the content. Some common language negotiation algorithms include the Lookup algorithm in [[BCP47]] or the BestFitMatcher in [[ECMA-402]].</p>
@@ -339,6 +350,8 @@
 
 
 <div class="letter_anchor" id="t">T</div>
+
+<p><dfn id="def_text_processing_language">Text-processing language</dfn>. The language in which a specific range of text is actually written. This needs to be declared so that user agents or applications that manipulate the text, such as voice browsers, spell checkers,  style processors, hyphenators, etc., can apply the appropriate rules to the text in question. So we are, by necessity, talking about associating a <em>single</em> language with a <em>specific</em> range of text. Contrast this with <a href="#def_language_metadata" class="termref">language metadata</a>.</p>
 
 <p><dfn id="def_time_zone">Time zone</dfn>.  A set of rules for determining the local  time (wall time) as it relates to incremental time (as used in most computing systems) for a particular geographical region, and vice versa. Time zone rules have to take into account <a href="#def_zone_offset" class="termref"> zone offsets</a> <em>plus</em> any <a href="#def_dst" class="termref">daylight savings</a> modifications to wall time that apply.</p>
 
