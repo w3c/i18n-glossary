@@ -87,6 +87,7 @@
 <h2 id="links">Alphabetical links</h2>
 
 <div id="link_list" spellcheck="false">
+<a href="#a">A</a>
 <a href="#b">B</a>
 <a href="#c">C</a>
 <a href="#d">D</a>
@@ -115,6 +116,16 @@
 <h2>Glossary</h2>
 
 
+
+<div class="letter_anchor" id="a">A</div>
+
+<p><dfn data-plurals="application internal identifiers" id="dfn-application-internal-identifier">Application internal identifiers</dfn> are identifiers defined by or assigned by a user in a <a href="#def_vocabulary" class="termref">vocabulary</a> that is internal to the document format or protocol and not intended for human interaction. Such values are generally not <a href="#def_localizable_content" class="termref">localizable content</a>.</p>
+
+
+
+
+
+
 <div class="letter_anchor" id="b">B</div>
 
 <p><dfn>Base direction</dfn> determines the general arrangement and progression of content when bidirectional text is displayed. The <dfn data-lt="unicode bidirectional algorithm|uba">Unicode Bidirectional Algorithm</dfn> or <q>UBA</q> [[UAX9]] is primarily focused on arranging adjacent characters, based on character properties. Base direction works at a higher level, and dictates (a) the visual order and direction in which runs of strongly-typed LTR and RTL character are displayed, and (b) where there are weakly-typed characters such as punctuation, the placement of those items relative to the other content.</p>
@@ -133,6 +144,8 @@
 <p><dfn data-lt="canonical Unicode locale identifier|canonical tag|canonical locale|Canonical Unicode locale identifier" data-plurals="canonical unicode locale identifiers" id="def_canonical_unicode_locale_identifier">Canonical Unicode locale identifier</dfn>. A <a href="#def_well_formed" class="termref">well-formed language tag</a> resulting from the application of the <a href="#def_unicode_locale" class="termref">Unicode locale identifier</a> canonicalization rules found in [[LDML]]. This process converts any <a href="#def_valid" class="termref">valid</a> [[BCP47]] <a href="#def_language_tag">language tag</a> into a valid <a href="#def_unicode_locale" class="termref">Unicode locale identifier</a>.  For example, deprecated subtags or irregular grandfathered tags are replaced with their preferred value from the <a href="#def_iana_language_subtag_registry" class="termref">IANA language subtag registry</a>.</p>
 
 <p><strong><em>CLDR</em></strong>, see <a href="def_common_locale_data_repository">Common Locale Data Repository</a>.</p>
+
+<p>A <dfn data-lt="Unicode code point|Unicode code points|code point|code points" data-plurals="unicode code points" id="def_code_point">code point</dfn> (or "Unicode code point") refers to the numeric value assigned to each Unicode character. Unicode code points range from <code class="kw" translate="no">0</code> to <code class="kw" translate="no">0x10FFFF</code>. (See Section 4.1 in [[CHARMOD]] for a deeper discussion of character encoding terminology.) Unicode code points are denoted as <code class="kw" translate="no">U+<em>hhhh</em></code>, where <code class="kw" translate="no"><em>hhhh</em></code> is a sequence of at least four, and at most six hexadecimal digits. For example, the character <span class="codepoint"><span lang="en">€</span> [<span class="uname">U+20AC EURO SIGN</span>]</span> has the code point <span class="uname" translate="no">U+20AC</span>, while the character <span class="codepoint">😺</span> [<span class="uname">U+1F63A SMILING CAT FACE WITH OPEN MOUTH</span>] has the code point <span class="uname" translate="no">U+1F63A</span>.</p>
 
 <p><dfn data-lt="common locale data repository|CLDR|Common Locale Data Repository" id="def_common_locale_data_repository">Common Locale Data Repository</dfn> (or [[CLDR]]). The Common Locale Data Repository is a Unicode Consortium project that defines, collects, and curates sets of data needed to enable <a href="#locale" class="termref">locales</a> in systems or operating environments. CLDR data and its locale model are widely adopted, particularly in browsers.</p>
 
@@ -173,6 +186,27 @@
 
 <div class="letter_anchor" id="g">G</div>
 
+<p>A <dfn data-lt="grapheme|graphemes" id="def_grapheme">grapheme</dfn> is a character or a sequence of
+         characters in a visual representation of some text
+          that a typical user would perceive as being a single unit (<q>character</q>).
+          Graphemes are important for a number of text operations such as
+          sorting or text selection, so it is necessary to be able to compute
+          the boundaries between each user-perceived character.</p>
+          
+<p><dfn id="def_grapheme_cluster">Grapheme clusters</dfn> are defined by the Unicode Standard as 
+          the default mechanism for computing an approximation to <a href="#def_grapheme" class="termref">graphemes</a> (see <cite>Unicode
+            Standard Annex #29: Text Segmentation</cite> [[UAX29]]). Two types
+          of default grapheme cluster are defined. Unless otherwise noted, <q>grapheme
+          cluster</q> in this document refers to an <q>extended default grapheme
+          cluster</q>. (A discussion of grapheme clusters is also given in Section 2
+           of the <cite>Unicode Standard</cite>, [[Unicode]]. Cf. near the end of
+           <a href="http://www.unicode.org/versions/latest/ch02.pdf">Section 2.11</a>
+           in version 8.0 of The Unicode Standard.) Because different natural languages have different needs, grapheme clusters
+          can also sometimes require tailoring. For example, a Slovak user might
+          wish to treat the default pair of grapheme clusters "ch" as a single
+          grapheme cluster. Note that the interaction between the language of
+          string content and the end-user's preferences might be complex.</p>
+
 <p>The <dfn id="def_gregorian_calendar">Gregorian calendar</dfn> is the most widely used way of representing civil time. It is a solar calendar, with years usually consisting of 365 days, plus the concept of a "leap year". This adds an additional day every 4 years, except when the year is evenly divisible by 100 (unless the year is also evenly divisible by 400). There are numerous other calendars in use around the world, some of which are lunar calendars, some that are based on a different start date than the Gregorian calendar, and some that are reset each time a prominent person dies. Often these calendars are still used for religious purposes, but sometimes you will also find them being used in newspapers and emails, or for birth dates. There are technologies, such as ICU or Dojo, that support conversion between different calendaring systems.</p>
 
 
@@ -208,7 +242,8 @@
 </p>
 <p><dfn data-lt="language tag|language tags|Language tag" id="def_language_tag" tabindex="0">Language tag</dfn>. A string used as an identifier for a language, usually referring explicitly to a [[BCP47]] language tag. These language tags consist of one or more subtags.
 </p>
-<p><dfn>LTR</dfn> stands for "left-to-right" and refers to the inline base direction of left-to-right [[UAX9]]. This is the base text direction used by languages whose starting character progression begins on the left side of the page in horizontal text. It's used for scripts such as Latin, Cyrillic, Devanagari, and many others.</p>
+
+<p><dfn data-lt="legacy character encoding|legacy character encodings" id="def_legacy_character_encoding">Legacy character encodings</dfn> are character encoding forms that do not encode the full repertoire of characters in the Unicode character set.</p>
 
 <p><dfn id="locale" data-lt="locale|locales|Locale">Locale</dfn>. An identifier (such as a <a href="#def_language_tag" class="termref">language tag</a>) for a set of <a href="#def_international_preferences" class="termref">international preferences</a>. Usually this identifier indicates the preferred language of the user and possibly includes other information, such as a geographic region (such as a country). A locale is passed in APIs or set in the operating environment to obtain culturally-affected behavior within a system or process.</p>
 
@@ -218,7 +253,11 @@
 
 <p><dfn data-lt="locale-neutral|locale neutral|Locale-neutral" id="def_locale_neutral">Locale-neutral</dfn>. A <a href="#def_non_linguistic_field" class="termref">non-linguistic field</a> is said to be <a href="#def_locale_neutral" class="termref">locale-neutral</a> when it is stored or exchanged in a format that is not specifically appropriate for any given language, locale, or culture and which can be interpreted unambiguously for presentation in a <a href="#def_locale_aware" class="termref">locale aware</a> way.</p>
 
+<p><dfn id="def_localizable_content">Localizable content</dfn> refers to document contents intended as human-readable text and <b>not</b> to any of the surrounding or embedded syntactic content that form part of the document structure. Note that syntactic content can have localizable content embedded in it, such as when an [[HTML]] <code class="kw">img</code> element has an <code class="kw">alt</code> attribute containing a description of the image.  [[CHARMOD-NORM]] gives <a href="https://w3c.github.io/charmod-norm/#dfn-localizable-content">some additional examples</a>.</p>
+
 <p><dfn data-lt="localization|localized|L10N|Localization" id="def_localization">Localization</dfn>. The tailoring of a system to the individual cultural expectations of a specific target market or group of individuals. Localization includes, but is not limited to, the translation of user-facing text and messages. Localization is sometimes abbreviated as <code>l10n</code> because there are ten letters between the "L" and the "N" in the English word. When a particular set of content and preferences corresponding to a specific set of international preferences is operationally available, then the system is said to be <em>localized</em>.</p>
+
+<p><dfn>LTR</dfn> stands for "left-to-right" and refers to the inline base direction of left-to-right [[UAX9]]. This is the base text direction used by languages whose starting character progression begins on the left side of the page in horizontal text. It's used for scripts such as Latin, Cyrillic, Devanagari, and many others.</p>
 
 
 
@@ -242,6 +281,8 @@
 
 <div class="letter_anchor" id="r">R</div>
 
+<p>A <dfn data-lt="resource|resources" id="def_resource">resource</dfn>, in the context of W3C Internationalization documents,  is a given document, file, or protocol "message" which includes both the <a href="#def_localizable_content" class="termref">localizable content</a> as well as the <a href="#def_syntactic_content" class="termref">syntactic content</a> such as identifiers surrounding or containing it. For example, in an HTML document that also has some CSS and a few <code class="kw" translate="no">script</code> tags with embedded JavaScript, the entire HTML document, considered as a file, is a resource. This term is intentionally similar to the term 'resource' as used in [[RFC3986]], although here the term is applied loosely. </p>
+
 <p><dfn>RTL</dfn> stands for "right-to-left" and refers to the inline base direction of right-to-left [[UAX9]]. This is the base text direction used by languages whose starting character progression begins on the right side of the page in horizontal text. It's used for a variety of scripts which include Arabic, Hebrew, N'Ko, Adlam, Thaana, and Syriac among others.</p>
 
 
@@ -251,6 +292,8 @@
 
 <p>A <dfn data-lt="agreement|agreements|serialization agreement|serialization agreements|serialization">serialization agreement</dfn> (or "agreement" for short) is the common understanding between a producer and consumer about the serialization of string metadata: how it is to be understood, serialized, read, transmitted, removed, etc.</p>
 
+<p><dfn data-lt="syntactic content|Syntactic content" id="def_syntactic_content">Syntactic content</dfn> is any text in a document format or protocol that belongs to the structure of the format or protocol. This definition includes values that are typically thought of as "markup" but can also include other values, such as the name of a field in an HTTP header. Syntactic content consists of all of the characters that form the <em>structure</em> of a format or protocol. For example, <span class="qchar">&lt;</span> and <span class="qchar">&gt;</span> (as well as the element name and various attributes they surround) are part of the syntactic content in an HTML document. Syntactic content usually is defined by a specification or specifications and includes both the defined, reserved keywords for the given protocol or format as well as string tokens and identifiers that are defined by document authors to form the structure of the document (rather than the "content" of the document).</p>
+
 
 
 
@@ -259,6 +302,10 @@
 <p>A <dfn id="def_time_zone">time zone</dfn> is a set of rules for determining the local  time (wall time) as it relates to incremental time (as used in most computing systems) for a particular geographical region, and vice versa. Time zone rules have to take into account <a href="#def_zone_offset" class="termref"> zone offsets</a> <em>plus</em> any <a href="#def_dst" class="termref">daylight savings</a> modifications to wall time that apply.</p>
 
 <p><dfn id="def_time_zone_id">Time zone identifiers</dfn> allow you to refer to a particular difference from <a href="utc" class="termref">UTC</a> that includes both <a href="#def_zone_offset" class="termref"> zone offsets</a> and <a href="#def_dst" class="termref">daylight savings time</a>. The most definitive reference for identifying sets of time zone rules is the <a href="https://www.iana.org/time_zones">TZ database</a> (also known as the Olson time zone database), which is used by systems such as various commercial UNIX operating systems, Linux, Java, CLDR, ICU, and many other systems and libraries. Other systems exist: for example, Microsoft Windows uses its own data set and identifiers. In the TZ database, time zones are given IDs that typically consist of a region and exemplar city. An exemplar city is a city in the time zone in question that should be well-known to people using the time zone. For example, the U.S. Pacific time zone has a TZ database ID of <code class="kw" translate="no">America/Los_Angeles</code>. The TZ database also supplies aliases for many IDs; for example, <code class="kw" translate="no">Asia/Ulan Bator</code> is equivalent to <code class="kw" translate="no">Asia/Ulaanbaatar</code>. The Common Locale Data Repository (CLDR) can be used to provide a localized form for the IDs. Note that some systems, such as Apple's Mac OS, provide additional exemplar cities.</p>
+
+<p>A <dfn data-lt="transcoder|transcoders" id="dfn-transcoder">transcoder</dfn> is a process that converts 
+text between two character encodings. Most commonly in W3C internationalization documents it 
+refers to a process that converts from a <a href="#def_legacy_character_encoding" class="termref" >legacy character encoding</a> to a <a href="http://www.w3.org/TR/2005/REC-charmod-20050215/#Unicode_Encoding_Form">Unicode encoding form</a>, such as UTF-8.</p>
 
 
 
@@ -270,6 +317,10 @@
 <p><dfn id="def_utc" data-lt="utc">Universal Coordinated Time (UTC)</dfn> is the basis for modern timekeeping. Among other things, it provides a common baseline for converting between <a href="#def_incremental_time" class="termref">incremental</a> and <a href="#def_wall_time" class="termref">wall</a> time. UTC is also known as GMT (Greenwich Mean Time). There are some subtle differences between the two, but none that  the average person would notice. 
 The time zone offset for UTC is 0. UTC is often indicated in <a href="#def_field_based_format" class="termref">field-based formats</a> using <code class="kw" translate="no">Z</code>.</p>
 
+<p><dfn data-plurals="user-facing identifiers" id="def_user_facing_identifier">User-facing identifiers</dfn> are identifiers defined by or assigned by a user in a <a href="#def_vocabulary" class="termref">vocabulary</a> that is intended to be at least potentially visible to end-users (and thus is <a href="#def_localizable_content" class="termref">localizable content</a>).</p>
+
+<p>A <dfn data-lt="user-supplied value|user-supplied values" id="def_user_supplied_value">user-supplied value</dfn> is unreserved <a href="#def_syntactic_content" class="termref">syntactic content</a> in a <a href="#def_vocabulary" class="termref">vocabulary</a> that is assigned by users, as distinct from reserved keywords in a given format or protocol. Users generally expect that their user-supplied values can be words or phrases in their preferred <a href="#def_natural_language" class="termref">natural language</a>. This is why [[CHARMOD]] recommends that "Specifications <em class="rfc2119">SHOULD NOT</em> arbitrarily exclude code points from the full range of Unicode code points from <code>U+0000</code> to <code>U+10FFFF</code> inclusive." [[CHARMOD-NORM]] gives <a href="https://w3c.github.io/charmod-norm/#dfn-user-supplied-value">some examples</a>.</p>
+
 
 
 
@@ -277,6 +328,8 @@ The time zone offset for UTC is 0. UTC is often indicated in <a href="#def_field
 <div class="letter_anchor" id="v">V</div>
 
 <p><dfn data-lt="valid|valid language tag|valid language tags|Valid language tag" id="def_valid">Valid language tag</dfn>. A language tag that is <a href="#def_well_formed" class="termref">well-formed</a> and which also conforms to the additional <a href="https://tools.ietf.org/html/bcp47#section-2.2.9">conformance requirements</a> in [[BCP47]], notably that each of the subtags appears in the IANA Language Subtag Registry.</p>
+
+<p>A <dfn id="def_vocabulary" data-plurals="vocabularies">vocabulary</dfn> is the list of reserved keywords and/or rules for assigning <a href="#def_user_supplied_value" class="termref">user-supplied values</a> (such as identifiers) in a format or protocol. This can include restrictions on range, order, or type of characters that can appear in different places. For example, HTML defines the names of its elements and attributes, as well as enumerated attribute values, which defines the "vocabulary" of HTML <a href="#def_syntactic_content" class="termref">syntactic content</a>. Another example would be ECMAScript, which restricts the range of characters that can appear at the start or in the body of an identifier or variable name. It applies different rules for other cases, such as to the values of string literals. Values within a vocabulary fall into two broad classes: those that are meant to be seen, read, or interacted with by humans (and thus might be expected to contain natural language text); and those that are application or protocol internal and not intended for human interaction.</p>
 
 
 
