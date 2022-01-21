@@ -29,6 +29,7 @@
 		  //	     ],
           editors:  [
                 { name: "Richard Ishida", mailto: "ishida@w3.org", company: "W3C", w3cid: 3439 },
+                { name: "Addison Phillips", company: "Amazon", w3cid: 33573 }
                 ],
          
 
@@ -168,7 +169,7 @@
 
 <p><dfn data-lt="canonical Unicode locale identifier|canonical tag|canonical locale|Canonical Unicode locale identifier" data-plurals="canonical unicode locale identifiers" id="def_canonical_unicode_locale_identifier" class="lint-ignore">Canonical Unicode locale identifier</dfn>. A <a href="#def_well_formed" class="termref">well-formed language tag</a> resulting from the application of the <a href="#def_unicode_locale" class="termref">Unicode locale identifier</a> canonicalization rules found in [[UAX35]]. This process converts any <a href="#def_valid" class="termref">valid</a> [[BCP47]] <a href="#def_language_tag">language tag</a> into a valid <a href="#def_unicode_locale" class="termref">Unicode locale identifier</a>.  For example, deprecated subtags or irregular grandfathered tags are replaced with their preferred value from the <a href="#def_iana_language_subtag_registry" class="termref">IANA language subtag registry</a>.</p>
 
-<p><dfn id="def_encoding" class="lint-ignore">Character encoding</dfn>. The way the <a class="termref" href="#def_coded_character_set">coded character set</a> is mapped to bytes for manipulation in a computer. Commonly referred to as just the <span class="alt_name">encoding</span>. For examples and further descriptions see <a href="https://www.w3.org/International/articles/definitions-characters/index#charsets">Character encodings: Essential concepts</a>.</p>
+<p><dfn data-lt="character encoding|character encoding form" id="def_encoding" class="lint-ignore">Character encoding</dfn> or, more formally, a <em>character encoding form</em>. The way a <a class="termref" href="#def_coded_character_set">coded character set</a> is mapped to <a>code units</a> (such as bytes) for manipulation in a computer. Commonly referred to as just the <span class="alt_name">encoding</span>. For examples and further descriptions see <a href="https://www.w3.org/International/articles/definitions-characters/index#charsets">Character encodings: Essential concepts</a>.</p>
 
 <p><dfn id="def_character_set" class="lint-ignore">Character set</dfn> or <span class="alt_name">repertoire</span>. The set of characters one might use for a particular purpose – be it those required to support Western European languages in computers, or those a Chinese child will learn at school in the third grade (nothing to do with computers).</p>
 
@@ -181,6 +182,8 @@
 <p><dfn id="def_coded_character_set" class="lint-ignore">Coded character set</dfn>. A set of characters where a unique number has been assigned to each character. Units of a coded character set are known as <a href="#def_code_point" class="termref">code points</a>.</p>
 
 <p><dfn id="def_code_point" class="lint-ignore">Code point</dfn>. A code point value represents the position of a character in a coded character set. For example, the code point for the letter <span class="qchar">á</span> in the Unicode coded character set is 225 in decimal, or 0xE1 in hexadecimal notation. Hexadecimal notation is commonly used for referring to code points. See also <a class="termref" href="#def_unicode_code_point">Unicode code point</a>.</p>
+
+<p><dfn data-lt="code unit|code units" id="def_code_unit" class="lint-ignore">Code unit</dfn>. The units of data used by a <a>character encoding</a>to encode or serialize characters into a programming language or other serialized form (such as a file). Common code units are 8-, 16-, and 32-bits in size. For example, in C, a <code>char</code> is generally an 8-bit byte: each <code>char</code> is a 8-bit code unit. In Java or Javascript, a <code>char</code> is a 16-bit code unit.</p>
 
 <p><strong><em>CLDR</em></strong>, see <a href="#def_common_locale_data_repository" class="termref">Common Locale Data Repository</a>.</p>
 
@@ -208,6 +211,8 @@
 
 
 <div class="letter_anchor" id="e">E</div>
+
+<p><dfn data-lt="extended grapheme cluster|extended grapheme clusters" id="def_extended_grapheme_cluster" class="lint-ignore">Extended grapheme cluster</dfn>. A specific type of <a>grapheme</a> defined by [[Unicode]] that most closely matches the mapping of the underlying logical character sequence to a <a>user-perceived character</a>. Extended grapheme clusters are needed because the relationship is not one-to-one between code points and graphemes and because the relationship can be somewhat complex.</p>
 
 <p><dfn id="def_extended_language_range" class="lint-ignore">Extended language range</dfn>. A <a href="#def_language_range" class="termref">language range</a> consisting of a sequence of hyphen-separated subtags. In an extended language range, a subtag can either be a valid subtag or the wildcard subtag <q><code>*</code></q>, which matches any value.</p>
 
@@ -317,7 +322,7 @@
 
 <p><dfn data-lt="metadata|metadata" id="def_metadata" class="lint-ignore">Metadata</dfn> is additional information about data. Key types of metadata for <a class="termref" href="#internationalization">internationalization</a> are <a class="termref" href="#def_language_metadata">language metadata</a> and metadata to support <a class="termref" href="#def_bidirectional_text">bidirectional text</a>. Metadata has a scope, e.g., a string or a set of strings. In absence of explicit metadata, defaults might apply, e.g. defaults for the <a class="termref" href="#def_base_direction">base direction</a> of a text.</p>
 
-
+<p><dfn id="def_mojibake" class="lint-ignore">Mojibake</dfn> (文字化け). Garbled or incorrectly rendered or processed characters, generally caused by using the wrong <a>character encoding</a> to interpret the <a>code units</a> in a string or file. The word is Japanese in origin and is pronounced approximately <q>moh-gee-bah-kay</q>. For example, the word <q>文字化け</q> encoded as UTF-8 might be displayed as <q>&#x00e6;&#x0096;&#x0087;&#x00e5;&#x00ad;&#x0097;&#x00e5;&#x008c;&#x0096;&#x00e3;&#x0081;&#x0091;</q> if viewed using the (incorrect) character encoding <code>ISO-8859-1</code>.</p>
 
 
 
@@ -379,6 +384,8 @@ refers to a process that converts from a <a href="#def_legacy_character_encoding
 <p><dfn data-lt="unicode bidirectional algorithm|unicode bidi algorithm|bidi algorithm|UBA" id="def_uba" class="lint-ignore">Unicode Bidirectional Algorithm</dfn> or <em>Bidi algorithm</em>. This is the name for the rules described in the <a href="http://www.unicode.org/reports/tr9/">Unicode Standard Annex #9, “Unicode Bidirectional Algorithm</a> [[UAX9]].  Those rules describe how inline <a href="#def_bidirectional_text" class="termref">bidirectional text</a> should be rendered for scripts such as Arabic, Hebrew, Thaana, N'Ko, Adlam, etc. The effects of the bidi algorithm depend on the   <a href="#def_base_direction" class="termref">base direction</a> and the directional properties of the characters to which it is applied.</p>
 
 <p><dfn data-lt="unicode locale|unicode locale identifier|unicode locale identifiers|unicode locales|Unicode Locale Identifier" id="def_unicode_locale" class="lint-ignore">Unicode Locale Identifier</dfn> or <em>Unicode Locale</em>. A <a href="#def_language_tag" class="termref">language tag</a> that follows the additional rules and restrictions on subtag choice defined in UTR#35 [[UAX35]]. Any valid Unicode locale identifier is also a <a href="#def_valid" class="termref">valid</a> [[BCP47]] <a href="#def_language_tag" class="termref">language tag</a>, but a few <a href="#def_valid" class="termref">valid language tags</a> are not also valid Unicode locale identifiers.</p>
+
+<p><dfn data-lt="universal character set|unicode" id="def_universal_character_set" class="lint-ignore">Universal Character Set</dfn> or <em>Unicode</em>. The character set defined by the [[Unicode]] Standard and which includes all of the characters used to encode text, including historical or extinct writing systems as well as modern usage, private use, typesetting symbols, and other things, such as the emoji. Other <a>character sets</a> are defined subsets of Unicode.</p>
 
 <p><dfn id="def_utc" data-lt="utc" class="lint-ignore">Universal Coordinated Time (UTC)</dfn> is the basis for modern timekeeping. Among other things, it provides a common baseline for converting between <a href="#def_incremental_time" class="termref">incremental</a> and <a href="#def_wall_time" class="termref">wall</a> time. UTC is also known as GMT (Greenwich Mean Time). There are some subtle differences between the two, but none that  the average person would notice. 
 The time zone offset for UTC is 0. UTC is often indicated in <a href="#def_field_based_format" class="termref">field-based formats</a> using <code class="kw" translate="no">Z</code>.</p>
