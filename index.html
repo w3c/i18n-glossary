@@ -29,6 +29,7 @@
 		  //	     ],
           editors:  [
                 { name: "Richard Ishida", mailto: "ishida@w3.org", company: "W3C", w3cid: 3439 },
+                { name: "Addison Phillips", company: "Amazon", w3cid: 33573 }
                 ],
          
 
@@ -168,7 +169,7 @@
 
 <p><dfn data-lt="canonical Unicode locale identifier|canonical tag|canonical locale|Canonical Unicode locale identifier" data-plurals="canonical unicode locale identifiers" id="def_canonical_unicode_locale_identifier" class="lint-ignore">Canonical Unicode locale identifier</dfn>. A <a href="#def_well_formed" class="termref">well-formed language tag</a> resulting from the application of the <a href="#def_unicode_locale" class="termref">Unicode locale identifier</a> canonicalization rules found in [[UAX35]]. This process converts any <a href="#def_valid" class="termref">valid</a> [[BCP47]] <a href="#def_language_tag">language tag</a> into a valid <a href="#def_unicode_locale" class="termref">Unicode locale identifier</a>.  For example, deprecated subtags or irregular grandfathered tags are replaced with their preferred value from the <a href="#def_iana_language_subtag_registry" class="termref">IANA language subtag registry</a>.</p>
 
-<p><dfn id="def_encoding" class="lint-ignore">Character encoding</dfn>. The way the <a class="termref" href="#def_coded_character_set">coded character set</a> is mapped to bytes for manipulation in a computer. Commonly referred to as just the <span class="alt_name">encoding</span>. For examples and further descriptions see <a href="https://www.w3.org/International/articles/definitions-characters/index#charsets">Character encodings: Essential concepts</a>.</p>
+<p><dfn data-lt="character encoding|character encoding form" id="def_encoding" class="lint-ignore">Character encoding</dfn> or, more formally, a <em>character encoding form</em>. The way a <a class="termref" href="#def_coded_character_set">coded character set</a> is mapped to bytes for manipulation in a computer. Commonly referred to as just the <span class="alt_name">encoding</span>. For examples and further descriptions see <a href="https://www.w3.org/International/articles/definitions-characters/index#charsets">Character encodings: Essential concepts</a>.</p>
 
 <p><dfn id="def_character_set" class="lint-ignore">Character set</dfn> or <span class="alt_name">repertoire</span>. The set of characters one might use for a particular purpose – be it those required to support Western European languages in computers, or those a Chinese child will learn at school in the third grade (nothing to do with computers).</p>
 
@@ -181,6 +182,8 @@
 <p><dfn id="def_coded_character_set" class="lint-ignore">Coded character set</dfn>. A set of characters where a unique number has been assigned to each character. Units of a coded character set are known as <a href="#def_code_point" class="termref">code points</a>.</p>
 
 <p><dfn id="def_code_point" class="lint-ignore">Code point</dfn>. A code point value represents the position of a character in a coded character set. For example, the code point for the letter <span class="qchar">á</span> in the Unicode coded character set is 225 in decimal, or 0xE1 in hexadecimal notation. Hexadecimal notation is commonly used for referring to code points. See also <a class="termref" href="#def_unicode_code_point">Unicode code point</a>.</p>
+
+<p><dfn data-lt="code unit|code units" id="def_code_unit" class="lint-ignore">Code unit</dfn>. The units of data used by a <a>character encoding</a> to encode or serialize characters into a programming language or other serialized form (such as a file). Common code units are 8-, 16-, and 32-bits in size. On the Web we are mostly concerned with <em>bytes</em>, which are technically <q>8-bit code units</q>. However, in Javascript a <code>char</code> is a 16-bit code unit (related to the UTF-16 encoding of Unicode).</p>
 
 <p><strong><em>CLDR</em></strong>, see <a href="#def_common_locale_data_repository" class="termref">Common Locale Data Repository</a>.</p>
 
@@ -209,6 +212,8 @@
 
 <div class="letter_anchor" id="e">E</div>
 
+<p><dfn data-lt="extended grapheme cluster|extended grapheme clusters" id="def_extended_grapheme_cluster" class="lint-ignore">Extended grapheme cluster</dfn>. See <a>grapheme cluster</a>.</p>
+
 <p><dfn id="def_extended_language_range" class="lint-ignore">Extended language range</dfn>. A <a href="#def_language_range" class="termref">language range</a> consisting of a sequence of hyphen-separated subtags. In an extended language range, a subtag can either be a valid subtag or the wildcard subtag <q><code>*</code></q>, which matches any value.</p>
 
 
@@ -231,26 +236,9 @@
 
 <p><dfn id="def_glyph" class="lint-ignore">Glyph</dfn>. The visual representation of a character  when rendered by a particular font. In more complex orthographies a glyph may represent only a part of a character, or may represent more than one character. A font is a collection of glyph shapes, and different fonts or font rules can render a given character using a variety of different glyphs. For example, the letter 'a' can be represented using regular (a), bold (<b style="font-weight: bold;">a</b>), or italic (<i style="font-style: italic;">a</i>) glyphs.</p>
 
-<p><dfn data-lt="grapheme|graphemes" id="def_grapheme" class="lint-ignore">Grapheme</dfn>. A character or a sequence of
-         characters in a visual representation of some text
-          that a typical user would perceive as being a single unit (<q>character</q>).
-          Graphemes are important for a number of text operations such as
-          sorting or text selection, so it is necessary to be able to compute
-          the boundaries between each user-perceived character. For more information about graphemes and grapheme clusters, with examples, see <a href="https://www.w3.org/International/articles/definitions-characters/index#characters">Character encodings: Essential concepts</a>.</p>
+<p><dfn data-lt="grapheme|graphemes" id="def_grapheme" class="lint-ignore">Grapheme</dfn>. A character or a sequence of characters in a visual representation of some text that a typical user would perceive as being a single unit (<q>character</q>). Graphemes are important for a number of text operations such as sorting or text selection, so it is necessary to be able to compute the boundaries between each user-perceived character. For more information about graphemes and grapheme clusters, with examples, see <a href="https://www.w3.org/International/articles/definitions-characters/index#characters">Character encodings: Essential concepts</a>.</p>
           
-<p><dfn id="def_grapheme_cluster" class="lint-ignore">Grapheme clusters</dfn> are defined by the Unicode Standard as 
-          the default mechanism for computing an approximation to <a href="#def_grapheme" class="termref">graphemes</a> (see <cite>Unicode
-            Standard Annex #29: Text Segmentation</cite> [[UAX29]]). Two types
-          of default grapheme cluster are defined. Unless otherwise noted, <q>grapheme
-          cluster</q> in this document refers to an <q>extended default grapheme
-          cluster</q>. (A discussion of grapheme clusters is also given in Section 2
-           of the <cite>Unicode Standard</cite>, [[Unicode]]. Cf. near the end of
-           <a href="http://www.unicode.org/versions/latest/ch02.pdf">Section 2.11</a>
-           in version 8.0 of The Unicode Standard.) Because different natural languages have different needs, grapheme clusters
-          can also sometimes require tailoring. For example, a Slovak user might
-          wish to treat the default pair of grapheme clusters "ch" as a single
-          grapheme cluster. Note that the interaction between the language of
-          string content and the end-user's preferences might be complex.</p>
+<p><dfn id="def_grapheme_cluster" class="lint-ignore">Grapheme cluster</dfn>. A grapheme cluster is defined by the Unicode Standard as the default mechanism for computing an approximation to <a href="#def_grapheme" class="termref">graphemes</a> (see <cite>Unicode Standard Annex #29: Text Segmentation</cite> [[UAX29]]). Two types of default grapheme cluster are defined. Unless otherwise noted, <q>grapheme cluster</q> in this document refers to an <q>extended default grapheme cluster</q>. (A discussion of grapheme clusters is also given in Section 2 of the <cite>Unicode Standard</cite>, [[Unicode]]. Cf. near the end of <a href="http://www.unicode.org/versions/latest/ch02.pdf">Section 2.11</a> in version 14.0 of The Unicode Standard.) Because different natural languages have different needs, grapheme clusters can also sometimes require tailoring. For example, a Slovak user might wish to treat the default pair of grapheme clusters "ch" as a single grapheme cluster. Note that the interaction between the language of string content and the end-user's preferences might be complex.</p>
 
 <p><dfn id="def_gregorian_calendar" class="lint-ignore">Gregorian calendar</dfn>. The  most widely used way of representing civil time. It is a solar calendar, with years usually consisting of 365 days, plus the concept of a "leap year". This adds an additional day every 4 years, except when the year is evenly divisible by 100 (unless the year is also evenly divisible by 400). There are numerous other calendars in use around the world, some of which are lunar calendars, some that are based on a different start date than the Gregorian calendar, and some that are reset each time a prominent person dies. Often these calendars are still used for religious purposes, but sometimes you will also find them being used in newspapers and emails, or for birth dates. There are technologies, such as ICU or Dojo, that support conversion between different calendaring systems.</p>
 
@@ -317,7 +305,7 @@
 
 <p><dfn data-lt="metadata|metadata" id="def_metadata" class="lint-ignore">Metadata</dfn> is additional information about data. Key types of metadata for <a class="termref" href="#internationalization">internationalization</a> are <a class="termref" href="#def_language_metadata">language metadata</a> and metadata to support <a class="termref" href="#def_bidirectional_text">bidirectional text</a>. Metadata has a scope, e.g., a string or a set of strings. In absence of explicit metadata, defaults might apply, e.g. defaults for the <a class="termref" href="#def_base_direction">base direction</a> of a text.</p>
 
-
+<p><dfn id="def_mojibake" class="lint-ignore">Mojibake</dfn> (文字化け). Garbled or incorrectly rendered or processed characters, generally caused by using the wrong <a>character encoding</a> to interpret the bytes in a string or file. The word is Japanese in origin and is pronounced <q>/mo.d&#x0361;&#x0292;i.ba.ke/</q>. For example, the word <q>&#x6587;&#x5B57;&#x5316;&#x3051;</q> encoded as UTF-8 might be displayed as <q>&#x00e6;&#x0096;&#x0087;&#x00e5;&#x00ad;&#x0097;&#x00e5;&#x008c;&#x0096;&#x00e3;&#x0081;&#x0091;</q> if viewed in an application that thinks (incorrectly) that the character encoding is <code>ISO-8859-1</code>.</p>
 
 
 
@@ -380,12 +368,14 @@ refers to a process that converts from a <a href="#def_legacy_character_encoding
 
 <p><dfn data-lt="unicode locale|unicode locale identifier|unicode locale identifiers|unicode locales|Unicode Locale Identifier" id="def_unicode_locale" class="lint-ignore">Unicode Locale Identifier</dfn> or <em>Unicode Locale</em>. A <a href="#def_language_tag" class="termref">language tag</a> that follows the additional rules and restrictions on subtag choice defined in UTR#35 [[UAX35]]. Any valid Unicode locale identifier is also a <a href="#def_valid" class="termref">valid</a> [[BCP47]] <a href="#def_language_tag" class="termref">language tag</a>, but a few <a href="#def_valid" class="termref">valid language tags</a> are not also valid Unicode locale identifiers.</p>
 
+<p><dfn data-lt="universal character set|unicode" id="def_universal_character_set" class="lint-ignore">Universal Character Set</dfn> or <em>Unicode</em>. The character set defined by the [[Unicode]] Standard and which includes all of the characters used to encode text, including historical or extinct writing systems as well as modern usage, private use, typesetting symbols, and other things, such as the emoji. Other <a>character sets</a> are subsets of Unicode.</p>
+
 <p><dfn id="def_utc" data-lt="utc" class="lint-ignore">Universal Coordinated Time (UTC)</dfn> is the basis for modern timekeeping. Among other things, it provides a common baseline for converting between <a href="#def_incremental_time" class="termref">incremental</a> and <a href="#def_wall_time" class="termref">wall</a> time. UTC is also known as GMT (Greenwich Mean Time). There are some subtle differences between the two, but none that  the average person would notice. 
 The time zone offset for UTC is 0. UTC is often indicated in <a href="#def_field_based_format" class="termref">field-based formats</a> using <code class="kw" translate="no">Z</code>.</p>
 
 <p><dfn data-plurals="user-facing identifiers" id="def_user_facing_identifier" class="lint-ignore">User-facing identifiers</dfn> are identifiers defined by or assigned by a user in a <a href="#def_vocabulary" class="termref">vocabulary</a> that is intended to be at least potentially visible to end-users (and thus is <a href="#def_localizable_text" class="termref">localizable text</a>).</p>
 
-<p><span class="alt_name">User-percieved character</span>. See <a class="termref" href="#def_grapheme">grapheme</a>.</p>
+<p><span class="alt_name">User-perceived character</span>. See <a class="termref" href="#def_grapheme">grapheme</a>.</p>
 
 <p><dfn data-lt="user-supplied value|user-supplied values" id="def_user_supplied_value" class="lint-ignore">User-supplied value</dfn>. Unreserved <a href="#def_syntactic_content" class="termref">syntactic content</a> in a <a href="#def_vocabulary" class="termref">vocabulary</a> that is assigned by users, as distinct from reserved keywords in a given format or protocol. Users generally expect that their user-supplied values can be words or phrases in their preferred <a href="#def_natural_language" class="termref">natural language</a>. This is why [[CHARMOD]] recommends that "Specifications <em class="rfc2119">SHOULD NOT</em> arbitrarily exclude code points from the full range of Unicode code points from <code>U+0000</code> to <code>U+10FFFF</code> inclusive." <!-- [[CHARMOD-NORM]] gives <a href="https://w3c.github.io/charmod-norm/#dfn-user-supplied-value">some examples</a>.  ADD THIS BACK ONCE CHARMOD-NORM IS UPDATED WITH THESE DEFINITIONS --></p>
 
