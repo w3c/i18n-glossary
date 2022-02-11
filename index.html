@@ -29,7 +29,7 @@
 		  //	     ],
           editors:  [
                 { name: "Richard Ishida", mailto: "ishida@w3.org", company: "W3C", w3cid: 3439 },
-                { name: "Addison Phillips", company: "Amazon", w3cid: 33573 }
+                { name: "Addison Phillips", mailto: "addison@amazon.com", company: "Amazon", w3cid: 33573 }
                 ],
          
 
@@ -92,7 +92,7 @@
 <h2 id="introduction">Introduction</h2>
 
 <p>This document can be pointed to for definitions of terms, or these definitions may be copied to other documents and slightly adapted.</p>
-<p>The W3C Internationalization Working Group also uses <a href="https://www.unicode.org/glossary/#normalization_form_d">definitions provided by the Unicode Consortium</a>.</p>
+<p>The W3C Internationalization Working Group also uses <a href="https://www.unicode.org/glossary/">definitions provided by the Unicode Consortium</a>.</p>
 </section>
 
 
@@ -305,7 +305,7 @@
 
 <p><dfn data-lt="metadata|metadata" id="def_metadata" class="lint-ignore export">Metadata</dfn> is additional information about data. Key types of metadata for <a class="termref" href="#internationalization">internationalization</a> are <a class="termref" href="#def_language_metadata">language metadata</a> and metadata to support <a class="termref" href="#def_bidirectional_text">bidirectional text</a>. Metadata has a scope, e.g., a string or a set of strings. In absence of explicit metadata, defaults might apply, e.g. defaults for the <a class="termref" href="#def_base_direction">base direction</a> of a text.</p>
 
-<p><dfn id="def_mojibake" class="lint-ignore export">Mojibake</dfn> (文字化け). Garbled or incorrectly rendered or processed characters, generally caused by using the wrong <a>character encoding</a> to interpret the bytes in a string or file. The word is Japanese in origin and is pronounced <q>/mo.d&#x0361;&#x0292;i.ba.ke/</q>. For example, the word <q lang="ja">&#x6587;&#x5B57;&#x5316;&#x3051;</q> encoded as UTF-8 might be displayed as <q>&#x00e6;&#x0096;&#x0087;&#x00e5;&#x00ad;&#x0097;&#x00e5;&#x008c;&#x0096;&#x00e3;&#x0091;</q> if viewed in an application that thinks (incorrectly) that the character encoding is <code>ISO-8859-1</code>.</p>
+<p><dfn id="def_mojibake" class="lint-ignore export">Mojibake</dfn> (<span lang="ja">文字化け</span>). Garbled or incorrectly rendered or processed characters, generally caused by using the wrong <a>character encoding</a> to interpret the bytes in a string or file. The word is Japanese in origin and is pronounced <q>/mo.d&#x0361;&#x0292;i.ba.ke/</q>. For example, the word <q><span lang="ja">&#x6587;&#x5B57;&#x5316;&#x3051;</span></q> encoded as UTF-8 might be displayed as <q>&#x00e6;&#x0096;&#x0087;&#x00e5;&#x00ad;&#x0097;&#x00e5;&#x008c;&#x0096;&#x00e3;&#x0091;</q> if viewed in an application that thinks (incorrectly) that the character encoding is <code>ISO-8859-1</code>.</p>
 
 
 
@@ -349,7 +349,7 @@
 
 <div class="letter_anchor" id="t">T</div>
 
-<p><dfn id="def_text_processing_language" class="lint-ignore export">Text-processing language</dfn>. The language in which a specific range of text is actually written. This needs to be declared so that user agents or applications that manipulate the text, such as voice browsers, spell checkers,  style processors, hyphenators, etc., can apply the appropriate rules to the text in question. So we are, by necessity, talking about associating a <em>single</em> language with a <em>specific</em> range of text. Contrast this with <a href="#def_language_metadata" class="termref">language metadata</a>.</p>
+<p><dfn id="def_text_processing_language" data-lt="text processing language|text-processing language" class="lint-ignore export">Text-processing language</dfn>. The language in which a specific range of text is actually written. This needs to be declared so that user agents or applications that manipulate the text, such as voice browsers, spell checkers,  style processors, hyphenators, etc., can apply the appropriate rules to the text in question. So we are, by necessity, talking about associating a <em>single</em> language with a <em>specific</em> range of text. Contrast this with <a href="#def_language_metadata" class="termref">language metadata</a>.</p>
 
 <p><dfn id="def_time_zone" class="lint-ignore export">Time zone</dfn>.  A set of rules for determining the local  time (wall time) as it relates to incremental time (as used in most computing systems) for a particular geographical region, and vice versa. Time zone rules have to take into account <a href="#def_zone_offset" class="termref"> zone offsets</a> <em>plus</em> any <a href="#def_dst" class="termref">daylight savings</a> modifications to wall time that apply.</p>
 
@@ -385,7 +385,7 @@ The time zone offset for UTC is 0. UTC is often indicated in <a href="#def_field
 
 <div class="letter_anchor" id="v">V</div>
 
-<p><dfn data-lt="valid|valid language tag|valid language tags|Valid language tag" id="def_valid" class="lint-ignore export">Valid language tag</dfn>. A language tag that is <a href="#def_well_formed" class="termref">well-formed</a> and which also conforms to the additional <a href="https://www.rfc-editor.org/rfc/rfc5646.html#section-2.2.9">conformance requirements</a> in [[BCP47]], notably that each of the subtags appears in the IANA Language Subtag Registry.</p>
+<p><dfn data-lt="valid|valid language tag|valid language tags|Valid language tag" id="def_valid" class="lint-ignore export">Valid language tag</dfn>. A language tag that is <a href="#def_well_formed" class="termref">well-formed</a> and which also conforms to the additional <a href="https://www.rfc-editor.org/rfc/rfc5646.html#section-2.2.9">conformance requirements</a> in [[BCP47]], notably that each of the subtags appears in the IANA Language Subtag Registry.  Contrast this with <a href="#def_well_formed" class="termref">well-formed language tag</a>,</p>
 
 <p><dfn id="def_vocabulary" data-plurals="vocabularies" class="lint-ignore export">Vocabulary</dfn>. The list of reserved keywords and/or rules for assigning <a href="#def_user_supplied_value" class="termref">user-supplied values</a> (such as identifiers) in a format or protocol. This can include restrictions on range, order, or type of characters that can appear in different places. For example, HTML defines the names of its elements and attributes, as well as enumerated attribute values, which defines the "vocabulary" of HTML <a href="#def_syntactic_content" class="termref">syntactic content</a>. Another example would be ECMAScript, which restricts the range of characters that can appear at the start or in the body of an identifier or variable name. It applies different rules for other cases, such as to the values of string literals. Values within a vocabulary fall into two broad classes: those that are meant to be seen, read, or interacted with by humans (and thus might be expected to contain natural language text); and those that are application or protocol internal and not intended for human interaction.</p>
 
@@ -400,7 +400,7 @@ The time zone offset for UTC is 0. UTC is often indicated in <a href="#def_field
 
 
 
-<p><dfn data-lt="well-formed|well-formed language tag|well-formed language tags|Well-formed language tag" id="def_well_formed" class="lint-ignore export">Well-formed language tag</dfn>. A language tag that follows the grammar defined in [[BCP47]]. That is, it is structurally correct, consisting of ASCII letters and digit <a href="#def_subtag" class="termref">subtags</a> of the prescribed length, separated by hyphens.</p>
+<p><dfn data-lt="well-formed|well-formed language tag|well-formed language tags|Well-formed language tag" id="def_well_formed" class="lint-ignore export">Well-formed language tag</dfn>. A language tag that follows the grammar defined in [[BCP47]]. That is, it is structurally correct, consisting of ASCII letters and digit <a href="#def_subtag" class="termref">subtags</a> of the prescribed length, separated by hyphens. Contrast this with <a href="#def_valid" class="termref">valid language tag</a>.</p>
 
 
 
