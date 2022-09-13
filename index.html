@@ -248,6 +248,14 @@
 
 <div class="letter_anchor" id="i">I</div>
 
+<p><dfn id="def_ijam" class="lint-ignore export">Ijam</dfn>. An ijam is an Arabic script diacritical mark considered to be part of a basic letter form. &#x681; [<span class="uname" translate="no">U+0681 ARABIC LETTER HAH WITH HAMZA ABOVE</span>] is an example of a letter with an ijam. Unicode encodes letter+ijam combinations as separate, atomic characters, which are never given decompositions in the standard. Ijam generally take the form of one-, two-, three- or four-dot markings above or below the basic letter skeleton, although other diacritic forms occur in extensions of the Arabic script in Central and South Asia and in Africa.</p>
+
+<aside class="note">
+	<p>This distinction between using a character with <a>ijam</a> instead of combining a letter with a <a>tashkil</a> becomes important when choosing which Unicode characters to use because (as can be seen in the examples above) the visual forms can be identical. Using the wrong character can change the meaning of the text, affecting the results of text search, font rendering, text to speech, etc.</p>
+
+    <p>There are, however, some very common combinations of diacritic and base that can be represented using precomposed characters or decomposed sequences that are canonically equivalent. For those the standard encourages the use of the precomposed form, but the fact that the forms are canonically equivalent removes concerns about changes in meaning.</p>
+</aside>
+
 <p><dfn id="def_incremental_time" class="lint-ignore export">Incremental time</dfn> is a way of representing time in computers that is based on a  progression of fixed integer units that increase monotonically from a specific point in time (called the "epoch").  Java (and many other systems) count time as the number of milliseconds since midnight (00:00 a.m.) on January 1, 1970 in <a href="#def_utc" class="termref">UTC</a> (less all of the intervening leap seconds). Other systems use different units and/or epochs. For example,  the incremental time for 11 June, 2016 at 6.10am BST in JavaScript is <samp>1465621816590</samp>. Most programming languages and operating environments provide or use incremental time for working with time values. However, incremental time is not usually seen directly by users, but is typically mapped to a <a href="#def_field_based_format" class="termref">field-based time format</a> for interchange or  for human consumption.</p>
 
 <p><dfn id="internationalization" data-lt="internationalization|I18N|internationalized|Internationalization" class="lint-ignore export">Internationalization</dfn>. The design and development of a product that is enabled for target audiences that vary in culture, region, or language. Internationalization is sometimes abbreviated <code>i18n</code> because there are eighteen letters between the "I" and the "N" in the English word.</p>
@@ -348,6 +356,14 @@
 
 
 <div class="letter_anchor" id="t">T</div>
+
+<p><dfn id="def_taskkil" class="lint-ignore export">Tashkil</dfn>. A tashkil (تَشْكِيل) is an Arabic script mark that indicates vocalization of text, as well as other types of phonetic guides to correct pronunciation. &#x62d;&#x654; [<span class="uname" translate="no">U+062D ARABIC LETTER HAH + U+0654 ARABIC HAMZA ABOVE</span>] is an example of a letter plus tashkil combination. Tashkil are separately encoded as combining marks. These include several subtypes: <em>harakat</em> (short vowel marks), <em>tanwin</em> (postnasalized or long vowel marks), <em>shaddah</em> (consonant gemination mark), and <em>sukun</em> (to mark lack of a following vowel). A basic Arabic letter plus any of these types of marks is never encoded as a separate, precomposed character, but must always be represented as a sequence of letter plus combining mark. Additional marks invented to indicate non-Arabic vowels, used in extensions of the Arabic script for languages other than Arabic, are also encoded as separate combining marks.</p>
+
+<aside class="note">
+	<p>This distinction between using a character with <a>ijam</a> instead of combining a letter with a <a>tashkil</a> becomes important when choosing which Unicode characters to use because (as can be seen in the examples above) the visual forms can be identical. Using the wrong character can change the meaning of the text, affecting the results of text search, font rendering, text to speech, etc.</p>
+
+    <p>There are, however, some very common combinations of diacritic and base that can be represented using precomposed characters or decomposed sequences that are canonically equivalent. For those the standard encourages the use of the precomposed form, but the fact that the forms are canonically equivalent removes concerns about changes in meaning.</p>
+</aside>
 
 <p><dfn id="def_text_processing_language" data-lt="text processing language|text-processing language" class="lint-ignore export">Text-processing language</dfn>. The language in which a specific range of text is actually written. This needs to be declared so that user agents or applications that manipulate the text, such as voice browsers, spell checkers,  style processors, hyphenators, etc., can apply the appropriate rules to the text in question. So we are, by necessity, talking about associating a <em>single</em> language with a <em>specific</em> range of text. Contrast this with <a href="#def_language_metadata" class="termref">language metadata</a>.</p>
 
