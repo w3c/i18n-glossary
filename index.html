@@ -434,6 +434,20 @@ The time zone offset for UTC is 0. UTC is often indicated in <a href="#def_field
 	
 	<p>If you are writing a W3C specification, you can use the terminology in this document directly by importing this document as a cross-reference source. This may be especially helpful when using <a>character encoding</a> or <a>locale</a>-related terms found here, since these terms are common to the needs of many specifications, are often "inter-locking" with other definitions, but might not otherwise provide value to your spec.</p>
 	
+    <p>This document is on the WG NOTE track in order to facilitate maintenance. This means that the definitions in the glossary are defined to be <em>informative</em> rather than <em>normative</em>.</p>
+    
+    <section id="infra-rel">
+		<h4>Relationship to the Infra Standard</h4>
+
+        <p>This document is meant to be used in conjunction with formal, normative definitions found in [[INFRA]]. When a term is defined in both documents, the [[INFRA]] version SHOULD be preferred. The definitions in both documents are maintained to be consistent with one-another.</p>
+        
+        <p>The I18N Glossary has many more terms specific to internationalization than are to be found in Infra, including many terms useful in defining or discussing the handling of text.</p>
+    
+    </section>
+	
+	<section id="respec-how-to-use">
+		<h4>ReSpec</h4>
+	
 	<p>If you are using <a href="https://respec.org">ReSpec</a>, you can import this glossary using the <kbd><a href="https://respec.org/docs/#xref">xref</a></kbd> keyword in your configuration block like this:</p>
 	
 <pre>
@@ -442,7 +456,17 @@ The time zone offset for UTC is 0. UTC is often indicated in <a href="#def_field
 
     <p>This allows you to then write references using the normal ReSpec notation (<code>&lt;a&gt;</code> tags or <code>[&#x200b;= term =&#x200b;]</code> markup).</p>
     
-    <p class="issue">BikeShed support coming soon.</p>
+    <p>Note that if you use a terminology definition inside of a normative statement, ReSpec will complain that you've used an informative reference inside of a normative statement. The I18N Glossary is maintained as a WG Note, rather than on the REC-track, so it is formally informative. You can suppress the warning by including this directive in your configuration block:</p>
+    
+    <pre>lint: informative-dfn: false
+    </pre>
+    
+    </section>
+    
+    <section id="bikeshed-how">
+		<h4>Bikeshed</h4>
+        <p class="issue">BikeShed support coming soon.</p>
+    </section>
 </section>
 
 <!--section class="appendix" id="Acknowledgements">
