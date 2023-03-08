@@ -467,7 +467,18 @@ The time zone offset for UTC is 0. UTC is often indicated in <a href="#def_field
     
     <section id="bikeshed-how">
 		<h4>Bikeshed</h4>
-        <p class="issue">BikeShed support coming soon.</p>
+		
+		<p>If you are using <a href="https://github.com/speced/bikeshed">Bikeshed</a> to generate your specification, you can import this glossary using a <code translate="no">spec</code> directive that looks like this:</p>
+		
+<pre>spec: i18n-glossary; urlPrefix: https://www.w3.org/TR/i18n-glossary/</pre>
+
+        <p>All of the references in the glossary are exported, so you should be able to refer to terms in the glossary by using markup that looks like <code translate="yes">[=<em>term</em>=]</code>. In rare cases, you may need to include specific directives following the <code translate="no">spec</code> directive to ensure that the definition is found during document processing. Here is an example using the term <a>locale</a>:</p>
+        
+<pre>
+spec: i18n-glossary; urlPrefix: https://www.w3.org/TR/i18n-glossary/
+    type: dfn
+        text: locale; url: locale
+</pre>
     </section>
 </section>
 
