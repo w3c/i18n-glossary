@@ -183,7 +183,7 @@ section h2 {
 
 <p><dfn class="lint-ignore export">Character set</dfn> or <span class="alt_name">repertoire</span>. The set of characters one might use for a particular purpose – be it those required to support Western European languages in computers, or those a Chinese child will learn at school in the third grade (nothing to do with computers).</p>
 
-<p><dfn class="lint-ignore export">Circumgraph</dfn>. A single vowel code point that produces glyphs on more than one side of its consonant base. </p>
+<p><dfn class="lint-ignore export">Circumgraph</dfn>. A single vowel code point that produces glyphs on more than one side of its consonant base. For example, in the Odia syllable <img src="img/circumgraph.svg" alt="କୋ" style="height:1.2rem;">, /ka/, the character <span class="codepoint" translate="no"><bdi lang="or">&#x0B4B;</bdi> [<span class="uname">U+0B4B ORIYA VOWEL SIGN O</span>]</span> produces separate glyphs on either side of the base consonant.</p>
 
 <p><dfn class="lint-ignore">CJK</dfn>. An abbreviation for Chinese, Japanese, and Korean. Sometimes CJKV is used to include the Han characters used in Vietnamese.</p>
 
@@ -327,7 +327,7 @@ pronounced <span class="ipa">θ</span>. <strong>Unicode encodes letter+ijam comb
 
 <p><dfn class="lint-ignore export">Language subtag</dfn>. A sequence of ASCII letters or digits separated from other subtags by the hyphen-minus character and identifying a specific element of meaning withing the overall [=language tag=]. In [[BCP47]], subtags can consist of upper or lowercase ASCII letters (the case carries no distinction) or ASCII digits. Subtags are limited to no more than eight characters (although additional length restrictions apply depending on the specific use of the subtag).
 </p>
-<p><dfn class="lint-ignore export">Language tag</dfn>. A string used as an identifier for a language, usually referring explicitly to a [[BCP47]] language tag. These language tags consist of one or more subtags.
+<p><dfn class="lint-ignore export">Language tag</dfn>. A string used as an identifier for a language, usually referring explicitly to a [[BCP47]] language tag. These language tags consist of one or more [=language subtags=].
 </p>
 
 <p><dfn class="lint-ignore export">Legacy character encodings</dfn>. Character encoding forms that do not encode the full repertoire of characters in the Unicode character set.</p>
@@ -340,7 +340,7 @@ pronounced <span class="ipa">θ</span>. <strong>Unicode encodes letter+ijam comb
 
 <p><dfn data-lt="locale neutral" class="lint-ignore export">Locale-neutral</dfn>. A [=non-linguistic field=] is said to be locale-neutral when it is stored or exchanged in a format that is not specifically appropriate for any given language, locale, or culture and which can be interpreted unambiguously for presentation in a [=locale-aware=] way.</p>
 
-<p><dfn class="lint-ignore export">Localizable text</dfn>.  Document contents and strings intended as human-readable text and <b>not</b> to any of the surrounding or embedded syntactic content that form part of the document structure. Note that syntactic content can have localizable text embedded in it, such as when an [[HTML]] <code class="kw">img</code> element has an <code class="kw">alt</code> attribute containing a description of the image.  <!-- REINSTATE THIS AFTER CHARMOD-NORM HAS BEEN UPDATED  [[CHARMOD-NORM]] gives <a href="https://www.w3.org/TR/charmod-norm/#dfn-localizable-content">some additional examples</a>.-->  See also [=syntactic content=] and [=natural language=].</p>
+<p><dfn class="lint-ignore export">Localizable text</dfn>.  Document contents and strings intended as human-readable text and <b>not</b> to any of the surrounding or embedded syntactic content that form part of the document structure. Note that syntactic content can have localizable text embedded in it, such as when an [[HTML]] <code class="kw">img</code> element has an <code class="kw">alt</code> attribute containing a description of the image. [[CHARMOD-NORM]] gives <a href="https://www.w3.org/TR/charmod-norm/#dfn-localizable-content">some additional examples</a>.  See also [=syntactic content=] and [=natural language=].</p>
 
 <p><dfn data-lt="localisation" class="lint-ignore export">Localization</dfn>. The tailoring of a system to the individual cultural expectations of a specific target market or group of individuals. Localization includes, but is not limited to, the translation of user-facing text and messages. Localization is sometimes abbreviated as <code>l10n</code> because there are ten letters between the "L" and the "N" in the English word. When a particular set of content and preferences corresponding to a specific set of international preferences is operationally available, then the system is said to be <em>localized</em>.</p>
 
@@ -362,20 +362,13 @@ pronounced <span class="ipa">θ</span>. <strong>Unicode encodes letter+ijam comb
 
 
 
-<div class="letter_anchor" id="o">O</div>
-	
-<p><dfn class="lint-ignore export">Othographic syllable</dfn> This term is not clearly defined in the Unicode Standard. For their materials, the i18n group defines it to mean a typographic unit that includes more than one [=grapheme cluster=]. This is commonly the case for Brahmi-derived scripts, such as Devanagari, or Balinese, when they form conjuncts or stacks.</p>
-
-
-
-
 <div class="letter_anchor" id="n">N</div>
 	
 <p><dfn class="lint-ignore export">Natural Language</dfn> (sometimes just <em>language</em>). Refers to the spoken, written, or signed communications used by human beings. See also [=localizable text=] and [=syntactic content=].</p>
 
 <p><dfn class="lint-ignore export">Non-linguistic Field</dfn>. Any element of a data structure not intended for the storage or interchange of natural language textual data. This includes non-string data types, such as booleans, numbers, dates, and so forth. It also includes strings, such as program or protocol internal identifiers. This document uses the term <em>field</em> as a short hand for this concept.</p>
 
-<p><dfn class="lint-ignore export" data-lt="normalisation|Unicode normalization">Normalization</dfn>. The process of removing alternate representations of equivalent sequences from textual data, to convert the data into a form that can be binary-compared for equivalence.</p>
+<p><dfn class="lint-ignore export" data-lt="normalisation|Unicode normalization">Normalization</dfn>. The process of removing alternate representations of equivalent sequences from textual data, to convert the data into a form that can be binary-compared for equivalence. In internationalization contexts this usually refers to applying one of the Unicode normalization forms, such as [=NFC=], to a string. For more info, see [[CHARMOD-NORM]] or [[UAX15]]</p>
 
 <p><dfn class="lint-ignore export" data-lt="unicode normalization form c|nfc">Normalization Form C</dfn> (<strong>NFC</strong>). <a href="https://www.unicode.org/glossary/#normalization_form_c">Unicode definition</a>: <q cite="https://www.unicode.org/glossary/#normalization_form_c">A normalization form that erases any canonical differences, and generally produces a <strong>composed</strong> result. For example, a + umlaut is 
 converted to ä in this form. This form most closely matches legacy 
@@ -383,6 +376,12 @@ usage. The formal definition is D120 in <a href="http://www.unicode.org/versions
 Section 3.11, Normalization Forms</a>.</q> See also [=normalization=].</p>
 
 <p><dfn class="lint-ignore export" data-lt="unicode normalization form d|nfd">Normalization Form D</dfn> (<strong>NFD</strong>). <a href="https://www.unicode.org/glossary/#normalization_form_c">Unicode definition</a>: <q cite="https://www.unicode.org/glossary/#normalization_form_d">A normalization form that erases any canonical differences, and produces a <strong>decomposed</strong> result. For example, ä is converted to a + umlaut in this form. This form is most often used in internal processing, such as in collation. The formal definition is D118 in <a href="http://www.unicode.org/versions/latest/ch03.pdf#G49537"> Section 3.11, Normalization Forms</a>.</q> See also [=normalization=].</p>
+
+
+
+
+<div class="letter_anchor" id="o">O</div>
+<p><dfn class="lint-ignore export">Othographic syllable</dfn> A [=typographic character unit=] that includes more than one [=grapheme cluster=]. These are most commonly found in Brahmi-derived scripts, such as Devanagari, or Balinese, when forming conjuncts or stacks. This term is used but not defined in the Unicode Standard: it is defined here for use by W3C documents, such as layout requirements.</p>
 
 
 
@@ -429,9 +428,9 @@ Section 3.11, Normalization Forms</a>.</q> See also [=normalization=].</p>
 
 <p><dfn class="lint-ignore export">Standalone vowel</dfn>. Vowel sounds that are not immediately preceded by a consonant sound; they typically appear at the beginning or in the middle of a word. In Brahmi-derived scripts standalone vowels are often represented using [=independent vowel=] letters.</p>
 
-<p><dfn class="lint-ignore export" data-lt="supplementary code point">Supplementary characters</dfn>. Beyond the [=Basic Multilingual Plane=] the Unicode character set also contains space for around a million additional code point positions. Characters in this latter range are referred to as supplementary characters. In the UTF-16 encoding, supplementary characters are encoded using a pairs of surrogate characters.</p>
+<p><dfn class="lint-ignore export" data-lt="supplementary code point">Supplementary characters</dfn>. Beyond the [=Basic Multilingual Plane=] the Unicode character set also contains space for around a million additional code point positions. Characters in this latter range are referred to as supplementary characters. In the UTF-16 encoding, supplementary characters are encoded using  pairs of surrogate characters.</p>
 
-<p><dfn class="lint-ignore" data-lt="surrogate">Surrogate code point</dfn>. <a href="https://www.unicode.org/glossary/#surrogate_code_point">Unicode definition</a>: <q>A Unicode code point in the range U+D800..U+DFFF. Reserved for use by UTF-16, where a pair of surrogate code units (a high surrogate followed by a low surrogate) “stand in” for a [=supplementary code point=].</q></p>
+<p><dfn class="lint-ignore" data-lt="surrogate">Surrogate code point</dfn>. <a href="https://www.unicode.org/glossary/#surrogate_code_point">Unicode definition</a>: <q>A Unicode code point in the range U+D800..U+DFFF. Reserved for use by UTF-16, where a pair of surrogate code units (a high surrogate followed by a low surrogate) “stand in” for a [=supplementary code point=].</q> This term is also defined by [[INFRA]].</p>
 
 <p><dfn class="lint-ignore export">Syllabary</dfn>. A type of writing system in which each symbol typically represents both a consonant and a vowel, or in some instances more than one consonant and a vowel. Usually there is also a set of symbols that represent [=standalone vowel=] sounds. Alternatives include [=abugida=], [=alphabet=] and [=abjad=].</p>
 
