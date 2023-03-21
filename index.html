@@ -98,6 +98,7 @@ section h2 {
 
 <p>This document can be pointed to for definitions of terms, or these definitions may be copied to other documents and slightly adapted.</p>
 <p>The W3C Internationalization Working Group also uses <a href="https://www.unicode.org/glossary/">definitions provided by the Unicode Consortium</a>.</p>
+
 </section>
 
 
@@ -527,6 +528,59 @@ The time zone offset for UTC is 0. UTC is often indicated in [=field-based forma
 
 </section>
 
+
+<section class="appendix" id="how-to-use">
+	<h3 id="howto">How to use this glossary</h3>
+	
+	<p>If you are writing a W3C specification, you can use the terminology in this document directly by importing this document as a cross-reference source. This may be especially helpful when using <a>character encoding</a> or <a>locale</a>-related terms found here. Such terms are common to the needs of many specifications and often refer to other definitions found in this glossary. In most cases, though, copying these definitions into your specification won't add value to your readers.</p>
+	
+    <p>This document is on the WG NOTE track in order to facilitate maintenance. This means that the definitions in the glossary are defined to be <em>informative</em> rather than <em>normative</em>.</p>
+    
+    <section id="infra-rel">
+		<h4>Relationship to the Infra Standard</h4>
+
+        <p>This document is meant to be used in conjunction with formal, normative definitions found in [[INFRA]]. When a term is defined in both documents, the [[INFRA]] version SHOULD be preferred. The definitions in both documents are maintained to be consistent with one-another.</p>
+        
+        <p>The I18N Glossary has many more terms specific to internationalization than are to be found in Infra, including many terms useful in defining or discussing the handling of text.</p>
+    
+    </section>
+	
+	<section id="respec-how-to-use">
+		<h4>ReSpec</h4>
+	
+	<p>If you are using <a href="https://respec.org">ReSpec</a>, you can import this glossary using the <kbd><a href="https://respec.org/docs/#xref">xref</a></kbd> keyword in your configuration block like this:</p>
+	
+<pre>
+	xref: [ "i18n-glossary" ],
+</pre>
+
+    <p>This allows you to then write references using the normal ReSpec notation (<code>&lt;a&gt;</code> tags or <code>[&#x200b;=term=&#x200b;]</code> markup).</p>
+    
+    <p>If you use a terminology definition inside of a normative statement, ReSpec will complain that you've used an informative reference inside of a normative statement. The I18N Glossary is maintained as a WG Note, rather than on the REC-track, so it is formally informative. This is only necessary when you reference a term from a normative statement.</p>
+    
+    <p>You can suppress the warning by including this directive in your configuration block:</p>
+    
+    <pre>lint: informative-dfn: false
+    </pre>
+    
+    </section>
+    
+    <section id="bikeshed-how">
+		<h4>Bikeshed</h4>
+		
+		<p>If you are using <a href="https://github.com/speced/bikeshed">Bikeshed</a> to generate your specification, you can import this glossary using a <code translate="no">spec</code> directive that looks like this:</p>
+		
+<pre>spec: i18n-glossary; urlPrefix: https://www.w3.org/TR/i18n-glossary/</pre>
+
+        <p>All of the references in the glossary are exported, so you should be able to refer to terms in the glossary by using markup that looks like <code translate="yes">[=<em>term</em>=]</code>. In rare cases, you may need to include specific directives following the <code translate="no">spec</code> directive to ensure that the definition is found during document processing. Here is an example using the term <a>locale</a>:</p>
+        
+<pre>
+spec: i18n-glossary; urlPrefix: https://www.w3.org/TR/i18n-glossary/
+    type: dfn
+        text: locale; url: locale
+</pre>
+    </section>
+</section>
 
 <!--section class="appendix" id="Acknowledgements">
 <h2>Acknowledgements</h2>
