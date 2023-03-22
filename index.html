@@ -97,7 +97,7 @@ section h2 {
 <h2 id="introduction">Introduction</h2>
 
 <p>This document can be pointed to for definitions of terms, or these definitions may be copied to other documents and slightly adapted.</p>
-<p>The W3C Internationalization Working Group also uses <a href="https://www.unicode.org/glossary/">definitions provided by the Unicode Consortium</a>.</p>
+<p>The W3C Internationalization Working Group also uses <a href="https://www.unicode.org/glossary/">definitions provided by the Unicode Consortium</a>. For more information on how to use this glossary, see Appendix <a href="#how-to-use"></a></p>
 
 </section>
 
@@ -532,14 +532,16 @@ The time zone offset for UTC is 0. UTC is often indicated in [=field-based forma
 <section class="appendix" id="how-to-use">
 	<h3 id="howto">How to use this glossary</h3>
 	
-	<p>If you are writing a W3C specification, you can use the terminology in this document directly by importing this document as a cross-reference source. This may be especially helpful when using <a>character encoding</a> or <a>locale</a>-related terms found here. Such terms are common to the needs of many specifications and often refer to other definitions found in this glossary. In most cases, though, copying these definitions into your specification won't add value to your readers.</p>
+	<p>If you are writing a W3C specification, you can use the terminology in this document directly by importing this document as a cross-reference source. This may be especially helpful when using <a>character encoding</a> or <a>locale</a>-related terms found here. Such terms are common to the needs of many specifications and often refer to other definitions found in this glossary.</p>
 	
-    <p>This document is on the WG NOTE track in order to facilitate maintenance. This means that the definitions in the glossary are defined to be <em>informative</em> rather than <em>normative</em>.</p>
-    
+	<p>This glossary is a Working Group NOTE, which means that the definitions found in it are, by definition, non-normative. In most cases, most specifications do not need the definition of terms found here to be formally normative. Using the definitions found here lends clarity when using specialized terminology, but doesn't affect requirements directly and in those cases copying these definitions into your specification won't add value to your readers.</p>
+	
+	<p>However, you might find that your specification needs a normative dependency on a definition. In those cases, you should copy the definition to your own document (perhaps linking back to this glossary as a source). Slight adjustments can be made to the definitions to fit local circumstances. Please contact the Internationalization Working Group with any questions or concerns when doing this.</p>
+	
     <section id="infra-rel">
 		<h4>Relationship to the Infra Standard</h4>
 
-        <p>This document is meant to be used in conjunction with formal, normative definitions found in [[INFRA]]. When a term is defined in both documents, the [[INFRA]] version SHOULD be preferred. The definitions in both documents are maintained to be consistent with one-another.</p>
+        <p>This document is meant to be used in conjunction with formal, normative definitions found in [[INFRA]]. When a term is defined in both documents, the [[INFRA]] version SHOULD be preferred. The definitions in both documents are maintained to be consistent with one-another. Note that [[INFRA]]'s definitions may be used as normative.</p>
         
         <p>The I18N Glossary has many more terms specific to internationalization than are to be found in Infra, including many terms useful in defining or discussing the handling of text.</p>
     
@@ -548,13 +550,15 @@ The time zone offset for UTC is 0. UTC is often indicated in [=field-based forma
 	<section id="respec-how-to-use">
 		<h4>ReSpec</h4>
 	
-	<p>If you are using <a href="https://respec.org">ReSpec</a>, you can import this glossary using the <kbd><a href="https://respec.org/docs/#xref">xref</a></kbd> keyword in your configuration block like this:</p>
+	<p>If you are using <a href="https://respec.org">ReSpec</a>, you can import this glossary using the <kbd><a href="https://respec.org/docs/#xref">xref</a></kbd> keyword in your configuration block. Complete instructions can be found the ReSpec documentation <a href="https://respec.org/docs/#references-0">here</a>.
+	
+	<p>For this document, the <code>xref</code> configuration will look something like this:</p>
 	
 <pre>
 	xref: [ "i18n-glossary" ],
 </pre>
 
-    <p>This allows you to then write references using the normal ReSpec notation (<code>&lt;a&gt;</code> tags or <code>[&#x200b;=term=&#x200b;]</code> markup).</p>
+    <p>Adding the above configuration allows you to write references the terms found here using the normal ReSpec notation (<code>&lt;a&gt;</code> tags or <code>[&#x200b;=term=&#x200b;]</code> markup).</p>
     
     <p>If you use a terminology definition inside of a normative statement, ReSpec will complain that you've used an informative reference inside of a normative statement. The I18N Glossary is maintained as a WG Note, rather than on the REC-track, so it is formally informative. This is only necessary when you reference a term from a normative statement.</p>
     
