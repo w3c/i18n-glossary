@@ -349,7 +349,7 @@ pronounced <span class="ipa">θ</span>. <strong>Unicode encodes letter+ijam comb
 [[Unicode]] requires that characters be stored and interchanged in logical order, i.e. roughly corresponding to the order in which text is typed in via the keyboard or spoken (for a more detailed definition see [[Unicode]], Section 2.2). Logical ordering is important to ensure interoperability of data, and also benefits accessibility, searching, and collation.
 </p>
 
-<p><dfn class="lint-ignore export">LTR</dfn>. Stands for "left-to-right" and refers to the inline base direction of left-to-right [[UAX9]]. This is the base text direction used by languages whose starting character progression begins on the left side of the page in horizontal text. It's used for scripts such as Latin, Cyrillic, Devanagari, and many others.</p>
+<p><dfn class="lint-ignore export" data-lt="left-to-right">LTR</dfn>. Stands for "left-to-right" and refers to the inline base direction of left-to-right [[UAX9]]. This is the base text direction used by languages whose starting character progression begins on the left side of the page in horizontal text. It's used for scripts such as Latin, Cyrillic, Devanagari, and many others.</p>
 
 
 
@@ -408,7 +408,7 @@ Section 3.11, Normalization Forms</a>.</q> See also [=normalization=].</p>
 
 <p><dfn class="lint-ignore export">Resource identifier</dfn>. A compact string of characters for identifying an abstract or physical <a class="termref">resource</a>. On the Web, this mostly means various types of Universal Resource Identifiers (or <em>URIs</em>). For wire formats, [[RFC3986]] defines the structure and serialization. <em>Internationalized Resource Identifiers</em> (or <em>IRIs</em>) [[RFC3987]] describes how non-ASCII Unicode characters can be used in resource identifiers. The WhatWG [[URL]] specification describes how browsers handle IRIs and their mapping to URIs.</p>
 
-<p><dfn class="lint-ignore export">RTL</dfn>. Stands for "right-to-left" and refers to the inline base direction of right-to-left [[UAX9]]. This is the base text direction used by languages whose starting character progression begins on the right side of the page in horizontal text. It's used for a variety of scripts which include Arabic, Hebrew, N'Ko, Adlam, Thaana, and Syriac among others.</p>
+<p><dfn class="lint-ignore export" data-lt="right-to-left">RTL</dfn>. Stands for "right-to-left" and refers to the inline base direction of right-to-left [[UAX9]]. This is the base text direction used by languages whose starting character progression begins on the right side of the page in horizontal text. It's used for a variety of scripts which include Arabic, Hebrew, N'Ko, Adlam, Thaana, and Syriac among others.</p>
 
 <p><dfn class="lint-ignore export">Ruby</dfn>. A name for small (usually phonetic) annotations that are rendered alongside text. 'Ruby' is a British and Japanese printing term (often also called <i class="name">furigana</i> in Japan). Similar annotations are also used for Chinese, and sometimes Mongolian, and Korean.</p>
 
@@ -427,7 +427,7 @@ Section 3.11, Normalization Forms</a>.</q> See also [=normalization=].</p>
 
 <p><dfn class="lint-ignore export">Spacing mark</dfn>. Combining characters that consume space along the baseline, either before or after the base character.</p>
 
-<p><dfn class="link-ignore export">Spillover</dfn>. Errors in text presentation due to improper [=bidi isolation=]. When one string is inserted into another string, unless the inserted value is isolated and given the proper [=base direction=], the [=bidi algorithm=] can visually rearrange the text in unexpected ways that make the text illegible. For example, a MessageFormat pattern string like <code lang="en" translate="no">{{$restaurantName} - {$numReviews} reviews}</code> which inserts a <kbd>numReviews</kbd> of <kbd>4</kbd> and a <kbd>restaurantName</kbd> of <kbd lang="he" translate="no">&#x5e4;&#x5d9;&#x5e6;&#x5d4; &#x5e1;&#x5d2;&#x5d5;&#x5dc;&#x5d4;</kbd> (which means roughly <em>Purple Pizza</em> in Hebrew) would be presented as <code lang="en" dir="ltr">‎פיצה סגולה - 4 reviews</code>. The change in text order is due to spillover. Adding markup or isolating controls around the inserted values fixes the result: <code><span lang="he" translate="no" dir="rtl">&#x5e4;&#x5d9;&#x5e6;&#x5d4; &#x5e1;&#x5d2;&#x5d5;&#x5dc;&#x5d4;</span> - <span dir="ltr">4</span> reviews</code></p>
+<p><dfn class="link-ignore export">Spillover</dfn>. Errors in text presentation due to a lack of [=bidi isolation=]. When strings appear next to each other or when values are inserted into text, without isolation the [=bidi algorithm=] can visually rearrange the text in unexpected ways that make the text illegible. See: [=bidi isolation=].</p>
 
 <p><dfn class="lint-ignore export">Standalone vowel</dfn>. Vowel sounds that are not immediately preceded by a consonant sound; they typically appear at the beginning or in the middle of a word. In Brahmi-derived scripts standalone vowels are often represented using [=independent vowel=] letters.</p>
 
@@ -593,21 +593,9 @@ spec: i18n-glossary; urlPrefix: https://www.w3.org/TR/i18n-glossary/
 
 <p>The Internationalization (I18N) Working Group would like to thank 
 the following contributors to this document: 
-    Mati Allouche, 
-    Ivan Herman,
-    Tobie Langel,
-    Sangwhan Moon,
-    Felix Sasaki, 
-    Najib Tounsi, 
+
     
  and many others.</p>
-
-<p>The following pages formed the initial basis of this document:</p>
-<ul>
-  <li><a href="https://w3c.github.io/i18n-discuss/notes/annotation-language-use-cases.html">Use cases for language information in web annotations</a></li>
-  <li><a href="http://w3c.github.io/i18n-discuss/notes/string-base-direction.html">Support for bidi text in strings</a></li>
-  <li><a href="http://w3c.github.io/i18n-discuss/notes/json-bidi.html">Notes on JSON strings and text direction</a></li>
-</ul>
 
 </section-->
 
