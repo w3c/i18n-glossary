@@ -97,7 +97,7 @@ section h2 {
 <h2 id="introduction">Introduction</h2>
 
 <p>This document can be pointed to for definitions of terms, or these definitions may be copied to other documents and slightly adapted.</p>
-<p>The W3C Internationalization Working Group also uses <a href="https://www.unicode.org/glossary/">definitions provided by the Unicode Consortium</a>.</p>
+<p>The W3C Internationalization Working Group also uses <a href="https://www.unicode.org/glossary/">definitions provided by the Unicode Consortium</a>. For more information on how to use this glossary, see Appendix <a href="#how-to-use"></a></p>
 
 </section>
 
@@ -164,7 +164,9 @@ section h2 {
 
 <p><dfn data-lt="basic language range|Basic language range" class="lint-ignore export">Basic language range</dfn>. A [=language range=] consisting of a sequence of subtags separated by hyphens. That is, it is identical in appearance to a language tag.</p>
 
-<p><dfn class="lint-ignore export">Bidi isolation</dfn>. Isolation often needs to be applied to a range of text in order to prevent the automatic rules of the Unicode Bidirectional Algorithm incorrectly ordering that content in relation to the surrounding text. For example, numbers following right-to-left text in memory are automatically positioned to the left of that text by the Bidi Algorithm, but sometimes need to appear to the right. Another example occurs when lists of RTL items occur in a LTR sentence: the Bidi Algorithm will automatically assume that the order of items in the list should be "3 ,2 ,1", but actually what's needed is "1, 2, 3". In HTML, bidi isolation can be applied to a range of text by enclosing it in an element with a <code class="kw" translate="no">dir</code> attribute. In plain text there are Unicode formatting characters that can do the job. These mechanisms remove unwanted 'spillover effects'.</p>
+<p><dfn class="lint-ignore export" data-lt="bidi isolate">Bidirectional isolate</dfn>. Defined by the [=Unicode Bidirectional Algorithm=] [[UAX9]], an <em>isolate</em> is a range of text whose contents do not participate in the embedding and reordering of the surrounding text the range appears in, which prevents the bidi algorithm from incorrectly ordering that content in relation to the surrounding text.</p>
+
+<p><dfn class="lint-ignore export">Bidi isolation</dfn>. The use of [=bidi isolates=] in text in order to prevent the automatic rules of the Unicode Bidirectional Algorithm incorrectly ordering that content in relation to the surrounding text. For example, numbers following right-to-left text in memory are automatically positioned to the left of that text by the Bidi Algorithm, but sometimes need to appear to the right. Another example occurs when lists of RTL items occur in a LTR sentence: the Bidi Algorithm will automatically assume that the order of items in the list should be "3 ,2 ,1", but actually what's needed is "1, 2, 3". In HTML, bidi isolation can be applied to a range of text by enclosing it in an element with a <code class="kw" translate="no">dir</code> attribute. In plain text there are Unicode formatting characters that can do the job. These mechanisms remove unwanted [=spillover effects=].</p>
 
 
 
@@ -281,7 +283,7 @@ section h2 {
 
 
 
-<div class="letter_anchor" id="h">h</div>
+<div class="letter_anchor" id="h">H</div>
 
 <p><dfn class="lint-ignore export">Halfwidth</dfn>. <a href="https://www.unicode.org/glossary/#halfwidth">Unicode definition</a>: <q>Characters of East Asian character sets whose glyph image occupies half of the character display cell. In legacy character sets, halfwidth characters are normally encoded in a single byte. The Japanese term for halfwidth characters is hankaku.</q> See also [=fullwidth=].</p>
 
@@ -349,7 +351,7 @@ pronounced <span class="ipa">θ</span>. <strong>Unicode encodes letter+ijam comb
 [[Unicode]] requires that characters be stored and interchanged in logical order, i.e. roughly corresponding to the order in which text is typed in via the keyboard or spoken (for a more detailed definition see [[Unicode]], Section 2.2). Logical ordering is important to ensure interoperability of data, and also benefits accessibility, searching, and collation.
 </p>
 
-<p><dfn class="lint-ignore export">LTR</dfn>. Stands for "left-to-right" and refers to the inline base direction of left-to-right [[UAX9]]. This is the base text direction used by languages whose starting character progression begins on the left side of the page in horizontal text. It's used for scripts such as Latin, Cyrillic, Devanagari, and many others.</p>
+<p><dfn class="lint-ignore export" data-lt="left-to-right">LTR</dfn>. Stands for "left-to-right" and refers to the inline base direction of left-to-right [[UAX9]]. This is the base text direction used by languages whose starting character progression begins on the left side of the page in horizontal text. It's used for scripts such as Latin, Cyrillic, Devanagari, and many others.</p>
 
 
 
@@ -408,7 +410,7 @@ Section 3.11, Normalization Forms</a>.</q> See also [=normalization=].</p>
 
 <p><dfn class="lint-ignore export">Resource identifier</dfn>. A compact string of characters for identifying an abstract or physical <a class="termref">resource</a>. On the Web, this mostly means various types of Universal Resource Identifiers (or <em>URIs</em>). For wire formats, [[RFC3986]] defines the structure and serialization. <em>Internationalized Resource Identifiers</em> (or <em>IRIs</em>) [[RFC3987]] describes how non-ASCII Unicode characters can be used in resource identifiers. The WhatWG [[URL]] specification describes how browsers handle IRIs and their mapping to URIs.</p>
 
-<p><dfn class="lint-ignore export">RTL</dfn>. Stands for "right-to-left" and refers to the inline base direction of right-to-left [[UAX9]]. This is the base text direction used by languages whose starting character progression begins on the right side of the page in horizontal text. It's used for a variety of scripts which include Arabic, Hebrew, N'Ko, Adlam, Thaana, and Syriac among others.</p>
+<p><dfn class="lint-ignore export" data-lt="right-to-left">RTL</dfn>. Stands for "right-to-left" and refers to the inline base direction of right-to-left [[UAX9]]. This is the base text direction used by languages whose starting character progression begins on the right side of the page in horizontal text. It's used for a variety of scripts which include Arabic, Hebrew, N'Ko, Adlam, Thaana, and Syriac among others.</p>
 
 <p><dfn class="lint-ignore export">Ruby</dfn>. A name for small (usually phonetic) annotations that are rendered alongside text. 'Ruby' is a British and Japanese printing term (often also called <i class="name">furigana</i> in Japan). Similar annotations are also used for Chinese, and sometimes Mongolian, and Korean.</p>
 
@@ -426,6 +428,8 @@ Section 3.11, Normalization Forms</a>.</q> See also [=normalization=].</p>
 <p><dfn class="lint-ignore export">Shaping</dfn>. Making context-sensitive changes to glyph shapes. Shaping may or may not occur at the same time as context-sensitive positioning of glyphs (such as higher diacritics over tall base characters).</p>
 
 <p><dfn class="lint-ignore export">Spacing mark</dfn>. Combining characters that consume space along the baseline, either before or after the base character.</p>
+
+<p><dfn class="link-ignore export" data-lt="spillover effects">Spillover</dfn>. Errors in text presentation due to a lack of [=bidi isolation=]. When strings appear next to each other or when values are inserted into text without isolation, the [=bidi algorithm=] can visually rearrange the text in ways that make the text illegible. See the article <a href="https://www.w3.org/International/articles/inline-bidi-markup/index.en.html"><cite>Inline markup and bidirectional text in HTML</cite></a> for more info. See also: [=bidi isolation=]</p>
 
 <p><dfn class="lint-ignore export">Standalone vowel</dfn>. Vowel sounds that are not immediately preceded by a consonant sound; they typically appear at the beginning or in the middle of a word. In Brahmi-derived scripts standalone vowels are often represented using [=independent vowel=] letters.</p>
 
@@ -532,14 +536,16 @@ The time zone offset for UTC is 0. UTC is often indicated in [=field-based forma
 <section class="appendix" id="how-to-use">
 	<h3 id="howto">How to use this glossary</h3>
 	
-	<p>If you are writing a W3C specification, you can use the terminology in this document directly by importing this document as a cross-reference source. This may be especially helpful when using <a>character encoding</a> or <a>locale</a>-related terms found here. Such terms are common to the needs of many specifications and often refer to other definitions found in this glossary. In most cases, though, copying these definitions into your specification won't add value to your readers.</p>
+	<p>If you are writing a W3C specification, you can use the terminology in this document directly by importing this document as a cross-reference source. This may be especially helpful when using <a>character encoding</a> or <a>locale</a>-related terms found here. Such terms are common to the needs of many specifications and often refer to other definitions found in this glossary.</p>
 	
-    <p>This document is on the WG NOTE track in order to facilitate maintenance. This means that the definitions in the glossary are defined to be <em>informative</em> rather than <em>normative</em>.</p>
-    
+	<p>This glossary is a Working Group NOTE, which means that the definitions found in it are, by definition, non-normative. In most cases, most specifications do not need the definition of terms found here to be formally normative. Using the definitions found here lends clarity when using specialized terminology, but doesn't affect requirements directly and in those cases copying these definitions into your specification won't add value to your readers.</p>
+	
+	<p>However, you might find that your specification needs a normative dependency on a definition. In those cases, you should copy the definition to your own document (perhaps linking back to this glossary as a source). Slight adjustments can be made to the definitions to fit local circumstances. Please contact the Internationalization Working Group with any questions or concerns when doing this.</p>
+	
     <section id="infra-rel">
 		<h4>Relationship to the Infra Standard</h4>
 
-        <p>This document is meant to be used in conjunction with formal, normative definitions found in [[INFRA]]. When a term is defined in both documents, the [[INFRA]] version SHOULD be preferred. The definitions in both documents are maintained to be consistent with one-another.</p>
+        <p>This document is meant to be used in conjunction with formal, normative definitions found in [[INFRA]]. When a term is defined in both documents, the [[INFRA]] version SHOULD be preferred. The definitions in both documents are maintained to be consistent with one-another. Note that [[INFRA]]'s definitions may be used as normative.</p>
         
         <p>The I18N Glossary has many more terms specific to internationalization than are to be found in Infra, including many terms useful in defining or discussing the handling of text.</p>
     
@@ -548,13 +554,15 @@ The time zone offset for UTC is 0. UTC is often indicated in [=field-based forma
 	<section id="respec-how-to-use">
 		<h4>ReSpec</h4>
 	
-	<p>If you are using <a href="https://respec.org">ReSpec</a>, you can import this glossary using the <kbd><a href="https://respec.org/docs/#xref">xref</a></kbd> keyword in your configuration block like this:</p>
+	<p>If you are using <a href="https://respec.org">ReSpec</a>, you can import this glossary using the <kbd><a href="https://respec.org/docs/#xref">xref</a></kbd> keyword in your configuration block. Complete instructions can be found the ReSpec documentation <a href="https://respec.org/docs/#references-0">here</a>.
+	
+	<p>For this document, the <code>xref</code> configuration will look something like this:</p>
 	
 <pre>
 	xref: [ "i18n-glossary" ],
 </pre>
 
-    <p>This allows you to then write references using the normal ReSpec notation (<code>&lt;a&gt;</code> tags or <code>[&#x200b;=term=&#x200b;]</code> markup).</p>
+    <p>Adding the above configuration allows you to write references to the terms found in this glossary using the normal ReSpec notation (<code>&lt;a&gt;</code> tags or <code>[&#x200b;=term=&#x200b;]</code> markup).</p>
     
     <p>If you use a terminology definition inside of a normative statement, ReSpec will complain that you've used an informative reference inside of a normative statement. The I18N Glossary is maintained as a WG Note, rather than on the REC-track, so it is formally informative. This is only necessary when you reference a term from a normative statement.</p>
     
@@ -587,21 +595,9 @@ spec: i18n-glossary; urlPrefix: https://www.w3.org/TR/i18n-glossary/
 
 <p>The Internationalization (I18N) Working Group would like to thank 
 the following contributors to this document: 
-    Mati Allouche, 
-    Ivan Herman,
-    Tobie Langel,
-    Sangwhan Moon,
-    Felix Sasaki, 
-    Najib Tounsi, 
+
     
  and many others.</p>
-
-<p>The following pages formed the initial basis of this document:</p>
-<ul>
-  <li><a href="https://w3c.github.io/i18n-discuss/notes/annotation-language-use-cases.html">Use cases for language information in web annotations</a></li>
-  <li><a href="http://w3c.github.io/i18n-discuss/notes/string-base-direction.html">Support for bidi text in strings</a></li>
-  <li><a href="http://w3c.github.io/i18n-discuss/notes/json-bidi.html">Notes on JSON strings and text direction</a></li>
-</ul>
 
 </section-->
 
