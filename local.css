@@ -182,8 +182,9 @@ a.termref:active {
 }
 
 .uname {
-	text-transform: uppercase;
-	font-variant: all-small-caps;
+	font-size: 85%;
+	letter-spacing: 0.03em;
+	margin-inline: 2px;
 }
 	
 .note {
