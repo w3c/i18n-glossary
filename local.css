@@ -178,13 +178,14 @@ a.termref:active {
 	}
 	
 .codepoint bdi {
-    font-size: 120%;
+    font-size: 130%;
+    margin-inline: 0.25em;
 }
 
 .uname {
 	font-size: 85%;
 	letter-spacing: 0.03em;
-	margin-inline: 2px;
+	color: teal;
 }
 	
 .note {
