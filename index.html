@@ -40,6 +40,8 @@
           };
     </script>
 <link rel="stylesheet" data-import href="https://w3c.github.io/i18n-drafts/style/respec_2022.css">
+<link rel="stylesheet" data-import href="local.css">
+<link rel="stylesheet" data-import href="local.css">
 <style>
 .letter_anchor {
     font-weight: bold;
@@ -142,15 +144,17 @@ section h2 {
 
 <div class="letter_anchor" id="a">A</div>
 
-<p><dfn class="lint-ignore export">Abjad</dfn>. A writing system in which consonants are indicated, but not short vowels. The term “abjad” is derived from the first four letters of the traditional order of the Arabic script: <i class="name">alef, beh, jeem, dal</i>. (See also the <a href="https://www.unicode.org/glossary/#abjad">Unicode definition</a> and <a href="http://www.unicode.org/versions/latest/ch06.pdf#G7382">Section 6.1, Writing Systems</a>.) Alternatives include [=abugida=], [=alphabet=] and [=syllabary=].</p>
+<p><dfn class="lint-ignore export">Abjad</dfn>. A writing system in which consonants are indicated, but not short vowels. The term “abjad” is derived from the first four letters of the traditional order of the Arabic script: <i class="name">alef, beh, jeem, dal</i>. (See also the <a href="https://www.unicode.org/glossary/#abjad">Unicode definition</a> and <a href="https://www.unicode.org/versions/latest/ch06.pdf#G7382">Section 6.1, Writing Systems</a>.) Alternatives include [=abugida=], [=alphabet=] and [=syllabary=].</p>
 
-<p><dfn class="lint-ignore export">Abugida</dfn>. A writing system in which consonants have an inherent vowel, and  other vowels are indicated by associating the consonant with one or more combining marks and/or letters. The term “abugida” is derived from the first four letters of the Ethiopic script in the Semitic order: <i class="name">alf, bet, gaml, dant</i>. (See also the <a href="https://www.unicode.org/glossary/#abugida">Unicode definition</a> and <a href="http://www.unicode.org/versions/latest/ch06.pdf#G7382">Section 6.1, Writing Systems</a>.) Alternatives include [=abjad=], [=alphabet=] and [=syllabary=].</p>
+<p><dfn class="lint-ignore export">Abugida</dfn>. A writing system in which consonants have an inherent vowel, and  other vowels are indicated by associating the consonant with one or more combining marks and/or letters. The term “abugida” is derived from the first four letters of the Ethiopic script in the Semitic order: <i class="name">alf, bet, gaml, dant</i>. (See also the <a href="https://www.unicode.org/glossary/#abugida">Unicode definition</a> and <a href="https://www.unicode.org/versions/latest/ch06.pdf#G7382">Section 6.1, Writing Systems</a>.) Alternatives include [=abjad=], [=alphabet=] and [=syllabary=].</p>
 
-<p><dfn class="lint-ignore export">Alphabet</dfn>. A writing system in which both consonants and vowels are indicated. The term “alphabet” is derived from the first two letters of the Greek script: <i class="name">alpha, beta</i>. (See also the <a href="https://www.unicode.org/glossary/#alphabet">Unicode definition</a> and <a href="http://www.unicode.org/versions/latest/ch06.pdf#G7382">Section 6.1, Writing Systems</a>.) Alternatives include [=abugida=], [=abjad=] and [=syllabary=].</p>
+<p><dfn class="lint-ignore export">Alphabet</dfn>. A writing system in which both consonants and vowels are indicated. The term “alphabet” is derived from the first two letters of the Greek script: <i class="name">alpha, beta</i>. (See also the <a href="https://www.unicode.org/glossary/#alphabet">Unicode definition</a> and <a href="https://www.unicode.org/versions/latest/ch06.pdf#G7382">Section 6.1, Writing Systems</a>.) Alternatives include [=abugida=], [=abjad=] and [=syllabary=].</p>
 
 <p><dfn data-plurals="application internal identifiers" class="lint-ignore export">Application internal identifiers</dfn>. Identifiers defined by or assigned by a user in a [=vocabulary=] that is internal to the document format or protocol and not intended for human interaction. Such values are generally not [=localizable text=].</p>
 
 <p><dfn data-lt="ASCII case-insensitive" class="lint-ignore export">ASCII case-insensitive matching</dfn>. <a href="https://infra.spec.whatwg.org/#ascii-case-insensitive">Defined in INFRA</a>, this compares two sequences of code points as if all ASCII code points in the range 0x41 to 0x5A (A to Z) were mapped to the corresponding code points in the range 0x61 to 0x7A (a to z), but other code points are not  [=case-folded=]. ASCII case-insensitive matching can be required when a [=vocabulary=] is itself constrained to ASCII.</p>
+
+<a href="#links"><abbr title="Back to Alphabetical links">&#x2191;</abbr></a>
 <div class="letter_anchor" id="b">B</div>
 
 <p><dfn class="lint-ignore export">Base direction</dfn>. Determines the general arrangement and progression of content when [=bidirectional text=] is displayed. The [=Unicode Bidirectional Algorithm=] is primarily focused on arranging adjacent characters, based on character properties. Base direction works at a higher level, and dictates (a) the visual order and direction in which runs of strongly-typed LTR and RTL character are displayed, and (b) where there are weakly-typed characters such as punctuation, the placement of those items relative to the other content.</p>
@@ -164,13 +168,13 @@ section h2 {
 
 <p><dfn data-lt="basic language range|Basic language range" class="lint-ignore export">Basic language range</dfn>. A [=language range=] consisting of a sequence of subtags separated by hyphens. That is, it is identical in appearance to a language tag.</p>
 
-<p><dfn class="lint-ignore export" data-lt="bidi isolate">Bidirectional isolate</dfn>. Defined by the [=Unicode Bidirectional Algorithm=] [[UAX9]], an <em>isolate</em> is a range of text whose contents do not participate in the embedding and reordering of the surrounding text the range appears in, which prevents the bidi algorithm from incorrectly ordering that content in relation to the surrounding text.</p>
+<p><dfn class="lint-ignore export" data-lt="bidi isolate">Bidirectional isolate</dfn>. A range of text, bounded by formatting characters or markup, that is treated by the [=Unicode Bidirectional Algorithm=] [[UAX9]] as directionally isolated from its surroundings. The entire range of text inside the isolate is treated by the surrounding text as if it were a single neutral character (such as <span class="codepoint" translate="no"><bdi lang="en">&#xFFFC;</bdi> <span class="uname">U+FFFC OBJECT REPLACEMENT CHARACTER</span>)</span>, and is assigned the corresponding display position in the surrounding text. Furthermore, the text inside the isolate has no effect on the ordering of the text outside it, and vice versa.</p>
 
-<p><dfn class="lint-ignore export">Bidi isolation</dfn>. The use of [=bidi isolates=] in text in order to prevent the automatic rules of the Unicode Bidirectional Algorithm incorrectly ordering that content in relation to the surrounding text. For example, numbers following right-to-left text in memory are automatically positioned to the left of that text by the Bidi Algorithm, but sometimes need to appear to the right. Another example occurs when lists of RTL items occur in a LTR sentence: the Bidi Algorithm will automatically assume that the order of items in the list should be "3 ,2 ,1", but actually what's needed is "1, 2, 3". In HTML, bidi isolation can be applied to a range of text by enclosing it in an element with a <code class="kw" translate="no">dir</code> attribute. In plain text there are Unicode formatting characters that can do the job. These mechanisms remove unwanted [=spillover effects=].</p>
-
-
+<p><dfn class="lint-ignore export">Bidi isolation</dfn>. The use of [=bidi isolates=] in text in order to prevent the automatic rules of the Unicode Bidirectional Algorithm incorrectly ordering that content in relation to the surrounding text. For example, numbers following right-to-left text in memory are automatically positioned to the left of [=RTL=] text by the Bidi Algorithm, but sometimes need to appear to the right. Another example occurs when a list of RTL items occurs in a LTR sentence (and vice versa): the Bidi Algorithm will automatically assume that the order of items in the list should be "3 ,2 ,1", but actually what's needed is "1, 2, 3". In HTML, bidi isolation can be applied to a range of text by enclosing it in an element with a <code class="kw" translate="no">dir</code> attribute. In plain text there are Unicode formatting characters that can do the job. These mechanisms remove unwanted [=spillover effects=].</p>
 
 
+
+<a href="#links"><abbr title="Back to Alphabetical links">&#x2191;</abbr></a>
 
 <div class="letter_anchor" id="c">C</div>
 
@@ -186,7 +190,7 @@ section h2 {
 
 <p><dfn class="lint-ignore export">Character set</dfn> or <span class="alt_name">repertoire</span>. The set of characters one might use for a particular purpose – be it those required to support Western European languages in computers, or those a Chinese child will learn at school in the third grade (nothing to do with computers).</p>
 
-<p><dfn class="lint-ignore export">Circumgraph</dfn>. A single vowel code point that produces glyphs on more than one side of its consonant base. For example, in the Odia syllable <img src="img/circumgraph.svg" alt="କୋ" style="height:1.2rem;">, /ka/, the character <span class="codepoint" translate="no"><bdi lang="or">&#x0B4B;</bdi> [<span class="uname">U+0B4B ORIYA VOWEL SIGN O</span>]</span> produces separate glyphs on either side of the base consonant.</p>
+<p><dfn class="lint-ignore export">Circumgraph</dfn>. A single vowel code point that produces glyphs on more than one side of its consonant base. For example, in the Odia syllable <img src="img/circumgraph.svg" alt="କୋ" style="height:1.2rem;" height="20rem" width="34.8rem">, /ka/, the character <span class="codepoint" translate="no"><bdi lang="or">&#x0B4B;</bdi><span class="uname">U+0B4B ORIYA VOWEL SIGN O</span></span> produces separate glyphs on either side of the base consonant.</p>
 
 <p><dfn class="lint-ignore">CJK</dfn>. An abbreviation for Chinese, Japanese, and Korean. Sometimes CJKV is used to include the Han characters used in Vietnamese.</p>
 
@@ -222,7 +226,7 @@ section h2 {
 
 
 
-
+<a href="#links"><abbr title="Back to Alphabetical links">&#x2191;</abbr></a>
 
 <div class="letter_anchor" id="d">D</div>
 
@@ -230,14 +234,14 @@ section h2 {
 
 <p><dfn class="lint-ignore export">Decomposed</dfn>. Decomposed text is usually the result of applying [=Unicode normalization form D=] (NFD), which splits Unicode characters into component parts, typically a base character plus one or more diacritics. However, a decomposed sequence of code points may also be intentionally (or unintentionally) used by a content author where a [=precomposed=] alternative exists.</p>
 
-<p><dfn class="lint-ignore export">Dependent vowel</dfn>. <code class="kw" translate="no">Vowel_dependent</code> is one of the categories in the <code class="kw" translate="no">Indic_Syllabic_Category</code> property set (<a href="https://util.unicode.org/UnicodeJsps/list-unicodeset.jsp?a=[:Indic_Syllabic_Category=Vowel_Dependent:]">see a list</a>). The Unicode Standard definition <a href="https://www.unicode.org/glossary/#dependent_vowel">says</a>: <q cite="https://www.unicode.org/glossary/#dependent_vowel">A symbol or sign that represents a vowel and that is attached or combined with another symbol, usually one that represents a consonant.</q>  Dependent vowels are usually combining marks, but may also be letters (eg. in Thai, or New Tai Lue, which has no combining characters).</p>
+<p><dfn class="lint-ignore export">Dependent vowel</dfn>. <code class="kw" translate="no">Vowel_dependent</code> is one of the categories in the <code class="kw" translate="no">Indic_Syllabic_Category</code> property set (<a href="https://util.unicode.org/UnicodeJsps/list-unicodeset.jsp?a=%5B%3AIndic_Syllabic_Category=Vowel_Dependent%3A%5D">see a list</a>). The Unicode Standard definition <a href="https://www.unicode.org/glossary/#dependent_vowel">says</a>: <q cite="https://www.unicode.org/glossary/#dependent_vowel">A symbol or sign that represents a vowel and that is attached or combined with another symbol, usually one that represents a consonant.</q>  Dependent vowels are usually combining marks, but may also be letters (eg. in Thai, or New Tai Lue, which has no combining characters).</p>
 
 <p><dfn class="lint-ignore export">Document character set</dfn>. The character set used for processing a document, regardless of what character encoding was used to store it. For XML and HTML (from version 4.0), this is always Unicode. This means that browsers convert all text to Unicode internally and the logical model describing how XML or HTML are processed is described in terms of the set of characters defined by Unicode.</p>
 
 
 
 
-
+<a href="#links"><abbr title="Back to Alphabetical links">&#x2191;</abbr></a>
 
 <div class="letter_anchor" id="e">E</div>
 
@@ -249,7 +253,7 @@ section h2 {
 
 
 
-
+<a href="#links"><abbr title="Back to Alphabetical links">&#x2191;</abbr></a>
 
 <div class="letter_anchor" id="f">F</div>
 
@@ -265,7 +269,7 @@ section h2 {
 
 
 
-
+<a href="#links"><abbr title="Back to Alphabetical links">&#x2191;</abbr></a>
 
 <div class="letter_anchor" id="g">G</div>
 
@@ -275,13 +279,13 @@ section h2 {
 
 <p><dfn class="lint-ignore export">Grapheme</dfn>. A character or a sequence of characters in a visual representation of some text that a typical user would perceive as being a single unit (<q>character</q>). Graphemes are important for a number of text operations such as sorting or text selection, so it is necessary to be able to compute the boundaries between each user-perceived character. For more information about graphemes and grapheme clusters, with examples, see <a href="https://www.w3.org/International/articles/definitions-characters/index#characters">Character encodings: Essential concepts</a>.</p>
           
-<p><dfn class="lint-ignore export">Grapheme cluster</dfn>. A grapheme cluster is defined by the Unicode Standard as the default mechanism for computing an approximation to [=graphemes=] (see <cite>Unicode Standard Annex #29: Text Segmentation</cite> [[UAX29]]). Two types of default grapheme cluster are defined. Unless otherwise noted, <q>grapheme cluster</q> in this document refers to an <q>extended default grapheme cluster</q>. (A discussion of grapheme clusters is also given in Section 2 of the <cite>Unicode Standard</cite>, [[Unicode]]. Cf. near the end of <a href="http://www.unicode.org/versions/latest/ch02.pdf">Section 2.11</a> in version 14.0 of The Unicode Standard.) Because different natural languages have different needs, grapheme clusters can also sometimes require tailoring. For example, a Slovak user might wish to treat the default pair of grapheme clusters "ch" as a single grapheme cluster. Note that the interaction between the language of string content and the end-user's preferences might be complex.</p>
+<p><dfn class="lint-ignore export">Grapheme cluster</dfn>. A grapheme cluster is defined by the Unicode Standard as the default mechanism for computing an approximation to [=graphemes=] (see <cite>Unicode Standard Annex #29: Text Segmentation</cite> [[UAX29]]). Two types of default grapheme cluster are defined. Unless otherwise noted, <q>grapheme cluster</q> in this document refers to an <q>extended default grapheme cluster</q>. (A discussion of grapheme clusters is also given in Section 2 of the <cite>Unicode Standard</cite>, [[Unicode]]. Cf. near the end of <a href="https://www.unicode.org/versions/latest/ch02.pdf">Section 2.11</a> in version 14.0 of The Unicode Standard.) Because different natural languages have different needs, grapheme clusters can also sometimes require tailoring. For example, a Slovak user might wish to treat the default pair of grapheme clusters "ch" as a single grapheme cluster. Note that the interaction between the language of string content and the end-user's preferences might be complex.</p>
 
 <p><dfn class="lint-ignore export">Gregorian calendar</dfn>. The  most widely used way of representing civil time. It is a solar calendar, with years usually consisting of 365 days, plus the concept of a "leap year". This adds an additional day every 4 years, except when the year is evenly divisible by 100 (unless the year is also evenly divisible by 400). There are numerous other calendars in use around the world, some of which are lunar calendars, some that are based on a different start date than the Gregorian calendar, and some that are reset each time a prominent person dies. Often these calendars are still used for religious purposes, but sometimes you will also find them being used in newspapers and emails, or for birth dates. There are technologies, such as ICU or Dojo, that support conversion between different calendaring systems.</p>
 
 
 
-
+<a href="#links"><abbr title="Back to Alphabetical links">&#x2191;</abbr></a>
 
 <div class="letter_anchor" id="h">H</div>
 
@@ -289,15 +293,15 @@ section h2 {
 
 
 
-
+<a href="#links"><abbr title="Back to Alphabetical links">&#x2191;</abbr></a>
 
 <div class="letter_anchor" id="i">I</div>
 
 <p><dfn class="lint-ignore export">Ideograph</dfn>. <a href="https://www.unicode.org/glossary/#ideograph">Unicode definition</a>: <q>(1) Any symbol that primarily denotes an idea or concept in contrast to a sound or pronunciation – for example, ♻, which denotes the concept of recycling by a series of bent arrows. (2) A generic term for the unit of writing of a logosyllabic writing system. In this sense, ideograph (or ideogram) is not systematically distinguished from logograph (or logogram). (3) A term commonly used to refer specifically to Han characters, equivalent to the Chinese, Japanese, or Korean terms also sometimes used: hànzì, kanji, or hanja.</q></p>
 
 <p><dfn class="lint-ignore export">Ijam</dfn>. A diacritic in the Arabic script  that is considered to be an integral part of a basic letter form, such as the dots in
-<span class="codepoint" translate="no"><bdi lang="ar" dir="rtl">&#x062B;</bdi> [<span class="uname">U+062B ARABIC LETTER THEH</span>]</span>,
-pronounced <span class="ipa">θ</span>. <strong>Unicode encodes letter+ijam combinations as  atomic characters which are never given equivalent decompositions in the standard</strong>. Ijam generally take the form of one-, two-, three- or four-dot markings above or below the basic letter skeleton, although other diacritic forms occur, especially in extensions of the Arabic script in Central and South Asia and in Africa. For example, <span class="pre"><span class="codepoint" translate="no"><bdi lang="ar" dir="rtl">&#x06C8;</bdi> [<span class="uname">U+06C8 ARABIC LETTER YU</span>]</span></span> shows a letter with  ijam that represents the vowel <span class="ipa">y</span> in the Uighur orthography. See <a href="https://www.unicode.org/versions/Unicode13.0.0/ch09.pdf">Chapter 9</a> of the Unicode Standard. See also: [=tashkil=].</p>
+<span class="codepoint" translate="no"><bdi lang="ar" dir="rtl">&#x062B;</bdi><span class="uname">U+062B ARABIC LETTER THEH</span></span>,
+pronounced <span class="ipa">θ</span>. <strong>Unicode encodes letter+ijam combinations as  atomic characters which are never given equivalent decompositions in the standard</strong>. Ijam generally take the form of one-, two-, three- or four-dot markings above or below the basic letter skeleton, although other diacritic forms occur, especially in extensions of the Arabic script in Central and South Asia and in Africa. For example, <span class="pre"><span class="codepoint" translate="no"><bdi lang="ar" dir="rtl">&#x06C8;</bdi><span class="uname">U+06C8 ARABIC LETTER YU</span></span></span> shows a letter with  ijam that represents the vowel <span class="ipa">y</span> in the Uighur orthography. See <a href="https://www.unicode.org/versions/Unicode13.0.0/ch09.pdf">Chapter 9</a> of the Unicode Standard. See also: [=tashkil=].</p>
 
 <p><dfn class="lint-ignore export">Incremental time</dfn>. A way of representing time in computers that is based on a  progression of fixed integer units that increase monotonically from a specific point in time (called the "epoch").  Java (and many other systems) count time as the number of milliseconds since midnight (00:00 a.m.) on January 1, 1970 in <a href="#def_utc" class="termref">UTC</a> (less all of the intervening leap seconds). Other systems use different units and/or epochs. For example,  the incremental time for 11 June, 2016 at 6.10am BST in JavaScript is <samp>1465621816590</samp>. Most programming languages and operating environments provide or use incremental time for working with time values. However, incremental time is not usually seen directly by users, but is typically mapped to a [=field-based time format=] for interchange or  for human consumption.</p>
 
@@ -313,7 +317,7 @@ pronounced <span class="ipa">θ</span>. <strong>Unicode encodes letter+ijam comb
 
 
 
-
+<a href="#links"><abbr title="Back to Alphabetical links">&#x2191;</abbr></a>
 
 <div class="letter_anchor" id="l">L</div>
 
@@ -354,7 +358,7 @@ pronounced <span class="ipa">θ</span>. <strong>Unicode encodes letter+ijam comb
 <p><dfn class="lint-ignore export" data-lt="left-to-right">LTR</dfn>. Stands for "left-to-right" and refers to the inline base direction of left-to-right [[UAX9]]. This is the base text direction used by languages whose starting character progression begins on the left side of the page in horizontal text. It's used for scripts such as Latin, Cyrillic, Devanagari, and many others.</p>
 
 
-
+<a href="#links"><abbr title="Back to Alphabetical links">&#x2191;</abbr></a>
 
 <div class="letter_anchor" id="m">M</div>
 
@@ -363,7 +367,7 @@ pronounced <span class="ipa">θ</span>. <strong>Unicode encodes letter+ijam comb
 <p><dfn class="lint-ignore export">Mojibake</dfn> (<span lang="ja">文字化け</span>). Garbled or incorrectly rendered or processed characters, generally caused by using the wrong <a>character encoding</a> to interpret the bytes in a string or file. The word is Japanese in origin and is pronounced <q>/mo.d&#x0361;&#x0292;i.ba.ke/</q>. For example, the word <q><span lang="ja">&#x6587;&#x5B57;&#x5316;&#x3051;</span></q> encoded as UTF-8 might be displayed as <q>&#x00e6;&#x0096;&#x0087;&#x00e5;&#x00ad;&#x0097;&#x00e5;&#x008c;&#x0096;&#x00e3;&#x0091;</q> if viewed in an application that thinks (incorrectly) that the character encoding is <code>ISO-8859-1</code>.</p>
 
 
-
+<a href="#links"><abbr title="Back to Alphabetical links">&#x2191;</abbr></a>
 
 <div class="letter_anchor" id="n">N</div>
 	
@@ -375,25 +379,25 @@ pronounced <span class="ipa">θ</span>. <strong>Unicode encodes letter+ijam comb
 
 <p><dfn class="lint-ignore export" data-lt="unicode normalization form c|nfc">Normalization Form C</dfn> (<strong>NFC</strong>). <a href="https://www.unicode.org/glossary/#normalization_form_c">Unicode definition</a>: <q cite="https://www.unicode.org/glossary/#normalization_form_c">A normalization form that erases any canonical differences, and generally produces a <strong>composed</strong> result. For example, a + umlaut is 
 converted to ä in this form. This form most closely matches legacy 
-usage. The formal definition is D120 in <a href="http://www.unicode.org/versions/latest/ch03.pdf#G49537">
+usage. The formal definition is D120 in <a href="https://www.unicode.org/versions/latest/ch03.pdf#G49537">
 Section 3.11, Normalization Forms</a>.</q> See also [=normalization=].</p>
 
-<p><dfn class="lint-ignore export" data-lt="unicode normalization form d|nfd">Normalization Form D</dfn> (<strong>NFD</strong>). <a href="https://www.unicode.org/glossary/#normalization_form_c">Unicode definition</a>: <q cite="https://www.unicode.org/glossary/#normalization_form_d">A normalization form that erases any canonical differences, and produces a <strong>decomposed</strong> result. For example, ä is converted to a + umlaut in this form. This form is most often used in internal processing, such as in collation. The formal definition is D118 in <a href="http://www.unicode.org/versions/latest/ch03.pdf#G49537"> Section 3.11, Normalization Forms</a>.</q> See also [=normalization=].</p>
+<p><dfn class="lint-ignore export" data-lt="unicode normalization form d|nfd">Normalization Form D</dfn> (<strong>NFD</strong>). <a href="https://www.unicode.org/glossary/#normalization_form_c">Unicode definition</a>: <q cite="https://www.unicode.org/glossary/#normalization_form_d">A normalization form that erases any canonical differences, and produces a <strong>decomposed</strong> result. For example, ä is converted to a + umlaut in this form. This form is most often used in internal processing, such as in collation. The formal definition is D118 in <a href="https://www.unicode.org/versions/latest/ch03.pdf#G49537"> Section 3.11, Normalization Forms</a>.</q> See also [=normalization=].</p>
 
 
-
+<a href="#links"><abbr title="Back to Alphabetical links">&#x2191;</abbr></a>
 
 <div class="letter_anchor" id="o">O</div>
 <p><dfn class="lint-ignore export">Othographic syllable</dfn> A [=typographic character unit=] that includes more than one [=grapheme cluster=]. These are most commonly found in Brahmi-derived scripts, such as Devanagari, or Balinese, when forming conjuncts or stacks. This term is used but not defined in the Unicode Standard: it is defined here for use by W3C documents, such as layout requirements.</p>
 
 
-
+<a href="#links"><abbr title="Back to Alphabetical links">&#x2191;</abbr></a>
 
 <div class="letter_anchor" id="p">P</div>
 
-<p><dfn class="lint-ignore export">Paragraph direction</dfn>. The initial <a>base direction</a> of  a paragraph or string, which resolves to either <em>left-to-right</em> or <em>right-to-left</em>. Nested embedding controls may be used to change the direction of an inline range of text, but the paragraph direction sets the starting point which the <a>Unicode Bidirectional Algorithm</a> uses  to calculate the directions of the embedded levels. For more details, see <a href="http://www.unicode.org/reports/tr9/">Unicode Standard Annex #9, Unicode Bidirectional Algorithm</a> [[UAX9]], especially definitions BD2–BD5.<br><span class="see-also">See also the definition in the <a href="https://www.unicode.org/glossary/#paragraph_direction">Unicode Standard</a>.</span></p>
+<p><dfn class="lint-ignore export">Paragraph direction</dfn>. The initial <a>base direction</a> of  a paragraph or string, which resolves to either <em>left-to-right</em> or <em>right-to-left</em>. Nested embedding controls may be used to change the direction of an inline range of text, but the paragraph direction sets the starting point which the <a>Unicode Bidirectional Algorithm</a> uses  to calculate the directions of the embedded levels. For more details, see <a href="https://www.unicode.org/reports/tr9/">Unicode Standard Annex #9, Unicode Bidirectional Algorithm</a> [[UAX9]], especially definitions BD2–BD5.<br><span class="see-also">See also the definition in the <a href="https://www.unicode.org/glossary/#paragraph_direction">Unicode Standard</a>.</span></p>
 
-<p><dfn class="lint-ignore export" data-lt="percent encoding|%HH encoding|percent encoded">Percent-encoding</dfn>. Percent encoding is the escaping mechanism defined by URI [[RFC3986]] for the encoding of arbitrary byte values not otherwise permitted into a URI. For example, if a user wishes to include the character <span class="codepoint" translate="no"><bdi lang="und">&#x2F;</bdi> [<span class="uname">U+002F SOLIDUS</span>]</span> in a URI, the byte <code>0x2F</code> is encoded as the character sequence <code>%2F</code>. If the user wishes to include the character <span class="codepoint" translate="no"><bdi lang="en">&#x00E9;</bdi> [<span class="uname">U+00E9 LATIN SMALL LETTER E WITH ACUTE</span>]</span> in a URI, the UTF-8 byte sequence for this character (<code>0xC3 0xA9</code>) could be encoded as the sequence <code>%C3%A9</code>.</p>
+<p><dfn class="lint-ignore export" data-lt="percent encoding|%HH encoding|percent encoded">Percent-encoding</dfn>. Percent encoding is the escaping mechanism defined by URI [[RFC3986]] for the encoding of arbitrary byte values not otherwise permitted into a URI. For example, if a user wishes to include the character <span class="codepoint" translate="no"><bdi lang="und">&#x2F;</bdi><span class="uname">U+002F SOLIDUS</span></span> in a URI, the byte <code>0x2F</code> is encoded as the character sequence <code>%2F</code>. If the user wishes to include the character <span class="codepoint" translate="no"><bdi lang="en">&#x00E9;</bdi><span class="uname">U+00E9 LATIN SMALL LETTER E WITH ACUTE</span></span> in a URI, the UTF-8 byte sequence for this character (<code>0xC3 0xA9</code>) could be encoded as the sequence <code>%C3%A9</code>.</p>
 
 <p><dfn data-lt="pre-base" class="lint-ignore export">Pre-base vowel</dfn>. A pre-base (or prescript) vowel glyph is displayed before the consonant or orthographic syllable after which it is pronounced. If the vowel character is a combining mark, it is still typed and stored in pronunciation order, and the application will render it in the correct location. In some scripts, such as Thai, a pre-base vowel glyph is represented by a normal letter, which is typed and stored in the correct position relative to the base.</p>
 
@@ -402,7 +406,7 @@ Section 3.11, Normalization Forms</a>.</q> See also [=normalization=].</p>
 <p><dfn class="lint-ignore export">Producer</dfn>. When talking about strings on the Web, the W3C Internationalization group refers to a producer as any process where natural language string data is created for later storage, processing, or interchange.</p>
 
 
-
+<a href="#links"><abbr title="Back to Alphabetical links">&#x2191;</abbr></a>
 
 <div class="letter_anchor" id="r">R</div>
 
@@ -415,7 +419,7 @@ Section 3.11, Normalization Forms</a>.</q> See also [=normalization=].</p>
 <p><dfn class="lint-ignore export">Ruby</dfn>. A name for small (usually phonetic) annotations that are rendered alongside text. 'Ruby' is a British and Japanese printing term (often also called <i class="name">furigana</i> in Japan). Similar annotations are also used for Chinese, and sometimes Mongolian, and Korean.</p>
 
 
-
+<a href="#links"><abbr title="Back to Alphabetical links">&#x2191;</abbr></a>
 
 <div class="letter_anchor" id="s">S</div>
 
@@ -444,12 +448,12 @@ Section 3.11, Normalization Forms</a>.</q> See also [=normalization=].</p>
 <p><dfn class="lint-ignore export">Syntactic content</dfn>. Any text in a document format or protocol that belongs to the structure of the format or protocol. This definition includes values that are typically thought of as "markup" but can also include other values, such as the name of a field in an HTTP header. Syntactic content consists of all of the characters that form the <em>structure</em> of a format or protocol. For example, <span class="qchar">&lt;</span> and <span class="qchar">&gt;</span> (as well as the element name and various attributes they surround) are part of the syntactic content in an HTML document. Syntactic content usually is defined by a specification or specifications and includes both the defined, reserved keywords for the given protocol or format as well as string tokens and identifiers that are defined by document authors to form the structure of the document (rather than the "content" of the document).  See also [=localizable text=] and [=natural language=].</p>
 
 
-
+<a href="#links"><abbr title="Back to Alphabetical links">&#x2191;</abbr></a>
 
 <div class="letter_anchor" id="t">T</div>
 
-<p><dfn class="lint-ignore export">Tashkil</dfn>. An Arabic script mark that indicates vocalization of text or other types of phonetic guide which indicate pronunciation, such as in <span class="codepoint" translate="no"><bdi lang="ar" dir="rtl">&#x062B;&#x064E;</bdi> [<span class="uname">U+062B ARABIC LETTER THEH</span> + <span class="uname">U+064E ARABIC FATHA</span>]</span>,
-pronounced <span class="ipa">θa</span>. These include several subtypes: <span class="name">harakat</span> (short vowel marks), <span class="name">tanwin</span> (postnasalized or long vowel marks), <span class="name">shaddah</span> (consonant gemination mark), and <span class="name">sukun</span> (to mark lack of a following vowel). <strong>A basic Arabic letter plus any of these types of marks is never encoded as an atomic, precomposed character, but must always be represented as a sequence of letter plus separate combining mark.</strong> For example, <span class="codepoint" translate="no"><bdi lang="ar" dir="rtl">&#x0647;&#x0670;</bdi> [<span class="uname">U+0647 ARABIC LETTER HEH</span> + <span class="uname">U+0670 ARABIC LETTER SUPERSCRIPT ALEF</span>]</span> pronounced <span class="ipa">ha</span>, is an example of a letter plus tashkil combination in Arabic (cf. the use of that diacritic in a precomposed Uighur letter).  See <a href="https://www.unicode.org/versions/Unicode13.0.0/ch09.pdf">Chapter 9</a> of the Unicode Standard. See also [=ijam=].</p>
+<p><dfn class="lint-ignore export">Tashkil</dfn>. An Arabic script mark that indicates vocalization of text or other types of phonetic guide which indicate pronunciation, such as in <span class="codepoint" translate="no"><bdi lang="ar" dir="rtl">&#x062B;&#x064E;</bdi><span class="uname">U+062B ARABIC LETTER THEH</span> + <span class="uname">U+064E ARABIC FATHA</span></span>,
+pronounced <span class="ipa">θa</span>. These include several subtypes: <span class="name">harakat</span> (short vowel marks), <span class="name">tanwin</span> (postnasalized or long vowel marks), <span class="name">shaddah</span> (consonant gemination mark), and <span class="name">sukun</span> (to mark lack of a following vowel). <strong>A basic Arabic letter plus any of these types of marks is never encoded as an atomic, precomposed character, but must always be represented as a sequence of letter plus separate combining mark.</strong> For example, <span class="codepoint" translate="no"><bdi lang="ar" dir="rtl">&#x0647;&#x0670;</bdi><span class="uname">U+0647 ARABIC LETTER HEH</span> + <span class="uname">U+0670 ARABIC LETTER SUPERSCRIPT ALEF</span></span> pronounced <span class="ipa">ha</span>, is an example of a letter plus tashkil combination in Arabic (cf. the use of that diacritic in a precomposed Uighur letter).  See <a href="https://www.unicode.org/versions/Unicode13.0.0/ch09.pdf">Chapter 9</a> of the Unicode Standard. See also [=ijam=].</p>
 
 <p><dfn data-lt="text processing language" class="lint-ignore export">Text-processing language</dfn>. The language in which a specific range of text is actually written. This needs to be declared so that user agents or applications that manipulate the text, such as voice browsers, spell checkers,  style processors, hyphenators, etc., can apply the appropriate rules to the text in question. So we are, by necessity, talking about associating a <em>single</em> language with a <em>specific</em> range of text. Contrast this with [=language metadata=].</p>
 
@@ -459,25 +463,25 @@ pronounced <span class="ipa">θa</span>. These include several subtypes: <span c
 
 <p><dfn class="lint-ignore export">Transcoder</dfn>. A process that converts 
 text between two character encodings. Most commonly in W3C internationalization documents it 
-refers to a process that converts from a [=legacy character encoding=] to a <a href="http://www.w3.org/TR/2005/REC-charmod-20050215/#Unicode_Encoding_Form">Unicode encoding form</a>, such as UTF-8.</p>
+refers to a process that converts from a [=legacy character encoding=] to a <a href="https://www.w3.org/TR/2005/REC-charmod-20050215/#Unicode_Encoding_Form">Unicode encoding form</a>, such as UTF-8.</p>
 
 <p><dfn class="lint-ignore export">Transcription</dfn>. A <em>transcription</em> is  likely to be more phonetically accurate than a [=transliteration=] (though usually still only reflects an approximation to the actual sound), but, in particular, it does not usually allow completely reversible conversions.</p>
 
 <p><dfn class="lint-ignore export">Transliteration</dfn>. In a <em>transliteration</em> each native character is associated with an equivalent and unique Latin-script character. The transliteration may not accurately represent pronunciation, but does allow straightforward and reversible conversion between the two scripts. Compare with [=transcription=].</p>
 
-<p><dfn class="lint-ignore">Typographic character unit</dfn>. <a href="https://www.w3.org/TR/css-text-4/#typographic-character-unit">CSS definition</a>: <q>the basic unit of text. Even within the realm of text layout, the relevant character unit depends on the operation. For example, line-breaking and letter-spacing will segment a sequence of Thai characters that include U+0E33  ำ THAI CHARACTER SARA AM differently; or the behavior of a conjunct consonant in a script such as Devanagari may depend on the font in use. So the typographic character represents a unit of the writing system—such as a Latin alphabetic letter (including its diacritics), Hangul syllable, Chinese ideographic character, Myanmar syllable cluster—that is indivisible with respect to a particular typographic operation (line-breaking, first-letter effects, tracking, justification, vertical arrangement, etc.).</q>
+<p><dfn class="lint-ignore">Typographic character unit</dfn>. <a href="https://www.w3.org/TR/css-text-4/#typographic-character-unit">CSS definition</a>: <q>the basic unit of text. Even within the realm of text layout, the relevant character unit depends on the operation. For example, line-breaking and letter-spacing will segment a sequence of Thai characters that include <span class="codepoint"><bdi lang="th">  ำ</bdi><span class="uname">U+0E33 THAI CHARACTER SARA AM</span></span> differently; or the behavior of a conjunct consonant in a script such as Devanagari may depend on the font in use. So the typographic character represents a unit of the writing system—such as a Latin alphabetic letter (including its diacritics), Hangul syllable, Chinese ideographic character, Myanmar syllable cluster—that is indivisible with respect to a particular typographic operation (line-breaking, first-letter effects, tracking, justification, vertical arrangement, etc.).</q>
 
 <p><dfn class="lint-ignore">Typographic letter unit</dfn>. <a href="https://www.w3.org/TR/css-text-4/#typographic-letter-unit">CSS definition</a>: <q>a [=typographic character unit=] belonging to one of the Letter or Number [=general categories=].</q>
 </p>
 
 
-
+<a href="#links"><abbr title="Back to Alphabetical links">&#x2191;</abbr></a>
 
 <div class="letter_anchor" id="u">U</div>
 
-<p><dfn data-lt="unicode bidi algorithm|bidi algorithm|UBA" class="lint-ignore export">Unicode Bidirectional Algorithm</dfn> or <em>Bidi algorithm</em>. The name for the rules described in the <a href="http://www.unicode.org/reports/tr9/">Unicode Standard Annex #9, “Unicode Bidirectional Algorithm</a> [[UAX9]].  Those rules describe how inline [=bidirectional text=] should be rendered for scripts such as Arabic, Hebrew, Thaana, N'Ko, Adlam, etc. The effects of the bidi algorithm depend on the  [=base direction=] and the directional properties of the characters to which it is applied.</p>
+<p><dfn data-lt="unicode bidi algorithm|bidi algorithm|UBA" class="lint-ignore export">Unicode Bidirectional Algorithm</dfn> or <em>Bidi algorithm</em>. The name for the rules described in the <a href="https://www.unicode.org/reports/tr9/">Unicode Standard Annex #9, “Unicode Bidirectional Algorithm</a> [[UAX9]].  Those rules describe how inline [=bidirectional text=] should be rendered for scripts such as Arabic, Hebrew, Thaana, N'Ko, Adlam, etc. The effects of the bidi algorithm depend on the  [=base direction=] and the directional properties of the characters to which it is applied.</p>
 
-<p><dfn class="lint-ignore export">Unicode code point</dfn>. The numeric value assigned to each Unicode character. Unicode code points range from <code class="kw" translate="no">0</code> to <code class="kw" translate="no">0x10FFFF</code>. (See Section 4.1 in [[CHARMOD]] for a deeper discussion of character encoding terminology.) Unicode code points are denoted as <code class="kw" translate="no">U+<em>hhhh</em></code>, where <code class="kw" translate="no"><em>hhhh</em></code> is a sequence of at least four, and at most six hexadecimal digits. For example, the character <span class="codepoint"><span lang="en">€</span> [<span class="uname">U+20AC EURO SIGN</span>]</span> has the code point <span class="uname" translate="no">U+20AC</span>, while the character <span class="codepoint">😺</span> [<span class="uname">U+1F63A SMILING CAT FACE WITH OPEN MOUTH</span>] has the code point <span class="uname" translate="no">U+1F63A</span>.</p>
+<p><dfn class="lint-ignore export">Unicode code point</dfn>. The numeric value assigned to each Unicode character. Unicode code points range from <code class="kw" translate="no">0</code> to <code class="kw" translate="no">0x10FFFF</code>. (See Section 4.1 in [[CHARMOD]] for a deeper discussion of character encoding terminology.) Unicode code points are denoted as <code class="kw" translate="no">U+<em>hhhh</em></code>, where <code class="kw" translate="no"><em>hhhh</em></code> is a sequence of at least four, and at most six hexadecimal digits. For example, the character <span class="codepoint"><bdi lang="en">€</bdi><span class="uname">U+20AC EURO SIGN</span></span> has the code point <span class="uname" translate="no">U+20AC</span>, while the character <span class="codepoint"><bdi lang="en">😺</bdi><span class="uname">U+1F63A SMILING CAT FACE WITH OPEN MOUTH</span></span> has the code point <span class="uname" translate="no">U+1F63A</span>.</p>
 
 <p><dfn data-lt="unicode locale" class="lint-ignore export">Unicode Locale Identifier</dfn> or <em>Unicode Locale</em>. A [=language tag=] that follows the additional rules and restrictions on subtag choice defined in UTR#35 [[UAX35]]. Any valid Unicode locale identifier is also a [=valid=] [[BCP47]] [=language tag=], but a few [=valid language tags=] are not also valid Unicode locale identifiers.</p>
 
@@ -492,11 +496,11 @@ The time zone offset for UTC is 0. UTC is often indicated in [=field-based forma
 
 <p><span class="alt_name">User-perceived character</span>. See [=grapheme=].</p>
 
-<p><dfn  class="lint-ignore export">User-supplied value</dfn>. Unreserved [=syntactic content=] in a [=vocabulary=] that is assigned by users, as distinct from reserved keywords in a given format or protocol. Users generally expect that their user-supplied values can be words or phrases in their preferred [=natural language=]. This is why [[CHARMOD]] recommends that "Specifications <em class="rfc2119">SHOULD NOT</em> arbitrarily exclude code points from the full range of Unicode code points from <code>U+0000</code> to <code>U+10FFFF</code> inclusive." <!-- [[CHARMOD-NORM]] gives <a href="https://w3c.github.io/charmod-norm/#dfn-user-supplied-value">some examples</a>.  ADD THIS BACK ONCE CHARMOD-NORM IS UPDATED WITH THESE DEFINITIONS --></p>
+<p><dfn  class="lint-ignore export">User-supplied value</dfn>. Unreserved [=syntactic content=] in a [=vocabulary=] that is assigned by users, as distinct from reserved keywords in a given format or protocol. Users generally expect that their user-supplied values can be words or phrases in their preferred [=natural language=]. This is why [[CHARMOD]] recommends that "Specifications <em class="rfc2119">SHOULD NOT</em> arbitrarily exclude code points from the full range of Unicode code points from <span class="uname">U+0000</span> to <span class="uname">U+10FFFF</span> inclusive." [[CHARMOD-NORM]] gives <a href="https://www.w3.org/TR/charmod-norm/#dfn-user-supplied-value">some examples</a>. </p>
 
 
 
-
+<a href="#links"><abbr title="Back to Alphabetical links">&#x2191;</abbr></a>
 
 <div class="letter_anchor" id="v">V</div>
 
@@ -509,7 +513,7 @@ The time zone offset for UTC is 0. UTC is often indicated in [=field-based forma
 
 
 
-
+<a href="#links"><abbr title="Back to Alphabetical links">&#x2191;</abbr></a>
 
 <div class="letter_anchor" id="w">W</div>
 
@@ -523,12 +527,13 @@ The time zone offset for UTC is 0. UTC is often indicated in [=field-based forma
 
 
 
-
+<a href="#links"><abbr title="Back to Alphabetical links">&#x2191;</abbr></a>
 
 <div class="letter_anchor" id="z">Z</div>
 
 <p><dfn class="lint-ignore export">Zone offset</dfn>. An amount that is added to or subtracted from [=UTC=] based on the location of the event around the world relative to the prime meridian. Usually offsets are at one-hour intervals, but offsets can also include other differences, such as 30 or 45 minutes. A common way to express a zone offset in field-based formats is with +/- followed by the offset. So for example, Japan is 9 hours ahead of UTC, so you may see a time written as <samp>2016-06-11 05:10+09:00</samp>. Note, importantly, that the zone offset does not help you convert times to wall time where [=daylight savings time=] is in force.</p>
 
+<a href="#links"><abbr title="Back to Alphabetical links">&#x2191;</abbr></a>
 
 </section>
 
@@ -589,17 +594,6 @@ spec: i18n-glossary; urlPrefix: https://www.w3.org/TR/i18n-glossary/
 </pre>
     </section>
 </section>
-
-<!--section class="appendix" id="Acknowledgements">
-<h2>Acknowledgements</h2>
-
-<p>The Internationalization (I18N) Working Group would like to thank 
-the following contributors to this document: 
-
-    
- and many others.</p>
-
-</section-->
 
 
 </body>

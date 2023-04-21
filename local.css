@@ -176,12 +176,19 @@ a.termref:active {
 	text-decoration:none;
 	border-bottom: 1px dotted #FC0; 
 	}
+	
+.codepoint bdi {
+    line-height: 1em;
+    font-size: 130%;
+    margin-inline: 0.25em;
+}
 
 .uname {
-	text-transform: uppercase;
+    font-family: Arial, monospaced;
 	font-size: 85%;
-	letter-spacing:0.03em;
-	}
+	letter-spacing: 0.03em;
+	color: teal;
+}
 	
 .note {
 	margin-left: 2em;
