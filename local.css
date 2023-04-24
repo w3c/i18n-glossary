@@ -184,7 +184,7 @@ a.termref:active {
 }
 
 .uname {
-    font-family: Arial, monospaced;
+    font-family: Arial, monospace;
 	font-size: 85%;
 	letter-spacing: 0.03em;
 	color: teal;
