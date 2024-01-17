@@ -120,7 +120,10 @@
 
 <p><dfn data-lt="ASCII case-insensitive" class="lint-ignore export">ASCII case-insensitive matching</dfn>. <a href="https://infra.spec.whatwg.org/#ascii-case-insensitive">Defined in INFRA</a>, this compares two sequences of code points as if all ASCII code points in the range 0x41 to 0x5A (A to Z) were mapped to the corresponding code points in the range 0x61 to 0x7A (a to z), but other code points are not  [=case-folded=]. ASCII case-insensitive matching can be required when a [=vocabulary=] is itself constrained to ASCII.</p>
 
+<p><dfn class="lint-ignore export" data-lt="auto direction|auto base direction|auto paragraph direction">Auto (direction)</dfn>. A value used for the [=paragraph direction=] of textual data when the actual direction is unknown; it indicates that [=first-strong detection=] will be used to estimate the display of the text. See also [=LTR=] and [=RTL=].</p>
+
 <a href="#links"><abbr title="Back to Alphabetical links">&#x2191;</abbr></a>
+
 <div class="letter_anchor" id="b">B</div>
 
 <p><dfn class="lint-ignore export">Base direction</dfn>. Determines the general arrangement and progression of content when [=bidirectional text=] is displayed. The [=Unicode Bidirectional Algorithm=] is primarily focused on arranging adjacent characters, based on character properties. Base direction works at a higher level, and dictates (a) the visual order and direction in which runs of strongly-typed LTR and RTL character are displayed, and (b) where there are weakly-typed characters such as punctuation, the placement of those items relative to the other content.</p>
@@ -335,7 +338,7 @@ pronounced <span class="ipa">θ</span>. <strong>Unicode encodes letter+ijam comb
 [[Unicode]] requires that characters be stored and interchanged in logical order, i.e. roughly corresponding to the order in which text is typed in via the keyboard or spoken (for a more detailed definition see [[Unicode]], Section 2.2). Logical ordering is important to ensure interoperability of data, and also benefits accessibility, searching, and collation.
 </p>
 
-<p><dfn class="lint-ignore export" data-lt="left-to-right">LTR</dfn>. Stands for "left-to-right" and refers to the inline base direction of left-to-right [[UAX9]]. This is the base text direction used by languages whose starting character progression begins on the left side of the page in horizontal text. It's used for scripts such as Latin, Cyrillic, Devanagari, and many others.</p>
+<p><dfn class="lint-ignore export" data-lt="left-to-right">LTR</dfn>. Stands for "left-to-right" and refers to the inline base direction of left-to-right [[UAX9]]. This is the base text direction used by languages whose starting character progression begins on the left side of the page in horizontal text. It's used for scripts such as Latin, Cyrillic, Devanagari, and many others. See also [=RTL=] and [=auto (direction)=].</p>
 
 
 <a href="#links"><abbr title="Back to Alphabetical links">&#x2191;</abbr></a>
@@ -394,7 +397,7 @@ Section 3.11, Normalization Forms</a>.</q> See also [=normalization=].</p>
 
 <p><dfn class="lint-ignore export">Resource identifier</dfn>. A compact string of characters for identifying an abstract or physical <a class="termref">resource</a>. On the Web, this mostly means various types of Universal Resource Identifiers (or <em>URIs</em>). For wire formats, [[RFC3986]] defines the structure and serialization. <em>Internationalized Resource Identifiers</em> (or <em>IRIs</em>) [[RFC3987]] describes how non-ASCII Unicode characters can be used in resource identifiers. The WhatWG [[URL]] specification describes how browsers handle IRIs and their mapping to URIs.</p>
 
-<p><dfn class="lint-ignore export" data-lt="right-to-left">RTL</dfn>. Stands for "right-to-left" and refers to the inline base direction of right-to-left [[UAX9]]. This is the base text direction used by languages whose starting character progression begins on the right side of the page in horizontal text. It's used for a variety of scripts which include Arabic, Hebrew, N'Ko, Adlam, Thaana, and Syriac among others.</p>
+<p><dfn class="lint-ignore export" data-lt="right-to-left">RTL</dfn>. Stands for "right-to-left" and refers to the inline base direction of right-to-left [[UAX9]]. This is the base text direction used by languages whose starting character progression begins on the right side of the page in horizontal text. It's used for a variety of scripts which include Arabic, Hebrew, N'Ko, Adlam, Thaana, and Syriac among others.  See also [=LTR=] and [=auto (direction)=].</p>
 
 <p><dfn class="lint-ignore export">Ruby</dfn>. A name for small (usually phonetic) annotations that are rendered alongside text. 'Ruby' is a British and Japanese printing term (often also called <i class="name">furigana</i> in Japan). Similar annotations are also used for Chinese, and sometimes Mongolian, and Korean.</p>
 
