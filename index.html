@@ -143,7 +143,7 @@
 
 <p><dfn class="lint-ignore export">Bidi isolation</dfn>. The use of [=bidi isolates=] in text in order to prevent the automatic rules of the Unicode Bidirectional Algorithm incorrectly ordering that content in relation to the surrounding text. For example, numbers following right-to-left text in memory are automatically positioned to the left of [=RTL=] text by the Bidi Algorithm, but sometimes need to appear to the right. Another example occurs when a list of RTL items occurs in a LTR sentence (and vice versa): the Bidi Algorithm will automatically assume that the order of items in the list should be "3 ,2 ,1", but actually what's needed is "1, 2, 3". In HTML, bidi isolation can be applied to a range of text by enclosing it in an element with a <code class="kw" translate="no">dir</code> attribute. In plain text there are Unicode formatting characters that can do the job. These mechanisms remove unwanted [=spillover effects=].</p>
 
-
+<p><dfn class="lint-ignore">Block direction</dfn>. The initial base direction of a block of text, which resolves to either <em>left-to-right</em> or <em>right-to-left</em>. A block refers to a unit of text as a whole, such as a paragraph in a document or a string in a data file. The name "block" is chosen as a contrast to <em>inline direction</em>. Unicode calls this value the [=paragraph direction=].</p> <!-- This term not exported to prevent conflicts with 'block' related terminology. -->
 
 <a href="#links"><abbr title="Back to Alphabetical links">&#x2191;</abbr></a>
 
@@ -421,6 +421,8 @@ Section 3.11, Normalization Forms</a>.</q> See also [=normalization=].</p>
 <p><dfn class="link-ignore export" data-lt="spillover effects">Spillover</dfn>. Errors in text presentation due to a lack of [=bidi isolation=]. When strings appear next to each other or when values are inserted into text without isolation, the [=bidi algorithm=] can visually rearrange the text in ways that make the text illegible. See the article <a href="https://www.w3.org/International/articles/inline-bidi-markup/index.en.html"><cite>Inline markup and bidirectional text in HTML</cite></a> for more info. See also: [=bidi isolation=]</p>
 
 <p><dfn class="lint-ignore export">Standalone vowel</dfn>. Vowel sounds that are not immediately preceded by a consonant sound; they typically appear at the beginning or in the middle of a word. In Brahmi-derived scripts standalone vowels are often represented using [=independent vowel=] letters.</p>
+
+<p><dfn class="lint-ignore export">String direction</dfn>. The overall direction of a specific string, which indicates the presentation order of string-internal directional runs. Strings transmitted inside various data structures are often inserted into a block (such as a paragraph). In such a case, the string direction is needed as part of the [=bidi isolation=] of the string.</p>
 
 <p><dfn class="lint-ignore export" data-lt="supplementary code point">Supplementary character</dfn>. Beyond the [=Basic Multilingual Plane=] the Unicode character set also contains space for around a million additional code point positions. Characters in this latter range are referred to as supplementary characters. In the UTF-16 encoding, each [=supplementary character=] is encoded using a pair of [=surrogates=].</p>
 
