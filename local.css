@@ -177,19 +177,6 @@ a.termref:active {
 	border-bottom: 1px dotted #FC0; 
 	}
 	
-.codepoint bdi {
-    line-height: 1em;
-    font-size: 130%;
-    margin-inline: 0.25em;
-}
-
-.uname {
-    font-family: Arial, monospace;
-	font-size: 85%;
-	letter-spacing: 0.03em;
-	color: brown;
-}
-	
 .note {
 	margin-left: 2em;
 	margin-right: 3em;
