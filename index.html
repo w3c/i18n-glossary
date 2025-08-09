@@ -145,66 +145,17 @@
 
 <p><dfn class="lint-ignore export">Wall time</dfn> or <dfn class="lint-ignore export">local time</dfn>.  A moment in time that can be mapped to a specific point in [=incremental time=] if you apply any relevant time zone information, but it corresponds to what a person would recognise the time to be if they looked at a clock and/or calendar mounted on a wall in a particular place. So, for example,  the time displayed by a computer in the UK may be <samp>Sat 11 Jun 06:10</samp>. By applying knowledge about how that time relates to [=UTC=] (in this case, adjusting by one hour to account for British Summer Time) it is possible to convert that to the incremental time <samp>1465621816590</samp>. It's also possible to convert that to a wall time in another location, such as San Francisco, where someone  looking at their computer's time display at the same time would have seen <samp>Fri 10 Jun 22:10</samp>.</p>
 
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
 </section>
 
-<h3 id="non-normative-terms">Non-normative terms</h3>
+<section id="non-normative-terms">
+<h3>Non-normative terms</h3>
+<!-- Search box for non-normative terms -->
+<div id="non-search-container" style="margin: 20px 0; padding: 15px; background-color: #f5f5f5; border: 1px solid #ddd; border-radius: 5px;">
+  <label for="non-search-input" style="display: block; margin-bottom: 8px; font-weight: bold;">Search in Non-normative terms:</label>
+  <input type="text" id="non-search-input" placeholder="Enter keyword to search..." style="width: 100%; max-width: 400px; padding: 8px; border: 1px solid #ccc; border-radius: 3px; font-size: 14px;">
+  <button id="non-clear-search" style="margin-left: 10px; padding: 8px 15px; background-color: #007cba; color: white; border: none; border-radius: 3px; cursor: pointer;">Clear</button>
+  <div id="non-search-results" style="margin-top: 10px; font-size: 14px; color: #666;"></div>
+</div>
 
 
 <p><dfn class="lint-ignore export">Abjad</dfn>. A writing system in which consonants are indicated, but not short vowels. The term “abjad” is derived from the first four letters of the traditional order of the Arabic script: <i class="name">alef, beh, jeem, dal</i>. (See also the <a href="https://www.unicode.org/glossary/#abjad" target="_blank">Unicode definition</a> and <a href="https://www.unicode.org/versions/latest/ch06.pdf#G7382" target="_blank">Section 6.1, Writing Systems</a>.) Alternatives include [=abugida=], [=alphabet=] and [=syllabary=].</p>
@@ -219,8 +170,6 @@
 
 <p><dfn class="lint-ignore export" data-lt="auto direction|auto base direction|auto paragraph direction">Auto (direction)</dfn>. A value used for the [=paragraph direction=] of textual data when the actual direction is unknown; it indicates that [=first-strong detection=] will be used to estimate the display of the text. See also [=LTR=] and [=RTL=].</p>
 
-<a href="#links"><abbr title="Back to Alphabetical links">&#x2191;</abbr></a>
-
 <p><dfn class="lint-ignore export">Base direction</dfn>. Determines the general arrangement and progression of content when [=bidirectional text=] is displayed. The [=Unicode Bidirectional Algorithm=] is primarily focused on arranging adjacent characters, based on character properties. Base direction works at a higher level, and dictates (a) the visual order and direction in which runs of strongly-typed LTR and RTL character are displayed, and (b) where there are weakly-typed characters such as punctuation, the placement of those items relative to the other content.</p>
 
 
@@ -233,8 +182,6 @@
 <p><dfn class="lint-ignore export">Bicameral</dfn>. <a href="https://unicode.org/glossary/#bicameral" target="_blank">Unicode definition</a>: <q>A script that distinguishes between two cases. (See <a href="https://unicode.org/glossary/#case" target="_blank">case</a>.)</q> Usually used to refer to scripts that have an upper- and lowercase distinction, such as many alphabetic scripts of European origin (Latin, Greek, Cyrillic).</p>
 
 <p><dfn class="lint-ignore">Block (Unicode)</dfn>. <a href="https://unicode.org/glossary/#block" target="_blank">Unicode definition</a>: <q>A grouping of characters within the Unicode encoding space used for organizing code charts. Each block is a uniquely named, continuous, non-overlapping range of code points, containing a multiple of 16 code points, and starting at a location that is a multiple of 16. A block may contain unassigned code points, which are reserved.</q> Note that a given script might be split across multiple blocks.</p>
-
-<a href="#links"><abbr title="Back to Alphabetical links">&#x2191;</abbr></a>
 
 <p><dfn data-lt="canonical Unicode locale identifier|canonical tag|canonical locale|Canonical Unicode locale identifier" data-plurals="canonical unicode locale identifiers" class="lint-ignore export">Canonical Unicode locale identifier</dfn>. A [=well-formed language tag=] resulting from the application of the [=Unicode locale identifier=] canonicalization rules found in [[UAX35]]. This process converts any [=valid=] [[BCP47]] [=language tag=] into a valid [=Unicode locale identifier=].  For example, deprecated subtags or irregular grandfathered tags are replaced with their preferred value from the [=IANA language subtag registry=].</p>
 
@@ -278,8 +225,6 @@
 
 
 
-<a href="#links"><abbr title="Back to Alphabetical links">&#x2191;</abbr></a>
-
 <p><dfn class="lint-ignore export" data-lt="daylight saving|daylight saving time">Daylight Savings Time</dfn> (DST) or <dfn class="lint-ignore export">Summer Time</dfn>. An approach to setting times of the day that was adopted as a way of allowing people more sunlight hours in the evening. DST varies from country to country (not to mention locality-to-locality) and often has special one-off changes to accommodate special events. Not all regions observe DST: usually those closer to the equator do not need it. In converting times it is  important to know when DST was introduced, and sometimes abandoned, for the local area, as well as on what dates DST starts and ends (which can vary from year to year). For example, Korea Standard Time and Japan Standard Time currently use the same [=zone offset=] and neither uses daylight saving. However, Japan abandoned DST in 1951, while South Korea used it last in 1988, so an application that tracks time values that reach back that far might need to track these time zones separately.</p>
 
 <p><dfn class="lint-ignore export">Decomposed</dfn>. Decomposed text is usually the result of applying [=Unicode normalization form D=] (NFD), which splits Unicode characters into component parts, typically a base character plus one or more diacritics. However, a decomposed sequence of code points may also be intentionally (or unintentionally) used by a content author where a [=precomposed=] alternative exists.</p>
@@ -291,8 +236,6 @@
 
 
 
-<a href="#links"><abbr title="Back to Alphabetical links">&#x2191;</abbr></a>
-
 <p><dfn class="lint-ignore">European digits</dfn>. A term used by the Unicode Standard to refer to ASCII digits. <a href="https://www.unicode.org/glossary/#european_digits" target="_blank">Unicode definition</a>: <q>Forms of decimal digits first used in Europe and now used worldwide. Historically, these digits were derived from the Arabic digits; they are sometimes called “Arabic numerals,” but this nomenclature leads to confusion with the real Arabic-Indic digits. Also called "Western digits" and "Latin digits." See <a href="https://www.unicode.org/terminology/digits.html" target="_blank"> Terminology for Digits</a> for additional information on terminology related to digits.</q></p>
 
 <p><dfn class="lint-ignore export">Extended grapheme cluster</dfn>. See <a>grapheme cluster</a>.</p>
@@ -300,8 +243,6 @@
 <p><dfn class="lint-ignore export">Extended language range</dfn>. A [=language range=] consisting of a sequence of hyphen-separated subtags. In an extended language range, a subtag can either be a valid subtag or the wildcard subtag <q><code>*</code></q>, which matches any value.</p>
 
 
-
-<a href="#links"><abbr title="Back to Alphabetical links">&#x2191;</abbr></a>
 
 <p><dfn class="lint-ignore export">Featural syllabary</dfn>. A syllabic writing system where the syllable glyphs are not arbitrary shapes but instead show, usually in a regular way, phonological features that are part of the syllable they represent. Examples include Korean (where a syllabic character is made up of strokes representing the individual sounds of the syllable) and Canadian Syllabics (where the vowel part of the syllable is expressed by rotation of the syllable glyph). See also <a href="https://en.wikipedia.org/wiki/Featural_writing_system">Wikipedia</a>.</p>
 
@@ -311,21 +252,15 @@
 
 
 
-<a href="#links"><abbr title="Back to Alphabetical links">&#x2191;</abbr></a>
-
 <p><dfn class="lint-ignore">General category</dfn>. <a href="https://www.unicode.org/glossary/#general_category" target="_blank">Unicode definition</a>: <q>Partition of the characters into major classes such as letters, punctuation, and symbols, and further subclasses for each of the major classes. (See <a href="https://www.unicode.org/versions/latest/ch04.pdf#G124142" target="_blank">Section 4.5, General Category</a>.)</q></p>
 
 <p><dfn class="lint-ignore export">Gregorian calendar</dfn>. The  most widely used way of representing civil time. It is a solar calendar, with years usually consisting of 365 days, plus the concept of a "leap year". This adds an additional day every 4 years, except when the year is evenly divisible by 100 (unless the year is also evenly divisible by 400). There are numerous other calendars in use around the world, some of which are lunar calendars, some that are based on a different start date than the Gregorian calendar, and some that are reset each time a prominent person dies. Often these calendars are still used for religious purposes, but sometimes you will also find them being used in newspapers and emails, or for birth dates. There are technologies, such as ICU or Dojo, that support conversion between different calendaring systems.</p>
 
 
 
-<a href="#links"><abbr title="Back to Alphabetical links">&#x2191;</abbr></a>
-
 <p><dfn class="lint-ignore export">Halfwidth</dfn>. <a href="https://www.unicode.org/glossary/#halfwidth" target="_blank">Unicode definition</a>: <q>Characters of East Asian character sets whose glyph image occupies half of the character display cell. In legacy character sets, halfwidth characters are normally encoded in a single byte. The Japanese term for halfwidth characters is hankaku.</q> See also [=fullwidth=].</p>
 
 
-
-<a href="#links"><abbr title="Back to Alphabetical links">&#x2191;</abbr></a>
 
 <p><dfn class="lint-ignore export">Ideograph</dfn>. <a href="https://www.unicode.org/glossary/#ideograph" target="_blank">Unicode definition</a>: <q>(1) Any symbol that primarily denotes an idea or concept in contrast to a sound or pronunciation – for example, ♻, which denotes the concept of recycling by a series of bent arrows. (2) A generic term for the unit of writing of a logosyllabic writing system. In this sense, ideograph (or ideogram) is not systematically distinguished from logograph (or logogram). (3) A term commonly used to refer specifically to Han characters, equivalent to the Chinese, Japanese, or Korean terms also sometimes used: hànzì, kanji, or hanja.</q></p>
 
@@ -341,15 +276,9 @@ pronounced <span class="ipa">θ</span>. <strong>Unicode encodes letter+ijam comb
 
 
 
-<a href="#links"><abbr title="Back to Alphabetical links">&#x2191;</abbr></a>
-
 <p><dfn class="lint-ignore export">Jamo</dfn>. The basic unit used to form Hangul syllables, representing vowels and consonants in Korean. In addition to code points for Jamo, Unicode encodes 11,172 Hangul <em>syllables</em>. These represent combinations of Jamo as single, pre-composed characters. In practice, such syllables are the main characters in actual use. (See also: <a href="https://www.unicode.org/faq/korean.html" target="_blank">Unicode Korean FAQ</a>)</p>
 
-<a href="#links"><abbr title="Back to Alphabetical links">&#x2191;</abbr></a>
-
 <p><dfn class="lint-ignore export">Kana</dfn>. <a href="https://unicode.org/glossary/#kana" target="_blank">Unicode definition</a>: <q cite="https://unicode.org/glossary/#kana">A collective term for the two syllabic scripts used (along with <a href="https://unicode.org/glossary/#kanji" target="_blank">kanji</a> and <a href="https://unicode.org/glossary/#romaji" target="_blank">romaji</a>) by the Japanese writing system. The two forms are <em><a href="https://unicode.org/glossary/#hiragana" target="_blank">hiragana</a></em> and <em> <a href="https://unicode.org/glossary/#katakana" target="_blank">katakana</a></em>.</q></p>
-
-<a href="#links"><abbr title="Back to Alphabetical links">&#x2191;</abbr></a>
 
 
 <p><dfn class="lint-ignore export">Language metadata</dfn>. When constrasted with the [=text-processing language=], this indicates the<em> intended use of the resource</em> as a whole.  For example, such metadata may be used for searching for a relevant resource, for serving the right language version, for classification, etc. This type of language declaration differs from that of the text-processing language declaration in that (a)  the value for such declarations may be more than one  language subtag, and (b) the language value declared doesn't indicate which bits of a multilingual resource are in which language.</p>
@@ -374,11 +303,7 @@ pronounced <span class="ipa">θ</span>. <strong>Unicode encodes letter+ijam comb
 <p><dfn class="lint-ignore export" data-lt="left-to-right">LTR</dfn>. Stands for "left-to-right" and refers to the inline base direction of left-to-right [[UAX9]]. This is the base text direction used by languages whose starting character progression begins on the left side of the page in horizontal text. It's used for scripts such as Latin, Cyrillic, Devanagari, and many others. See also [=RTL=] and [=auto (direction)=].</p>
 
 
-<a href="#links"><abbr title="Back to Alphabetical links">&#x2191;</abbr></a>
-
 <p><dfn class="lint-ignore export">Metadata</dfn>. Additional information about data. Key types of metadata for [=internationalization=] are [=language metadata=] and metadata to support [=bidirectional text=]. Metadata has a scope, e.g., a string or a set of strings. In absence of explicit metadata, defaults might apply, e.g. defaults for the [=base direction=] of a text.</p>
-
-<a href="#links"><abbr title="Back to Alphabetical links">&#x2191;</abbr></a>
 
 
 <p><dfn class="lint-ignore export">Natural Language</dfn> (sometimes just <em>language</em>). Refers to the spoken, written, or signed communications used by human beings. See also [=localizable text=] and [=syntactic content=].</p>
@@ -399,12 +324,8 @@ Section 3.11, Normalization Forms</a>.</q> See also [=normalization=].</p>
 <p><dfn class="lint-ignore export" data-lt="unicode normalization form kd|nfkd">Normalization Form KD</dfn> (<strong>NFKD</strong>). <a href="https://unicode.org/glossary/#normalization_form_kd" target="_blank">Unicode definition</a>: <q cite="https://unicode.org/glossary/#normalization_form_kd">A normalization form that erases both canonical and compatibility differences, and produces a decomposed result: for example, the single ǆ character is converted to d + z + caron in this form. The formal definition is D121 in <a href="https://www.unicode.org/versions/latest/ch03.pdf#G49537">Section 3.11, Normalization Forms</a>.</q> Some developers and specification authors find this normalization form attractive because it appears to bring together many strings that are logically similar, but NFKD has limited utility in actual practice and has side effects that confuse users. This definition is provided for completeness, but NFKD is not generally appropriate for use on the Web. See also [=normalization=].</p>
 
 
-<a href="#links"><abbr title="Back to Alphabetical links">&#x2191;</abbr></a>
+<p><dfn class="lint-ignore export">Othographic syllable</dfn> A [=typographic character unit=] that includes one or more [=grapheme clusters=]. These are most commonly found in Brahmi-derived scripts (such as Devanagari, or Balinese) when forming conjuncts or stacks. They commonly demarcate sequences of characters that are different from phonetic syllables, and they may even span word boundaries. See also the <a href="https://unicode.org/glossary/#orthographic_syllable" target="_blank">definition</a> in the Unicode Standard.</p>
 
-p><dfn class="lint-ignore export">Othographic syllable</dfn> A [=typographic character unit=] that includes one or more [=grapheme clusters=]. These are most commonly found in Brahmi-derived scripts (such as Devanagari, or Balinese) when forming conjuncts or stacks. They commonly demarcate sequences of characters that are different from phonetic syllables, and they may even span word boundaries. See also the <a href="https://unicode.org/glossary/#orthographic_syllable" target="_blank">definition</a> in the Unicode Standard.</p>
-
-
-<a href="#links"><abbr title="Back to Alphabetical links">&#x2191;</abbr></a>
 
 <p><dfn class="lint-ignore export">Paragraph direction</dfn>. The initial <a>base direction</a> of  a paragraph or string, which resolves to either <em>left-to-right</em> or <em>right-to-left</em>. Nested embedding controls may be used to change the direction of an inline range of text, but the paragraph direction sets the starting point which the <a>Unicode Bidirectional Algorithm</a> uses  to calculate the directions of the embedded levels. For more details, see <a href="https://www.unicode.org/reports/tr9/" target="_blank">Unicode Standard Annex #9, Unicode Bidirectional Algorithm</a> [[UAX9]], especially definitions BD2–BD5.<br><span class="see-also">See also the definition in the <a href="https://www.unicode.org/glossary/#paragraph_direction" target="_blank">Unicode Standard</a>.</span></p>
 
@@ -419,15 +340,11 @@ p><dfn class="lint-ignore export">Othographic syllable</dfn> A [=typographic cha
 <p><dfn class="lint-ignore export">Producer</dfn>. When talking about strings on the Web, the W3C Internationalization group refers to a producer as any process where natural language string data is created for later storage, processing, or interchange.</p>
 
 
-<a href="#links"><abbr title="Back to Alphabetical links">&#x2191;</abbr></a>
-
 <p><dfn class="lint-ignore export">Resource</dfn>. In the context of W3C Internationalization documents,   a given document, file, or protocol "message" which includes both the [=localizable content=] as well as the [=syntactic content=] such as identifiers surrounding or containing it. For example, in an HTML document that also has some CSS and a few <code class="kw" translate="no">script</code> elements with embedded JavaScript, the entire HTML document, considered as a file, is a resource. This term is intentionally similar to the term 'resource' as used in [[RFC3986]], although here the term is applied loosely. </p>
 
 <p><dfn class="lint-ignore export">Resource identifier</dfn>. A compact string of characters for identifying an abstract or physical <a class="termref">resource</a>. On the Web, this mostly means various types of Universal Resource Identifiers (or <em>URIs</em>). For wire formats, [[RFC3986]] defines the structure and serialization. <em>Internationalized Resource Identifiers</em> (or <em>IRIs</em>) [[RFC3987]] describes how non-ASCII Unicode characters can be used in resource identifiers. The WhatWG [[URL]] specification describes how browsers handle IRIs and their mapping to URIs.</p>
 
 <p><dfn class="lint-ignore export" data-lt="right-to-left">RTL</dfn>. Stands for "right-to-left" and refers to the inline base direction of right-to-left [[UAX9]]. This is the base text direction used by languages whose starting character progression begins on the right side of the page in horizontal text. It's used for a variety of scripts which include Arabic, Hebrew, N'Ko, Adlam, Thaana, and Syriac among others.  See also [=LTR=] and [=auto (direction)=].</p>
-
-<a href="#links"><abbr title="Back to Alphabetical links">&#x2191;</abbr></a>
 
 <p><strong><em>Scalar value</em></strong>, see [=Unicode scalar value=].</p>
 
@@ -454,8 +371,6 @@ p><dfn class="lint-ignore export">Othographic syllable</dfn> A [=typographic cha
 <p><dfn class="lint-ignore export">Syntactic content</dfn>. Any text in a document format or protocol that belongs to the structure of the format or protocol. This definition includes values that are typically thought of as "markup" but can also include other values, such as the name of a field in an HTTP header. Syntactic content consists of all of the characters that form the <em>structure</em> of a format or protocol. For example, <span class="qchar">&lt;</span> and <span class="qchar">&gt;</span> (as well as the element name and various attributes they surround) are part of the syntactic content in an HTML document. Syntactic content usually is defined by a specification or specifications and includes both the defined, reserved keywords for the given protocol or format as well as string tokens and identifiers that are defined by document authors to form the structure of the document (rather than the "content" of the document).  See also [=localizable text=] and [=natural language=].</p>
 
 
-<a href="#links"><abbr title="Back to Alphabetical links">&#x2191;</abbr></a>
-
 <p><dfn class="lint-ignore export">Tashkil</dfn>. An Arabic script mark that indicates vocalization of text or other types of phonetic guide which indicate pronunciation, such as in <span class="codepoint" translate="no"><bdi lang="ar" dir="rtl">&#x062B;&#x064E;</bdi><span class="uname">U+062B ARABIC LETTER THEH</span> + <span class="uname">U+064E ARABIC FATHA</span></span>,
 pronounced <span class="ipa">θa</span>. These include several subtypes: <span class="name">harakat</span> (short vowel marks), <span class="name">tanwin</span> (postnasalized, that is, an extra <span class="ipa">n</span> sound at the end of a noun marked by a double similar harakat), <span class="name">shaddah</span> (consonant gemination mark), and <span class="name">sukun</span> (to mark lack of a following vowel). <strong>A basic Arabic letter plus any of these types of marks is never encoded as an atomic, precomposed character, but must always be represented as a sequence of letter plus separate combining mark.</strong> For example, <span class="codepoint" translate="no"><bdi lang="ar" dir="rtl">&#x0647;&#x0670;</bdi><span class="uname">U+0647 ARABIC LETTER HEH</span> + <span class="uname">U+0670 ARABIC LETTER SUPERSCRIPT ALEF</span></span> pronounced <span class="ipa">ha</span>, is an example of a letter plus tashkil combination in Arabic (cf. the use of that diacritic in a precomposed Uighur letter).  See <a href="https://www.unicode.org/versions/Unicode13.0.0/ch09.pdf" target="_blank">Chapter 9</a> of the Unicode Standard. See also [=ijam=].</p>
 
@@ -480,8 +395,6 @@ refers to a process that converts from a [=legacy character encoding=] to a <a h
 <p><dfn class="lint-ignore">Typographic letter unit</dfn>. <a href="https://www.w3.org/TR/css-text-4/#typographic-letter-unit">CSS definition</a>: <q>a [=typographic character unit=] belonging to one of the Letter or Number [=general categories=].</q>
 </p>
 
-
-<a href="#links"><abbr title="Back to Alphabetical links">&#x2191;</abbr></a>
 
 <p><dfn class="lint-ignore export">Unicameral</dfn> or <em>unicase</em>. <a href="https://unicode.org/glossary/#unicameral" target="_blank">Unicode definition</a>: <q>A script that has no case distinctions.</q></p>
 
@@ -512,8 +425,6 @@ The time zone offset for UTC is 0. UTC is often indicated in [=field-based forma
 
 
 
-<a href="#links"><abbr title="Back to Alphabetical links">&#x2191;</abbr></a>
-
 <p><dfn class="lint-ignore export" data-lt="valid">Valid language tag</dfn>. A language tag that is [=well-formed=] and which also conforms to the additional <a href="https://www.rfc-editor.org/rfc/rfc5646.html#section-2.2.9">conformance requirements</a> in [[BCP47]], notably that each of the subtags appears in the IANA Language Subtag Registry.  Contrast this with [=well-formed=] language tags.</p>
 
 <p><dfn class="lint-ignore export">Variation selector</dfn>. <a href="https://unicode.org/glossary/#variation_selector" target="_blank">Unicode definition</a>: <q>Any of three ranges of Unicode characters designated for use in defining a <i><a href="https://unicode.org/glossary/#variation_sequence">variation sequence</a></i>. Variation selectors in the range U+FE00..U+FE0F are known as <i>general-use</i> variation selectors and are used for <a href="https://unicode.org/glossary/#standardized_variation_sequence"><em>standardized variation sequences</em></a>. Two of these, U+FE0E and U+FE0F, have specialized functions when used with <i>emoji</i> base characters. Variation selectors in the range U+180B..U+180D are known as <i><a href="https://unicode.org/glossary/#mongolian_free_variation_selector">Mongolian Free Variation Selector</a></i>; their use is limited to standardized variation sequences for the Mongolian script. Variation selectors in the range U+E0100..U+E01EF are known as <i>ideographic</i> variation selectors and are used for <a href="https://unicode.org/glossary/#ideographic_variation_sequence"><em>ideographic variation sequences</em></a>. Variation selectors are all nonspacing combing marks (General_Category=Mn). They have no graphic shape of their own; instead they function to pick out a particular, defined subset of potential graphic presentations for the base character to which they are applied. All variation selectors are <i><a href="https://unicode.org/glossary/#default_ignorable">default ignorable</a></i> code points (DICP=Yes), meaning that if they are not interpretable in combination with their base character, they should be ignored for display, rather than shown with a nondisplayable glyph box, for example. See <a href="https://www.unicode.org/versions/latest/ch23.pdf#G19053">Section 23.4, Variation Selectors</a>. The term variation selector is sometimes abbreviated as 'VS'.</q></p>
@@ -525,8 +436,6 @@ The time zone offset for UTC is 0. UTC is often indicated in [=field-based forma
 
 
 
-<a href="#links"><abbr title="Back to Alphabetical links">&#x2191;</abbr></a>
-
 <p><dfn class="lint-ignore export" data-lt="well-formed">Well-formed language tag</dfn>. A language tag that follows the grammar defined in [[BCP47]]. That is, it is structurally correct, consisting of ASCII letters and digit [=language subtags=] of the prescribed length, separated by hyphens. Contrast this with [=valid language tag=].</p>
 
 <p><dfn class="lint-ignore">Word boundary</dfn> or <dfn class="lint-ignore export">Word</dfn>. The concept of 'word' is difficult to define in any language (see <a href="https://www.w3.org/International/articles/typography/linebreak.en#whatisword">What is a word?</a>). In these definitions, a word is an often vaguely-defined, but recognisable semantic unit that is typically smaller than a phrase and may comprise one or more syllables. Word boundaries are typically important for text operations such as line-breaking, and for prosodic and phonetic rules.</p>
@@ -535,14 +444,10 @@ The time zone offset for UTC is 0. UTC is often indicated in [=field-based forma
 
 
 
-<a href="#links"><abbr title="Back to Alphabetical links">&#x2191;</abbr></a>
-
 <p><dfn class="lint-ignore export">Zone offset</dfn>. An amount that is added to or subtracted from [=UTC=] based on the location of the event around the world relative to the prime meridian. Usually offsets are at one-hour intervals, but offsets can also include other differences, such as 30 or 45 minutes. A common way to express a zone offset in field-based formats is with +/- followed by the offset. So for example, Japan is 9 hours ahead of UTC, so you may see a time written as <samp>2016-06-11 05:10+09:00</samp>. Note, importantly, that the zone offset does not help you convert times to wall time where [=daylight savings time=] is in force.</p>
 
-<a href="#links"><abbr title="Back to Alphabetical links">&#x2191;</abbr></a>
-
 </section>
-
+</section>
 
 <section class="appendix" id="how-to-use">
 <h3 id="howto">How to use this glossary</h3>
@@ -598,20 +503,12 @@ spec: i18n-glossary; urlPrefix: https://www.w3.org/TR/i18n-glossary/
     type: dfn
         text: locale; url: locale
 </pre>
-    </section>
+</section>
 </section>
 
 
 <script>
 (function() {
-    const searchInput = document.getElementById('search-input');
-    const clearButton = document.getElementById('clear-search');
-    let searchResults = document.getElementById('search-results');
-    const normativeSection = document.getElementById('normative-terms');
-
-    // Store original content for restoration
-    let originalContent = null;
-
     function highlightTextInElement(element, keyword) {
         if (!keyword) return;
 
@@ -643,97 +540,104 @@ spec: i18n-glossary; urlPrefix: https://www.w3.org/TR/i18n-glossary/
         });
     }
 
-    function searchInSection(keyword) {
-        if (!keyword.trim()) {
-            clearSearch();
-            return;
-        }
+    function setupSearch({ sectionElement, inputId, clearId, resultsId }) {
+        if (!sectionElement) return;
 
-        if (!originalContent) {
-            originalContent = normativeSection.innerHTML;
-        } else {
-            normativeSection.innerHTML = originalContent;
-            attachEventListeners();
-        }
+        let originalContent = null;
 
-        const currentInput = document.getElementById('search-input');
-        if (currentInput) {
-            if (currentInput.value !== keyword) {
-                currentInput.value = keyword;
+        function searchInSection(keyword) {
+            if (!keyword.trim()) {
+                clearSearch();
+                return;
             }
-            // Ensure the input keeps focus and caret stays at the end
-            currentInput.focus();
-            const len = currentInput.value.length;
-            try { currentInput.setSelectionRange(len, len); } catch (e) {}
-        }
 
-        // Get all paragraphs in the normative terms section
-        const paragraphs = normativeSection.querySelectorAll('p');
-        let matchCount = 0;
-
-        paragraphs.forEach(paragraph => {
-            // Use textContent for searching (no HTML tags)
-            const text = paragraph.textContent || paragraph.innerText;
-            if (text.toLowerCase().includes(keyword.toLowerCase())) {
-                matchCount++;
-                // Highlight the keyword in this paragraph's text nodes only
-                highlightTextInElement(paragraph, keyword);
-                paragraph.style.display = 'block';
+            if (!originalContent) {
+                originalContent = sectionElement.innerHTML;
             } else {
-                paragraph.style.display = 'none';
+                sectionElement.innerHTML = originalContent;
+                attachEventListeners();
             }
-        });
 
-        searchResults = document.getElementById('search-results');
-        if (searchResults) {
-            if (matchCount > 0) {
-                searchResults.innerHTML = `Found ${matchCount} term(s) containing "${keyword}"`;
-                searchResults.style.color = '#2e7d32';
-            } else {
-                searchResults.innerHTML = `No terms found containing "${keyword}"`;
-                searchResults.style.color = '#d32f2f';
+            const currentInput = document.getElementById(inputId);
+            if (currentInput) {
+                if (currentInput.value !== keyword) {
+                    currentInput.value = keyword;
+                }
+                currentInput.focus();
+                const len = currentInput.value.length;
+                try { currentInput.setSelectionRange(len, len); } catch (e) {}
             }
-        }
-    }
 
-    function clearSearch() {
-        if (originalContent) {
-            normativeSection.innerHTML = originalContent;
-            originalContent = null;
-        }
+            const paragraphs = sectionElement.querySelectorAll('p');
+            let matchCount = 0;
 
-        attachEventListeners();
-
-        const inputEl = document.getElementById('search-input');
-        const resultsEl = document.getElementById('search-results');
-        if (inputEl) {
-            inputEl.value = '';
-            inputEl.focus();
-        }
-        if (resultsEl) resultsEl.innerHTML = '';
-    }
-
-    function attachEventListeners() {
-        const newSearchInput = document.getElementById('search-input');
-        const newClearButton = document.getElementById('clear-search');
-
-        if (newSearchInput && newClearButton) {
-            newSearchInput.addEventListener('input', function() {
-                searchInSection(this.value);
-            });
-
-            newSearchInput.addEventListener('keypress', function(e) {
-                if (e.key === 'Enter') {
-                    searchInSection(this.value);
+            paragraphs.forEach(paragraph => {
+                const text = paragraph.textContent || paragraph.innerText;
+                if (text.toLowerCase().includes(keyword.toLowerCase())) {
+                    matchCount++;
+                    highlightTextInElement(paragraph, keyword);
+                    paragraph.style.display = 'block';
+                } else {
+                    paragraph.style.display = 'none';
                 }
             });
 
-            newClearButton.addEventListener('click', clearSearch);
+            const resultsEl = document.getElementById(resultsId);
+            if (resultsEl) {
+                if (matchCount > 0) {
+                    resultsEl.innerHTML = `Found ${matchCount} term(s) containing "${keyword}"`;
+                    resultsEl.style.color = '#2e7d32';
+                } else {
+                    resultsEl.innerHTML = `No terms found containing "${keyword}"`;
+                    resultsEl.style.color = '#d32f2f';
+                }
+            }
         }
+
+        function clearSearch() {
+            if (originalContent) {
+                sectionElement.innerHTML = originalContent;
+                originalContent = null;
+            }
+
+            attachEventListeners();
+
+            const inputEl = document.getElementById(inputId);
+            const resultsEl = document.getElementById(resultsId);
+            if (inputEl) {
+                inputEl.value = '';
+                inputEl.focus();
+            }
+            if (resultsEl) resultsEl.innerHTML = '';
+        }
+
+        function attachEventListeners() {
+            const newSearchInput = document.getElementById(inputId);
+            const newClearButton = document.getElementById(clearId);
+
+            if (newSearchInput && newClearButton) {
+                newSearchInput.addEventListener('input', function() {
+                    searchInSection(this.value);
+                });
+
+                newSearchInput.addEventListener('keypress', function(e) {
+                    if (e.key === 'Enter') {
+                        searchInSection(this.value);
+                    }
+                });
+
+                newClearButton.addEventListener('click', clearSearch);
+            }
+        }
+
+        attachEventListeners();
     }
 
-    // Initial event listener attachment
-    attachEventListeners();
+    const normativeSection = document.getElementById('normative-terms');
+    const nonNormativeSection = document.getElementById('non-normative-terms');
+
+    setupSearch({ sectionElement: normativeSection, inputId: 'search-input', clearId: 'clear-search', resultsId: 'search-results' });
+    setupSearch({ sectionElement: nonNormativeSection, inputId: 'non-search-input', clearId: 'non-clear-search', resultsId: 'non-search-results' });
 })();
 </script>
 
