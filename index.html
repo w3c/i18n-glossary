@@ -79,6 +79,15 @@
 
 <section id="normative-terms">
 <h3>Normative terms</h3>
+
+<!-- Search box for normative terms -->
+<div id="search-container" style="margin: 20px 0; padding: 15px; background-color: #f5f5f5; border: 1px solid #ddd; border-radius: 5px;">
+  <label for="search-input" style="display: block; margin-bottom: 8px; font-weight: bold;">Search in Normative terms:</label>
+  <input type="text" id="search-input" placeholder="Enter keyword to search..." style="width: 100%; max-width: 400px; padding: 8px; border: 1px solid #ccc; border-radius: 3px; font-size: 14px;">
+  <button id="clear-search" style="margin-left: 10px; padding: 8px 15px; background-color: #007cba; color: white; border: none; border-radius: 3px; cursor: pointer;">Clear</button>
+  <div id="search-results" style="margin-top: 10px; font-size: 14px; color: #666;"></div>
+</div>
+
 <p><dfn data-lt="bidirectional text|bidi text|bidi" class="lint-ignore export">Bidirectional text</dfn> (often referred to as &quot;<em><strong>bidi text</strong></em>&quot; for short). Text that mixes runs of both LTR and RTL text inline. It is common for right-to-left scripts, such as Arabic and Hebrew, to contain short runs of left-to-right text (most commonly in the Latin script), and several of the scripts that are predominantly right-to-left display  numbers from left-to-right. Bidirectional text is the source of many of the difficulties when dealing with RTL scripts.</p>
 
 <p><dfn class="lint-ignore export" data-lt="bidi isolate">Bidirectional isolate</dfn>. A range of text, bounded by formatting characters or markup, that is treated by the [=Unicode Bidirectional Algorithm=] [[UAX9]] as directionally isolated from its surroundings. The entire range of text inside the isolate is treated by the surrounding text as if it were a single neutral character (such as <span class="codepoint" translate="no"><bdi lang="en">&#xFFFC;</bdi> <span class="uname">U+FFFC OBJECT REPLACEMENT CHARACTER</span>)</span>, and is assigned the corresponding display position in the surrounding text. Furthermore, the text inside the isolate has no effect on the ordering of the text outside it, and vice versa.</p>
@@ -592,6 +601,141 @@ spec: i18n-glossary; urlPrefix: https://www.w3.org/TR/i18n-glossary/
     </section>
 </section>
 
+
+<script>
+(function() {
+    const searchInput = document.getElementById('search-input');
+    const clearButton = document.getElementById('clear-search');
+    let searchResults = document.getElementById('search-results');
+    const normativeSection = document.getElementById('normative-terms');
+
+    // Store original content for restoration
+    let originalContent = null;
+
+    function highlightTextInElement(element, keyword) {
+        if (!keyword) return;
+
+        const walker = document.createTreeWalker(
+            element,
+            NodeFilter.SHOW_TEXT,
+            null,
+            false
+        );
+
+        const textNodes = [];
+        let node;
+        while (node = walker.nextNode()) {
+            textNodes.push(node);
+        }
+
+        const escapedKeyword = keyword.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+
+        textNodes.forEach(textNode => {
+            const text = textNode.textContent;
+            const regex = new RegExp(`(${escapedKeyword})`, 'gi');
+
+            if (text.toLowerCase().includes(keyword.toLowerCase())) {
+                const highlightedHTML = text.replace(regex, '<mark style="background-color: yellow; font-weight: bold;">$1</mark>');
+                const wrapper = document.createElement('span');
+                wrapper.innerHTML = highlightedHTML;
+                textNode.parentNode.replaceChild(wrapper, textNode);
+            }
+        });
+    }
+
+    function searchInSection(keyword) {
+        if (!keyword.trim()) {
+            clearSearch();
+            return;
+        }
+
+        if (!originalContent) {
+            originalContent = normativeSection.innerHTML;
+        } else {
+            normativeSection.innerHTML = originalContent;
+            attachEventListeners();
+        }
+
+        const currentInput = document.getElementById('search-input');
+        if (currentInput) {
+            if (currentInput.value !== keyword) {
+                currentInput.value = keyword;
+            }
+            // Ensure the input keeps focus and caret stays at the end
+            currentInput.focus();
+            const len = currentInput.value.length;
+            try { currentInput.setSelectionRange(len, len); } catch (e) {}
+        }
+
+        // Get all paragraphs in the normative terms section
+        const paragraphs = normativeSection.querySelectorAll('p');
+        let matchCount = 0;
+
+        paragraphs.forEach(paragraph => {
+            // Use textContent for searching (no HTML tags)
+            const text = paragraph.textContent || paragraph.innerText;
+            if (text.toLowerCase().includes(keyword.toLowerCase())) {
+                matchCount++;
+                // Highlight the keyword in this paragraph's text nodes only
+                highlightTextInElement(paragraph, keyword);
+                paragraph.style.display = 'block';
+            } else {
+                paragraph.style.display = 'none';
+            }
+        });
+
+        searchResults = document.getElementById('search-results');
+        if (searchResults) {
+            if (matchCount > 0) {
+                searchResults.innerHTML = `Found ${matchCount} term(s) containing "${keyword}"`;
+                searchResults.style.color = '#2e7d32';
+            } else {
+                searchResults.innerHTML = `No terms found containing "${keyword}"`;
+                searchResults.style.color = '#d32f2f';
+            }
+        }
+    }
+
+    function clearSearch() {
+        if (originalContent) {
+            normativeSection.innerHTML = originalContent;
+            originalContent = null;
+        }
+
+        attachEventListeners();
+
+        const inputEl = document.getElementById('search-input');
+        const resultsEl = document.getElementById('search-results');
+        if (inputEl) {
+            inputEl.value = '';
+            inputEl.focus();
+        }
+        if (resultsEl) resultsEl.innerHTML = '';
+    }
+
+    function attachEventListeners() {
+        const newSearchInput = document.getElementById('search-input');
+        const newClearButton = document.getElementById('clear-search');
+
+        if (newSearchInput && newClearButton) {
+            newSearchInput.addEventListener('input', function() {
+                searchInSection(this.value);
+            });
+
+            newSearchInput.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    searchInSection(this.value);
+                }
+            });
+
+            newClearButton.addEventListener('click', clearSearch);
+        }
+    }
+
+    // Initial event listener attachment
+    attachEventListeners();
+})();
+</script>
 
 </body>
 </html>
