@@ -328,7 +328,13 @@ pronounced <span class="ipa">θ</span>. <strong>Unicode encodes letter+ijam comb
 
 <p class="normative"><dfn class="lint-ignore export">Legacy character encodings</dfn>. Character encoding forms that do not encode the full repertoire of characters in the Unicode character set.</p>
 
-<p class="normative"><dfn class="lint-ignore export">Locale</dfn>. An identifier (such as a [=language tag=]) for a set of [=international preferences=]. It MUST include at least a language identifier and MAY include additional subtags such as region, script, or variant. A locale is passed in APIs or set in the operating environment to obtain culturally-affected behavior within a system or process.</p>
+<div class="normative">
+  <p><dfn class="lint-ignore export">Locale</dfn>. An identifier (such as a [=language tag=]) for a set of [=international preferences=]. A locale is passed in APIs or set in the operating environment to obtain culturally-affected behavior within a system or process.</p>
+
+  <p>On the Web, this term generally refers to a [=Unicode Locale Identifier=].</p>
+
+  <p>Locales always contain a language identifier. They frequently also contain additional information, such as script, region (such as a country), and/or other linguistic, orthographic, dialectical, or preferential variation.</p>
+</div>
 
 <p class="normative"><dfn class="lint-ignore export">Locale-aware</dfn> (or <em>Enabled</em>). A system that can respond to changes in the [=locale=] with culturally and language-specific behavior or content. Generally, systems that are internationalized can support a wide range of [=locales=] in order to meet the [=international preferences=] of many kinds of users.</p>
 
