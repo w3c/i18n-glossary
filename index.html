@@ -138,7 +138,7 @@
 
 <p><dfn data-lt="bidirectional text|bidi text|bidi" class="lint-ignore export">Bidirectional text</dfn> (often referred to as &quot;<em><strong>bidi text</strong></em>&quot; for short). Text that mixes runs of both LTR and RTL text inline. It is common for right-to-left scripts, such as Arabic and Hebrew, to contain short runs of left-to-right text (most commonly in the Latin script), and several of the scripts that are predominantly right-to-left display  numbers from left-to-right. Bidirectional text is the source of many of the difficulties when dealing with RTL scripts.</p>
 
-<p><dfn data-lt="basic language range|Basic language range" class="lint-ignore export">Basic language range</dfn>. A [=language range=] consisting of a sequence of subtags separated by hyphens. That is, it is identical in appearance to a language tag.</p>
+<p><dfn data-lt="basic language range" class="lint-ignore export">Basic language range</dfn>. A [=language range=] consisting of a sequence of subtags separated by hyphens. That is, it is identical in appearance to a language tag. A basic language range is used for <a href="https://datatracker.ietf.org/doc/html/rfc4647#section-3.4" target="_blank">lookup</a> or <a href="https://datatracker.ietf.org/doc/html/rfc4647#section-3.3.1" target="_blank">basic filtering</a> [[RFC4647]] of language tags and language tagged content.</p>
 
 <p><dfn class="lint-ignore export">Bicameral</dfn>. <a href="https://unicode.org/glossary/#bicameral" target="_blank">Unicode definition</a>: <q>A script that distinguishes between two cases. (See <a href="https://unicode.org/glossary/#case" target="_blank">case</a>.)</q> Usually used to refer to scripts that have an upper- and lowercase distinction, such as many alphabetic scripts of European origin (Latin, Greek, Cyrillic).</p>
 
@@ -225,8 +225,8 @@
 
 <p><dfn class="lint-ignore export">Extended grapheme cluster</dfn>. See <a>grapheme cluster</a>.</p>
 
-<p><dfn class="lint-ignore export">Extended language range</dfn>. A [=language range=] consisting of a sequence of hyphen-separated subtags. In an extended language range, a subtag can either be a valid subtag or the wildcard subtag <q><code>*</code></q>, which matches any value.</p>
-
+<p><dfn class="lint-ignore export">Extended language range</dfn>. A [=language range=] consisting of a sequence of subtags separated by hyphens. In an extended language range, a subtag can be replaced by the wildcard character <code>*</code>. An extended language range is used in <a href="https://datatracker.ietf.org/doc/html/rfc4647#section-3.3.2">extended filtering</a> [[RFC4647]] of language tags and language tagged content.
+</p>
 
 
 <a href="#links"><abbr title="Back to Alphabetical links">&#x2191;</abbr></a>
@@ -320,7 +320,7 @@ pronounced <span class="ipa">θ</span>. <strong>Unicode encodes letter+ijam comb
 
 <p><dfn class="lint-ignore export">Language priority list</dfn>. A collection of one or more [=language ranges=] identifying the user's language preferences for use in matching. As the name suggests, such lists are normally ordered or weighted according to the user's preferences. The HTTP [[RFC2616]] <code>Accept-Language</code> [[RFC3282]] header is an example of one kind of language priority list.</p>
 
-<p><dfn data-lt="language-range" class="lint-ignore export">Language range</dfn>. A string similar in structure to a language tag that is used for "identifying sets of language tags that share specific attributes".</p>
+<p><dfn data-lt="language-range" class="lint-ignore export">Language range</dfn>. A [=language tag=], possibly modified with wildcards, for use in selecting or filtering language tags (or content associated with language tags). There are two types of language range: a [=basic language range=] for lookup or basic filtering and an [=extended language range=] for extended filtering operations. See <a href="https://datatracker.ietf.org/doc/html/rfc4647#section-3" target="_blank">Section 3</a> of <cite>Matching of Language Tags </cite>[[RFC4647]], which is part of [[BCP47]], for details.</p>
 
 <p><dfn class="lint-ignore export">Language subtag</dfn>. A sequence of ASCII letters or digits separated from other subtags by the hyphen-minus character and identifying a specific element of meaning withing the overall [=language tag=]. In [[BCP47]], subtags can consist of upper or lowercase ASCII letters (the case carries no distinction) or ASCII digits. Subtags are limited to no more than eight characters (although additional length restrictions apply depending on the specific use of the subtag).
 </p>
