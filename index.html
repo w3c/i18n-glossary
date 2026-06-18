@@ -294,8 +294,6 @@ pronounced <span class="ipa">θ</span>. <strong>Unicode encodes letter+ijam comb
 
 <p class="normative"><dfn data-lt="I18N|internationalized|internationalisation" class="lint-ignore export">Internationalization</dfn>. The design and development of a product that is enabled for target audiences that vary in culture, region, or language. Internationalization is sometimes abbreviated <code>i18n</code> because there are eighteen letters between the "I" and the "N" in the English word.</p>
 
-<p class="normative"><dfn class="lint-ignore export">International preferences</dfn>. A user's particular set of language and formatting preferences and associated cultural conventions. Software can use these preferences to correctly process or present information exchanged with that user.</p>
-
 <p><dfn data-lt="subtag registry|registry|lstr" class="lint-ignore export">IANA Language Subtag Registry</dfn>. A machine-readable text file available via IANA which contains a comprehensive list of all of the subtags valid in language tags. (Link: <a href="https://www.iana.org/assignments/language-subtag-registry/language-subtag-registry">Registry</a>)</p>
 
 
@@ -334,9 +332,11 @@ pronounced <span class="ipa">θ</span>. <strong>Unicode encodes letter+ijam comb
 
 <p class="normative"><dfn class="lint-ignore export">Legacy character encodings</dfn>. Character encoding forms that do not encode the full repertoire of characters in the Unicode character set.</p>
 
-<p class="normative"><dfn class="lint-ignore export">Locale</dfn>. An identifier (such as a [=language tag=]) for a set of [=international preferences=]. Usually this identifier indicates the preferred language of the user and possibly includes other information, such as a geographic region (such as a country). A locale is passed in APIs or set in the operating environment to obtain culturally-affected behavior within a system or process.</p>
+<p class="normative"><dfn class="lint-ignore export">Locale</dfn>. A user's particular set of language and formatting preferences and associated cultural conventions. Software can use these preferences to correctly process or present information exchanged with that user.</p>
 
-<p class="normative"><dfn class="lint-ignore export">Locale-aware</dfn> (or <em>Enabled</em>). A system that can respond to changes in the [=locale=] with culturally and language-specific behavior or content. Generally, systems that are internationalized can support a wide range of [=locales=] in order to meet the [=international preferences=] of many kinds of users.</p>
+<p class="normative"><dfn class="lint-ignore export">Locale identifier</dfn>. An identifier (such as a [=language tag=]) for a [=locale=]. Usually this identifier indicates the preferred language of the user and possibly includes other information, such as a geographic region (such as a country). A locale identifier is passed in APIs or set in the operating environment to obtain culturally-affected behavior within a system or process.</p>
+
+<p class="normative"><dfn class="lint-ignore export">Locale-aware</dfn> (or <em>Enabled</em>). A system that can respond to changes in the [=locale=] with culturally and language-specific behavior or content. Generally, systems that are internationalized can support a wide range of [=locales=] in order to meet the preferences of many kinds of users.</p>
 
 <p class="normative"><dfn class="lint-ignore export">Locale fallback</dfn>. The process of searching for translated content, locale data, or other resources by "falling back" from more-specific resources to more-general ones following a deterministic pattern.</p>
 
@@ -346,7 +346,7 @@ pronounced <span class="ipa">θ</span>. <strong>Unicode encodes letter+ijam comb
 
 <p class="normative"><dfn class="lint-ignore export">Localizable text</dfn>.  String content intended as human-readable text and <b>not</b> to any of the surrounding or embedded syntactic content that form part of the document structure. Note that syntactic content can have localizable text embedded in it, such as when an [[HTML]] <code class="kw">img</code> element has an <code class="kw">alt</code> attribute containing a description of the image. [[CHARMOD-NORM]] gives <a href="https://www.w3.org/TR/charmod-norm/#dfn-localizable-content">some additional examples</a>.  See also [=localizable content=], [=syntactic content=], and [=natural language=].</p>
 
-<p class="normative"><dfn data-lt="localisation" class="lint-ignore export">Localization</dfn>. The tailoring of a system to the individual cultural expectations of a specific target market or group of individuals. Localization includes, but is not limited to, the translation of user-facing text and messages. Localization is sometimes abbreviated as <code>l10n</code> because there are ten letters between the "L" and the "N" in the English word. When a particular set of content and preferences corresponding to a specific set of international preferences is operationally available, then the system is said to be <em>localized</em>.</p>
+<p class="normative"><dfn data-lt="localisation" class="lint-ignore export">Localization</dfn>. The tailoring of a system to the individual cultural expectations of a specific target market or group of individuals. Localization includes, but is not limited to, the translation of user-facing text and messages. Localization is sometimes abbreviated as <code>l10n</code> because there are ten letters between the "L" and the "N" in the English word. When a particular set of content and preferences corresponding to a specific locale is operationally available, then the system is said to be <em>localized</em>.</p>
 
 <p><dfn class="lint-ignore export">Logical order</dfn>. Some scripts, in particular Arabic and Hebrew, are written from right to left. Text including characters from these scripts can run in both directions and is therefore called [=bidirectional text=]. The Unicode Standard
 [[Unicode]] requires that characters be stored and interchanged in logical order, i.e. roughly corresponding to the order in which text is typed in via the keyboard or spoken (for a more detailed definition see [[Unicode]], Section 2.2). Logical ordering is important to ensure interoperability of data, and also benefits accessibility, searching, and collation.
