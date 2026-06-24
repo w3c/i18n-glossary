@@ -405,3 +405,30 @@ aside h4 {
     height: 400px;
     }
 
+
+/* Emphasize normative content */
+.normative {
+    position: relative;
+    margin-block: 1em;
+    padding: 1.1em 1em 1em 1em;
+    border: 2px solid #005a9c;
+    border-left-width: 6px;
+    border-radius: 6px;
+    background-color: #f0f7ff;
+    box-shadow: 0 1px 2px rgba(0,0,0,.06);
+}
+
+.normative::before {
+    content: "Normative";
+    position: absolute;
+    top: -0.8em;
+    left: 0.75em;
+    padding: .2em .6em;
+    font-size: .75em;
+    font-weight: 600;
+    letter-spacing: .02em;
+    text-transform: uppercase;
+    border-radius: 4px;
+    color: #fff;
+    background-color: #005a9c;
+}
